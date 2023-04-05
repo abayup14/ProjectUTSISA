@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectUTSISA", "ProjectUTSISA\ProjectUTSISA.csproj", "{BD618F05-F9E3-4B59-AD62-9BE833170316}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypthography", "Crypthography\Crypthography.csproj", "{B40A187B-33B6-4701-876D-E9D47CD73034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTSISA_Library", "UTSISA_Library\UTSISA_Library.csproj", "{EDE844C3-6637-4A6B-85D1-BDAFE4AA6ED7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BD618F05-F9E3-4B59-AD62-9BE833170316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD618F05-F9E3-4B59-AD62-9BE833170316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD618F05-F9E3-4B59-AD62-9BE833170316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40A187B-33B6-4701-876D-E9D47CD73034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40A187B-33B6-4701-876D-E9D47CD73034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40A187B-33B6-4701-876D-E9D47CD73034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40A187B-33B6-4701-876D-E9D47CD73034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE844C3-6637-4A6B-85D1-BDAFE4AA6ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE844C3-6637-4A6B-85D1-BDAFE4AA6ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE844C3-6637-4A6B-85D1-BDAFE4AA6ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE844C3-6637-4A6B-85D1-BDAFE4AA6ED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
