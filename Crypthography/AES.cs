@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Crypthography
 {
-    public class Class1
+    internal class AES
     {
     }
 }
