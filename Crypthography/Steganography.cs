@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Crypthography
 {
-    internal class Steganography
+    public class Steganography
     {
+
     }
 }

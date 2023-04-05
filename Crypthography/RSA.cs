@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Crypthography
 {
-    internal class RSA
+    public class RSA
     {
     }
 }
