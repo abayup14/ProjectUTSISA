@@ -32,7 +32,7 @@ namespace UTSISA_Library
         public float MarginTop { get => marginTop; set => marginTop = value; }
         public float MarginBottom { get => marginBottom; set => marginBottom = value; }
 
-        private void PrintText(object sender, PrintPageEventArgs e)
+        private void CetakTeks(object sender, PrintPageEventArgs e)
         {
             int maxRow = (int)((e.MarginBounds.Height - MarginTop - MarginBottom) / FontType.GetHeight(e.Graphics));
 
@@ -69,7 +69,7 @@ namespace UTSISA_Library
 
             p.PrinterSettings.PrinterName = "Microsoft Print to PDF";
 
-            p.PrintPage += new PrintPageEventHandler(PrintText);
+            p.PrintPage += new PrintPageEventHandler(CetakTeks);
 
             p.Print();
 
