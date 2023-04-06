@@ -21,7 +21,7 @@ namespace Crypthography
         public byte[] Key { get => key; private set => key = value; }
         public byte[] Iv { get => iv; private set => iv = value; }
 
-        public static byte[] GenerateRandomKeyInDES()
+        public byte[] GenerateRandomKeyInDES()
         {
             using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
@@ -30,7 +30,7 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomIVInDES()
+        public byte[] GenerateRandomIVInDES()
         {
             using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
