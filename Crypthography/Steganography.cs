@@ -8,6 +8,6 @@ namespace Crypthography
 {
     public class Steganography
     {
-
+        
     }
 }

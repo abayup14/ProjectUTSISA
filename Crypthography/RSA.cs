@@ -9,14 +9,14 @@ namespace Crypthography
 {
     public class RSA
     {
-        private UnicodeEncoding encoding = new UnicodeEncoding();
+        UnicodeEncoding encoder = new UnicodeEncoding();
 
         public string Encrypt(string plainText, RSAParameters publicKey)
         {
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
                 rsa.ImportParameters(publicKey);
-                byte[] getByteFromPlainText = encoding.GetBytes(plainText);
+                byte[] getByteFromPlainText = encoder.GetBytes(plainText);
                 byte[] cipherTextInBytes = rsa.Encrypt(getByteFromPlainText, true);
                 return Convert.ToBase64String(cipherTextInBytes);
             }
@@ -29,7 +29,7 @@ namespace Crypthography
                 rsa.ImportParameters(privateKey);
                 byte[] getByteFromCipherText = Convert.FromBase64String(cipherText);
                 byte[] plainTextInBytes = rsa.Decrypt(getByteFromCipherText, true);
-                return encoding.GetString(plainTextInBytes);
+                return encoder.GetString(plainTextInBytes);
             }
         }
     }
