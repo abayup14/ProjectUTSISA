@@ -32,5 +32,13 @@ namespace Crypthography
                 return encoder.GetString(plainTextInBytes);
             }
         }
+
+        public static (RSAParameters, RSAParameters) GetPublicAndPrivateKey()
+        {
+            using (RSACryptoServiceProvider rsaCrypt = new RSACryptoServiceProvider())
+            {
+                return (rsaCrypt.ExportParameters(false), rsaCrypt.ExportParameters(true));
+            }
+        }
     }
 }
