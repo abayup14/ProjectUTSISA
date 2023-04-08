@@ -32,21 +32,5 @@ namespace Crypthography
                 return encoder.GetString(plainTextInBytes);
             }
         }
-
-        public static RSAParameters GeneratePublicKey()
-        {
-            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
-            {
-                return rsa.ExportParameters(false);
-            }
-        }
-
-        public static RSAParameters GeneratePrivateKey()
-        {
-            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
-            {
-                return rsa.ExportParameters(true);
-            }
-        }
     }
 }
