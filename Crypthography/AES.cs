@@ -9,7 +9,7 @@ namespace Crypthography
 {
     public class AES
     {
-        public string Encrypt(string plainText, byte[] key, byte[] iv)
+        public static string Encrypt(string plainText, byte[] key, byte[] iv)
         {
             byte[] getByteFromPlainText = Encoding.UTF8.GetBytes(plainText);
 
@@ -29,7 +29,7 @@ namespace Crypthography
             }
         }
 
-        public string Decrypt(string cipherText, string key, string iv)
+        public static string Decrypt(string cipherText, string key, string iv)
         {
             byte[] getByteFromCipherText = Convert.FromBase64String(cipherText);
 
@@ -46,6 +46,26 @@ namespace Crypthography
 
                     return Encoding.UTF8.GetString(plainTextInBytes);
                 }
+            }
+        }
+
+        public static byte[] GenerateRandomKeyInAES()
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.KeySize = 256;
+                aes.GenerateKey();
+                return aes.Key;
+            }
+        }
+
+        public static byte[] GenerateRandomIVInAES()
+        {
+            using (var aes = Aes.Create())
+            {
+                aes.BlockSize = 128;
+                aes.GenerateIV();
+                return aes.IV;
             }
         }
     }

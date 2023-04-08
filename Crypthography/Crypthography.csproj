@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AES.cs" />
-    <Compile Include="RandomKeyAndIV.cs" />
     <Compile Include="RSA.cs" />
     <Compile Include="Steganography.cs" />
     <Compile Include="TripleDES.cs" />

@@ -9,7 +9,7 @@ namespace Crypthography
 {
     public class TripleDES
     {
-        public string Encrypt(string plainText, byte[] key, byte[] iv)
+        public static string Encrypt(string plainText, byte[] key, byte[] iv)
         {
             byte[] getByteFromPlainText = Encoding.UTF8.GetBytes(plainText);
 
@@ -27,7 +27,7 @@ namespace Crypthography
             }
         }
 
-        public string Decrypt(string cipherText, string key, string iv)
+        public static string Decrypt(string cipherText, string key, string iv)
         {
             byte[] getByteFromCipherText = Convert.FromBase64String(cipherText);
 
@@ -42,6 +42,24 @@ namespace Crypthography
 
                     return Encoding.UTF8.GetString(plainTextInBytes);
                 }
+            }
+        }
+
+        public static byte[] GenerateRandomKeyInDES()
+        {
+            using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
+            {
+                tdes.GenerateKey();
+                return tdes.Key;
+            }
+        }
+
+        public static byte[] GenerateRandomIVInDES()
+        {
+            using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
+            {
+                tdes.GenerateIV();
+                return tdes.IV;
             }
         }
     }
