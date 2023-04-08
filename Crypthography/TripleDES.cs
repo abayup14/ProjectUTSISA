@@ -45,7 +45,7 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomKeyInDES()
+        public static byte[] GenerateRandomKey()
         {
             using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
@@ -54,7 +54,7 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomIVInDES()
+        public static byte[] GenerateRandomIV()
         {
             using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {

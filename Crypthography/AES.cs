@@ -49,7 +49,7 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomKeyInAES()
+        public static byte[] GenerateRandomKey()
         {
             using (Aes aes = Aes.Create())
             {
@@ -59,7 +59,7 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomIVInAES()
+        public static byte[] GenerateRandomIV()
         {
             using (var aes = Aes.Create())
             {

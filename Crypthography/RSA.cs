@@ -9,9 +9,9 @@ namespace Crypthography
 {
     public class RSA
     {
-        UnicodeEncoding encoder = new UnicodeEncoding();
+        static UnicodeEncoding encoder = new UnicodeEncoding();
 
-        public string Encrypt(string plainText, RSAParameters publicKey)
+        public static string Encrypt(string plainText, RSAParameters publicKey)
         {
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
@@ -22,7 +22,7 @@ namespace Crypthography
             }
         }
 
-        public string Decrypt(string cipherText, RSAParameters privateKey)
+        public static string Decrypt(string cipherText, RSAParameters privateKey)
         {
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
@@ -30,6 +30,22 @@ namespace Crypthography
                 byte[] getByteFromCipherText = Convert.FromBase64String(cipherText);
                 byte[] plainTextInBytes = rsa.Decrypt(getByteFromCipherText, true);
                 return encoder.GetString(plainTextInBytes);
+            }
+        }
+
+        public static RSAParameters GeneratePublicKey()
+        {
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                return rsa.ExportParameters(false);
+            }
+        }
+
+        public static RSAParameters GeneratePrivateKey()
+        {
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                return rsa.ExportParameters(true);
             }
         }
     }
