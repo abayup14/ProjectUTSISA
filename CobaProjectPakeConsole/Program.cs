@@ -61,9 +61,7 @@ namespace CobaProjectPakeConsole
             //}
 
             Steganography stego = new Steganography();
-            stego.GetLibraryPath();
-            Console.ReadLine();
-            bool succ = stego.InstallModule("Pillow");
+            bool succ = stego.ExecuteThing();
             if (succ)
             {
                 Console.WriteLine("Berhasil");
@@ -72,6 +70,7 @@ namespace CobaProjectPakeConsole
             {
                 Console.WriteLine("Gagal");
             }
+            Console.ReadLine();
         }
     }
 }

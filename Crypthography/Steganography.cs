@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IronPython.Hosting;
+using IronPython.Modules;
 using Microsoft.Scripting.Hosting;
+
 
 namespace Crypthography
 {
@@ -22,32 +24,5 @@ namespace Crypthography
 
         public ScriptEngine Engine { get => engine; set => engine = value; }
         public ScriptScope Scope { get => scope; set => scope = value; }
-
-        public void GetLibraryPath()
-        {
-            string filePath = Directory.GetCurrentDirectory();
-
-            string parentFilePath = Directory.GetParent(filePath).Parent.FullName;
-            Console.WriteLine(parentFilePath);
-
-            var searchPaths = Engine.GetSearchPaths();
-            searchPaths.Add(parentFilePath + "\\Crypthography\\lib");
-            Engine.SetSearchPaths(searchPaths);
-        }
-
-        public bool InstallModule(string moduleName)
-        {
-            string command = "pip install " + moduleName;
-
-            GetLibraryPath();
-
-            Engine.ImportModule("os");
-
-            Scope.SetVariable("args", command);
-
-            Engine.Execute("import os; os.system(args)", Scope);
-
-            return true;
-        }
     }
 }
