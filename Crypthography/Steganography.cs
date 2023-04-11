@@ -35,7 +35,7 @@ namespace Crypthography
             Engine.SetSearchPaths(searchPaths);
         }
 
-        public void InstallModule(string moduleName)
+        public bool InstallModule(string moduleName)
         {
             string command = "pip install " + moduleName;
 
@@ -46,6 +46,8 @@ namespace Crypthography
             Scope.SetVariable("args", command);
 
             Engine.Execute("import os; os.system(args)", Scope);
+
+            return true;
         }
     }
 }
