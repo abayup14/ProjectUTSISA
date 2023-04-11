@@ -23,15 +23,15 @@ namespace Crypthography
         public ScriptEngine Engine { get => engine; set => engine = value; }
         public ScriptScope Scope { get => scope; set => scope = value; }
 
-        private void GetLibraryPath()
+        public void GetLibraryPath()
         {
             string filePath = Directory.GetCurrentDirectory();
+
             string parentFilePath = Directory.GetParent(filePath).Parent.FullName;
+            Console.WriteLine(parentFilePath);
 
             var searchPaths = Engine.GetSearchPaths();
-
-            searchPaths.Add(parentFilePath + @"\lib");
-
+            searchPaths.Add(parentFilePath + "\\Crypthography\\lib");
             Engine.SetSearchPaths(searchPaths);
         }
 
