@@ -59,18 +59,6 @@ namespace CobaProjectPakeConsole
             //        Console.ReadLine();
             //    }
             //}
-
-            Steganography stego = new Steganography();
-            bool succ = stego.ExecuteThing();
-            if (succ)
-            {
-                Console.WriteLine("Berhasil");
-            }
-            else
-            {
-                Console.WriteLine("Gagal");
-            }
-            Console.ReadLine();
         }
     }
 }
