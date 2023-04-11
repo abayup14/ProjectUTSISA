@@ -26,12 +26,13 @@ namespace CobaProjectPakeConsole
                 string plainText = Console.ReadLine();
                 if (plainText != "-1")
                 {
-                    string cipherText;
+                    string cipherText, decryptText;
                     cipherText = TripleDES.Encrypt(plainText, key, iv);
                     Console.WriteLine("");
                     Console.WriteLine(plainText + " encrypted become " + cipherText);
                     Console.WriteLine("");
-                    Console.WriteLine(cipherText + " decrypted become " + TripleDES.Decrypt(cipherText, Convert.ToBase64String(key), Convert.ToBase64String(iv)));
+                    decryptText = TripleDES.Decrypt(cipherText, Convert.ToBase64String(key), Convert.ToBase64String(iv));
+                    Console.WriteLine(cipherText + " decrypted become " + decryptText);
                     Console.WriteLine("");
 
                     //AES aes = new AES();
