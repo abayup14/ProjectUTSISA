@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,25 @@ namespace CobaProjectPakeConsole
             //        Console.ReadLine();
             //    }
             //}
+            List<string> list1 = new List<string>() { "halo", "dunia" };
+            string newList = string.Join(" ", list1);
+
+            string filePath = @"D:\GitHub\ProjectUTSISA\old.png";
+            string lokasi = @"D:\GitHub\ProjectUTSISA\old_img.png";
+
+            Bitmap hasil = Steganography.Sembunyikan(newList, filePath);
             
+            hasil.Save(lokasi);
+
+            string hasilAkhir = Steganography.Munculkan(new Bitmap(Image.FromFile(lokasi)));
+
+            List<string> list2 = hasilAkhir.Split(' ').ToList();
+
+            foreach (string item in list2)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
         }
     }
 }
