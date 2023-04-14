@@ -131,7 +131,7 @@ namespace Crypthography
             int colorUnitIndex = 0;
             int charValue = 0;
 
-            string hasilAkhir = string.Empty;
+            string hasilAkhir = "";
 
             for (int i = 0; i < gambarModif.Height; i++)
             {
