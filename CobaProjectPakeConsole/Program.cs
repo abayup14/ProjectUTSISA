@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,12 +64,14 @@ namespace CobaProjectPakeConsole
             List<string> list1 = new List<string>() { "halo", "dunia" };
             string newList = string.Join(" ", list1);
 
-            string filePath = @"D:\GitHub\ProjectUTSISA\old.png";
-            string lokasi = @"D:\GitHub\ProjectUTSISA\old_img.png";
+            string workPath = Directory.GetCurrentDirectory();
+            string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
+            string filePath = parentpath + @"\foto.jpg";
+            string lokasi = parentpath + @"\foto_modif.png";
 
             Bitmap hasil = Steganography.Sembunyikan(newList, filePath);
             
-            hasil.Save(lokasi);
+            hasil.Save(lokasi, System.Drawing.Imaging.ImageFormat.Png);
 
             string hasilAkhir = Steganography.Munculkan(new Bitmap(Image.FromFile(lokasi)));
 
