@@ -61,7 +61,7 @@ namespace CobaProjectPakeConsole
             //        Console.ReadLine();
             //    }
             //}
-            List<string> list1 = new List<string>() { "halo", "dunia" };
+            List<string> list1 = new List<string>() { "halo", "dunia", "apa", "kabarmu" };
             string newList = string.Join(" ", list1);
 
             string workPath = Directory.GetCurrentDirectory();
