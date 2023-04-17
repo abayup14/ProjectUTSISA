@@ -6,7 +6,7 @@
       <Value Profile="(Default)">localhost</Value>
     </Setting>
     <Setting Name="DbName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">utsisa</Value>
+      <Value Profile="(Default)">uts_isa</Value>
     </Setting>
     <Setting Name="DbUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)">root</Value>
