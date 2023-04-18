@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjectUTSISA
 {
-    public partial class FormLogin : Form
+    public partial class FormAkun : Form
     {
-        public FormLogin()
+        public FormAkun()
         {
             InitializeComponent();
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
