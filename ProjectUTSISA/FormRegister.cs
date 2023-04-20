@@ -16,5 +16,16 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
+
+        private void buttonSimpan_Click(object sender, EventArgs e)
+        {
+            //simpen data pengguna
+            this.Close();//kembali ke form login
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -16,5 +16,19 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Apakah anda yakin ingin membatalkan transaksi?","Info",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Stop);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnKirim_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
