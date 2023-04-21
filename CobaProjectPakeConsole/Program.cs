@@ -61,26 +61,26 @@ namespace CobaProjectPakeConsole
             //        Console.ReadLine();
             //    }
             //}
-            List<string> list1 = new List<string>() { "halo", "dunia", "apa", "kabarmu" };
-            string newList = string.Join(" ", list1);
+            //List<string> list1 = new List<string>() { "halo", "dunia", "apa", "kabarmu" };
+            //string newList = string.Join(" ", list1);
 
-            string workPath = Directory.GetCurrentDirectory();
-            string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
-            string filePath = parentpath + @"\foto.jpg";
-            string lokasi = parentpath + @"\foto_modif.png";
+            //string workPath = Directory.GetCurrentDirectory();
+            //string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
+            //string filePath = parentpath + @"\foto.jpg";
+            //string lokasi = parentpath + @"\foto_modif.png";
 
-            Bitmap hasil = Steganography.Sembunyikan(newList, filePath);
+            //Bitmap hasil = Steganography.Sembunyikan(newList, filePath);
             
-            hasil.Save(lokasi, System.Drawing.Imaging.ImageFormat.Png);
+            //hasil.Save(lokasi, System.Drawing.Imaging.ImageFormat.Png);
 
-            string hasilAkhir = Steganography.Munculkan(new Bitmap(Image.FromFile(lokasi)));
+            //string hasilAkhir = Steganography.Munculkan(new Bitmap(Image.FromFile(lokasi)));
 
-            List<string> list2 = hasilAkhir.Split(' ').ToList();
+            //List<string> list2 = hasilAkhir.Split(' ').ToList();
 
-            foreach (string item in list2)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (string item in list2)
+            //{
+            //    Console.WriteLine(item);
+            //}
             Console.ReadLine();
         }
     }
