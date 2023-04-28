@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTSISA_Library;
 
 namespace ProjectUTSISA
 {
@@ -25,8 +26,8 @@ namespace ProjectUTSISA
             //masterToolStripMenuItem.Visible = false;
             try
             {
-                //Koneksi koneksi = new Koneksi();
-                //MessageBox.Show("Koneksi berhasil dibentuk!", "Information");
+                Koneksi koneksi = new Koneksi();
+                MessageBox.Show("Koneksi berhasil dibentuk!", "Information");
 
                 ////form login
                 //FormLogin frmLogin = new FormLogin();
