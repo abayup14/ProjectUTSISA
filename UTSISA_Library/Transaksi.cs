@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UTSISA_Library
 {
-    internal class Transaksi
+    public class Transaksi
     {
     }
 }
