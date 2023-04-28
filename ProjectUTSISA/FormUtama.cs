@@ -29,29 +29,29 @@ namespace ProjectUTSISA
                 Koneksi koneksi = new Koneksi();
                 MessageBox.Show("Koneksi berhasil dibentuk!", "Information");
 
-                ////form login
-                //FormLogin frmLogin = new FormLogin();
-                //frmLogin.Owner = this;
+                //form login
+                FormLogin frmLogin = new FormLogin();
+                frmLogin.Owner = this;
 
-                //if (frmLogin.ShowDialog() == DialogResult.OK)
-                //{
-                //    //login sukses
-                //    //if (!(employeeAktif is null))
-                //    //{
-                //    //    label1.Text = "Anda login sebagai:";
-                //    //    label3.Text = "-";
-                //    //    labelKodePegawai.Text = employeeAktif.Id.ToString();
-                //    //    labelNamaPegawai.Text = employeeAktif.Nama_depan;
-                //    //}
-                //    //SetHakAkses(employeeAktif, penggunaAktif);
-                //}
-                //else
-                //{
-                //    //login gagal
-                //    MessageBox.Show("Gagal Login");
-                //    Application.Exit();
-                //}
-
+                if (frmLogin.ShowDialog() == DialogResult.OK)
+                {
+                    //    //login sukses
+                    //    //if (!(employeeAktif is null))
+                    //    //{
+                    //    //    label1.Text = "Anda login sebagai:";
+                    //    //    label3.Text = "-";
+                    //    //    labelKodePegawai.Text = employeeAktif.Id.ToString();
+                    //    //    labelNamaPegawai.Text = employeeAktif.Nama_depan;
+                    //    //}
+                    //    //SetHakAkses(employeeAktif, penggunaAktif);
+                    //}
+                    //else
+                    //{
+                    //    //login gagal
+                    //    MessageBox.Show("Gagal Login");
+                    //    Application.Exit();
+                    //}
+                }
             }
             catch (Exception ex)
             {
