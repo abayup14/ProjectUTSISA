@@ -265,7 +265,7 @@ namespace ProjectUTSISA
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 34);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Select a PNG file";
+            this.button1.Text = "Pilih Foto Anda";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label3

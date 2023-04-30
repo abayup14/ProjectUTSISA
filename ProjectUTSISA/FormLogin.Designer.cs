@@ -74,7 +74,6 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(233, 24);
             this.textBoxUsername.TabIndex = 2;
-            this.textBoxUsername.Text = "Masukkan username anda";
             this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
             this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             // 
@@ -86,7 +85,6 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(233, 24);
             this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.Text = "Masukkan password anda";
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             // 
