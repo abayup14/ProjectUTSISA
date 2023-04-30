@@ -44,7 +44,7 @@ namespace UTSISA_Library
         public static void TambahData(Pengguna pengguna, Koneksi k)
         {
             string sql = $"INSERT into penggunas (nik, nama_lengkap, alamat, email, nomor_telepon, password, foto_diri, jenis_pengguna_id) " +
-                         $"values '{pengguna.Nik}', '{pengguna.NamaLengkap}', '{pengguna.Alamat}', '{pengguna.Email}', '{pengguna.NoTelepon}', '{pengguna.Password}', '{pengguna.PhotoPath}', '{pengguna.JenisPengguna.KodeJenis}')";
+                         $"values ('{pengguna.Nik}', '{pengguna.NamaLengkap}', '{pengguna.Alamat}', '{pengguna.Email}', '{pengguna.NoTelepon}', '{pengguna.Password}', '{pengguna.PhotoPath}', '{pengguna.JenisPengguna.KodeJenis}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
@@ -82,6 +82,8 @@ namespace UTSISA_Library
 
             while (hasil.Read() == true)
             {
+                JenisPengguna jp = new JenisPengguna(hasil.GetValue(7).ToString());
+
                 Pengguna pengguna = new Pengguna(hasil.GetValue(0).ToString(),
                                                  hasil.GetValue(1).ToString(),
                                                  hasil.GetValue(2).ToString(),
@@ -89,7 +91,7 @@ namespace UTSISA_Library
                                                  hasil.GetValue(4).ToString(),
                                                  hasil.GetValue(5).ToString(),
                                                  hasil.GetValue(6).ToString(),
-                                                 (JenisPengguna)hasil.GetValue(7));
+                                                 jp);
 
                 listPengguna.Add(pengguna);
             }
@@ -103,8 +105,10 @@ namespace UTSISA_Library
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            while (hasil.Read() == true)
+            if (hasil.Read() == true)
             {
+                JenisPengguna jp = new JenisPengguna(hasil.GetValue(7).ToString());
+
                 Pengguna p = new Pengguna(hasil.GetString(0), 
                                           hasil.GetString(1), 
                                           hasil.GetString(2), 
@@ -112,7 +116,7 @@ namespace UTSISA_Library
                                           hasil.GetString(4),
                                           hasil.GetString(5), 
                                           hasil.GetString(6), 
-                                          (JenisPengguna)hasil.GetValue(7));
+                                          jp);
 
                 return p;
             }

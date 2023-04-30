@@ -31,5 +31,13 @@ namespace UTSISA_Library
         public double Nominal { get => nominal; set => nominal = value; }
         public string Pesan { get => pesan; set => pesan = value; }
         public JenisTransaksi JenisTransaksi { get => jenisTransaksi; set => jenisTransaksi = value; }
+
+        public static void TambahData(Transaksi transaksi, Koneksi k)
+        {
+            string sql = $"INSERT into transaksis (rek_sumber, rek_tujuan, waktu_transaksi, nominal, pesan, jenis_transaksi_id) " +
+                         $"values ('{transaksi.RekeningSumber.NoRekening}', '{transaksi.RekeningTujuan.NoRekening}', '{transaksi.WaktuTransaksi.ToString("yyyy-MM-dd HH:mm:ss")}', '{transaksi.Nominal}', '{transaksi.Pesan}', '{transaksi.JenisTransaksi.KodeJenis}')";
+
+            Koneksi.JalankanPerintahDML(sql, k);
+        }
     }
 }
