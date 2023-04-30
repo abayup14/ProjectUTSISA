@@ -25,5 +25,12 @@ namespace UTSISA_Library
         public double Saldo { get => saldo; set => saldo = value; }
         public string Pin { get => pin; set => pin = value; }
         public Pengguna Pengguna { get => pengguna; set => pengguna = value; }
+
+        public static void TambahData(Rekening rk, Koneksi k)
+        {
+            string sql = $"";
+
+            Koneksi.JalankanPerintahDML(sql, k);
+        }
     }
 }
