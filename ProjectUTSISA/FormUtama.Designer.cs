@@ -33,6 +33,7 @@ namespace ProjectUTSISA
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.riwayatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelSubtitle = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace ProjectUTSISA
             this.labelNamaPegawai = new System.Windows.Forms.Label();
             this.labelKodePegawai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.riwayatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +52,8 @@ namespace ProjectUTSISA
             this.keluarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(593, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(791, 28);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,27 +64,34 @@ namespace ProjectUTSISA
             this.transaksiToolStripMenuItem,
             this.riwayatToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.masterToolStripMenuItem.Text = "Master";
             // 
             // akunToolStripMenuItem
             // 
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.akunToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.akunToolStripMenuItem.Text = "Akun";
             this.akunToolStripMenuItem.Click += new System.EventHandler(this.akunToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             this.transaksiToolStripMenuItem.Click += new System.EventHandler(this.transaksiToolStripMenuItem_Click);
+            // 
+            // riwayatToolStripMenuItem
+            // 
+            this.riwayatToolStripMenuItem.Name = "riwayatToolStripMenuItem";
+            this.riwayatToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.riwayatToolStripMenuItem.Text = "Riwayat";
+            this.riwayatToolStripMenuItem.Click += new System.EventHandler(this.riwayatToolStripMenuItem_Click);
             // 
             // keluarToolStripMenuItem
             // 
             this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
-            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
@@ -93,9 +100,10 @@ namespace ProjectUTSISA
             this.labelSubtitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelSubtitle.AutoSize = true;
             this.labelSubtitle.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelSubtitle.Location = new System.Drawing.Point(182, 75);
+            this.labelSubtitle.Location = new System.Drawing.Point(243, 92);
+            this.labelSubtitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSubtitle.Name = "labelSubtitle";
-            this.labelSubtitle.Size = new System.Drawing.Size(263, 19);
+            this.labelSubtitle.Size = new System.Drawing.Size(326, 24);
             this.labelSubtitle.TabIndex = 17;
             this.labelSubtitle.Text = "Your Application for Digital Banking";
             // 
@@ -104,9 +112,10 @@ namespace ProjectUTSISA
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(167, 41);
+            this.labelTitle.Location = new System.Drawing.Point(223, 50);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(293, 33);
+            this.labelTitle.Size = new System.Drawing.Size(366, 41);
             this.labelTitle.TabIndex = 16;
             this.labelTitle.Text = "Welcome to Masbro!";
             // 
@@ -115,9 +124,10 @@ namespace ProjectUTSISA
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(490, 6);
+            this.label3.Location = new System.Drawing.Point(653, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
+            this.label3.Size = new System.Drawing.Size(11, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "-";
             // 
@@ -126,9 +136,10 @@ namespace ProjectUTSISA
             this.labelNamaPegawai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNamaPegawai.AutoSize = true;
             this.labelNamaPegawai.BackColor = System.Drawing.SystemColors.Menu;
-            this.labelNamaPegawai.Location = new System.Drawing.Point(504, 6);
+            this.labelNamaPegawai.Location = new System.Drawing.Point(672, 7);
+            this.labelNamaPegawai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNamaPegawai.Name = "labelNamaPegawai";
-            this.labelNamaPegawai.Size = new System.Drawing.Size(79, 13);
+            this.labelNamaPegawai.Size = new System.Drawing.Size(100, 16);
             this.labelNamaPegawai.TabIndex = 14;
             this.labelNamaPegawai.Text = "Nama Pegawai";
             // 
@@ -137,9 +148,10 @@ namespace ProjectUTSISA
             this.labelKodePegawai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelKodePegawai.AutoSize = true;
             this.labelKodePegawai.BackColor = System.Drawing.SystemColors.Menu;
-            this.labelKodePegawai.Location = new System.Drawing.Point(456, 6);
+            this.labelKodePegawai.Location = new System.Drawing.Point(608, 7);
+            this.labelKodePegawai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelKodePegawai.Name = "labelKodePegawai";
-            this.labelKodePegawai.Size = new System.Drawing.Size(32, 13);
+            this.labelKodePegawai.Size = new System.Drawing.Size(39, 16);
             this.labelKodePegawai.TabIndex = 13;
             this.labelKodePegawai.Text = "Kode";
             // 
@@ -148,25 +160,19 @@ namespace ProjectUTSISA
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(347, 6);
+            this.label1.Location = new System.Drawing.Point(463, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Anda login sebagai:";
             // 
-            // riwayatToolStripMenuItem
-            // 
-            this.riwayatToolStripMenuItem.Name = "riwayatToolStripMenuItem";
-            this.riwayatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.riwayatToolStripMenuItem.Text = "Riwayat";
-            this.riwayatToolStripMenuItem.Click += new System.EventHandler(this.riwayatToolStripMenuItem_Click);
-            // 
             // FormUtama
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(593, 401);
+            this.ClientSize = new System.Drawing.Size(791, 494);
             this.Controls.Add(this.labelSubtitle);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.label3);
@@ -174,9 +180,9 @@ namespace ProjectUTSISA
             this.Controls.Add(this.labelKodePegawai);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormUtama";
-            this.Text = "Menu";
+            this.Text = "Masbro!";
             this.Load += new System.EventHandler(this.FormUtama_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
