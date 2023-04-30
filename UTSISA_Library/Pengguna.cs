@@ -43,22 +43,22 @@ namespace UTSISA_Library
 
         public static void TambahData(Pengguna pengguna, Koneksi k)
         {
-            string sql = "INSERT into penggunas(nik, nama_lengkap, alamat, email, nomor_telepon, password, foto_diri, jenis_pengguna_id) " +
-                          "values ('" + pengguna.Nik + "', '" + pengguna.NamaLengkap + "', '" + pengguna.Alamat + "', '" + pengguna.Email + "', '" + pengguna.NoTelepon + "', '" + pengguna.Password + "', '" + pengguna.PhotoPath + "', '" + pengguna.JenisPengguna + "')";
+            string sql = $"INSERT into penggunas (nik, nama_lengkap, alamat, email, nomor_telepon, password, foto_diri, jenis_pengguna_id) " +
+                         $"values '{pengguna.Nik}', '{pengguna.NamaLengkap}', '{pengguna.Alamat}', '{pengguna.Email}', '{pengguna.NoTelepon}', '{pengguna.Password}', '{pengguna.PhotoPath}', '{pengguna.JenisPengguna}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
 
         public static void UpdateData(Pengguna pengguna, Koneksi k)
         {
-            string sql = "UPDATE penggunas set nik='" + pengguna.Nik + "', nama_lengkap='" + pengguna.NamaLengkap + "', alamat='" + pengguna.Alamat + "', email='" + pengguna.Email + "', nomor_telepon='" + pengguna.NoTelepon + "', password='" + pengguna.Password + "', foto_diri='" + pengguna.PhotoPath + "', jenis_pengguna_id='" + pengguna.JenisPengguna + "'";
+            string sql = $"UPDATE penggunas set nik='{pengguna.Nik}', nama_lengkap='{pengguna.NamaLengkap}', alamat='{pengguna.Alamat}', email='{pengguna.Email}', nomor_telepon='{pengguna.NoTelepon}', password='{pengguna.Password}', foto_diri='{pengguna.PhotoPath}', jenis_pengguna_id='{pengguna.JenisPengguna}'";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
 
         public static void HapusData(Pengguna pengguna, Koneksi k)
         {
-            string sql = "DELETE from penggunas where nik='" + pengguna.Nik + "'";
+            string sql = $"DELETE from penggunas where nik='{pengguna.Nik}'";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
@@ -73,7 +73,7 @@ namespace UTSISA_Library
             }
             else
             {
-                sql = "SELECT * from penggunas where " + kriteria + "LIKE '%" + nilaiKriteria + "%'";
+                sql = $"SELECT * from penggunas where {kriteria} LIKE '%{nilaiKriteria}%'";
             }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -99,8 +99,7 @@ namespace UTSISA_Library
 
         public static Pengguna CekLogin(string emailAtauNoTelepon, string password)
         {
-            string sql = "SELECT * from penggunas where (email = '" + emailAtauNoTelepon + "' OR nomor_telepon = '" + emailAtauNoTelepon +
-                         "') AND password='" + password + "'";
+            string sql = $"SELECT * from penggunas where (email='{emailAtauNoTelepon}' OR nomor_telepon='{emailAtauNoTelepon}') AND password='{password}'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

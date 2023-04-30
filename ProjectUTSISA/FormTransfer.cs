@@ -41,5 +41,34 @@ namespace ProjectUTSISA
 
             }
         }
+
+        private void FormTransfer_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = label1;
+
+            textBoxRekTujuan.Text = "Masukkan nomor rekening tujuan";
+            textBoxRekTujuan.Font = new Font(textBoxRekTujuan.Font, FontStyle.Italic);
+            textBoxRekTujuan.ForeColor = Color.Gray;
+        }
+
+        private void textBoxRekTujuan_Enter(object sender, EventArgs e)
+        {
+            if (textBoxRekTujuan.Text == "Masukkan nomor rekening tujuan")
+            {
+                textBoxRekTujuan.Text = "";
+                textBoxRekTujuan.Font = new Font(textBoxRekTujuan.Font, FontStyle.Regular);
+                textBoxRekTujuan.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxRekTujuan_Leave(object sender, EventArgs e)
+        {
+            if (textBoxRekTujuan.Text == "")
+            {
+                textBoxRekTujuan.Text = "Masukkan nomor rekening tujuan";
+                textBoxRekTujuan.Font = new Font(textBoxRekTujuan.Font, FontStyle.Italic);
+                textBoxRekTujuan.ForeColor = Color.Gray;
+            }
+        }
     }
 }

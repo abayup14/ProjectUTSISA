@@ -20,7 +20,16 @@ namespace ProjectUTSISA
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = label1;
 
+            textBoxUsername.Text = "Masukkan username anda";
+            textBoxUsername.Font = new Font(textBoxUsername.Font, FontStyle.Italic);
+            textBoxUsername.ForeColor = Color.Gray;
+
+            textBoxPassword.Text = "Masukkan password anda";
+            textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
+            textBoxPassword.ForeColor = Color.Gray;
+            textBoxPassword.UseSystemPasswordChar = false;
         }
 
         private void labelRegistrasi_Click(object sender, EventArgs e)
@@ -92,6 +101,48 @@ namespace ProjectUTSISA
             if (result == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void textBoxUsername_Enter(object sender, EventArgs e)
+        {
+            if (textBoxUsername.Text == "Masukkan username anda")
+            {
+                textBoxUsername.Text = "";
+                textBoxUsername.Font = new Font(textBoxUsername.Font, FontStyle.Regular);
+                textBoxUsername.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxUsername_Leave(object sender, EventArgs e)
+        {
+            if (textBoxUsername.Text == "")
+            {
+                textBoxUsername.Text = "Masukkan username anda";
+                textBoxUsername.Font = new Font(textBoxUsername.Font, FontStyle.Italic);
+                textBoxUsername.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBoxPassword_Enter(object sender, EventArgs e)
+        {
+            if (textBoxPassword.Text == "Masukkan password anda")
+            {
+                textBoxPassword.Text = "";
+                textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Regular);
+                textBoxPassword.ForeColor = Color.Black;
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void textBoxPassword_Leave(object sender, EventArgs e)
+        {
+            if (textBoxPassword.Text == "")
+            {
+                textBoxPassword.Text = "Masukkan password anda";
+                textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
+                textBoxPassword.ForeColor = Color.Gray;
+                textBoxPassword.UseSystemPasswordChar = false;
             }
         }
     }

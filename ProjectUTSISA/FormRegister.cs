@@ -27,5 +27,34 @@ namespace ProjectUTSISA
         {
             this.Close();
         }
+
+        private void textBoxNIK_Enter(object sender, EventArgs e)
+        {
+            if (textBoxNIK.Text == "(16 digit angka Nomor Induk Kewarganegaraan)")
+            {
+                textBoxNIK.Text = "";
+                textBoxNIK.Font = new Font(textBoxNIK.Font, FontStyle.Regular);
+                textBoxNIK.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxNIK_Leave(object sender, EventArgs e)
+        {
+            if (textBoxNIK.Text == "")
+            {
+                textBoxNIK.Text = "(16 digit angka Nomor Induk Kewarganegaraan)";
+                textBoxNIK.Font = new Font(textBoxNIK.Font, FontStyle.Italic);
+                textBoxNIK.ForeColor = Color.Gray;
+            }
+        }
+
+        private void FormRegister_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = label1;
+
+            textBoxNIK.Text = "(16 digit angka Nomor Induk Kewarganegaraan)";
+            textBoxNIK.Font = new Font(textBoxNIK.Font, FontStyle.Italic);
+            textBoxNIK.ForeColor = Color.Gray;
+        }
     }
 }

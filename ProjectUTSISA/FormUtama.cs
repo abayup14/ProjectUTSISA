@@ -27,7 +27,7 @@ namespace ProjectUTSISA
             try
             {
                 Koneksi koneksi = new Koneksi();
-                //MessageBox.Show("Koneksi berhasil dibentuk!", "Information");
+                MessageBox.Show("Koneksi berhasil dibentuk!", "Information");
 
                 //form login
                 FormLogin frmLogin = new FormLogin();
