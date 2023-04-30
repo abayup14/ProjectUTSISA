@@ -14,13 +14,7 @@ namespace UTSISA_Library
         private MySqlConnection koneksiDB;
         #endregion
 
-        #region Properties
-        public MySqlConnection KoneksiDB
-        {
-            get => koneksiDB;
-            private set => koneksiDB = value;
-        }
-        #endregion
+        #region Constructors
         public Koneksi(string pServer, string pDatabase, string pUsername, string pPassword)
         {
             string strCon = "server=" + pServer + ";database=" + pDatabase + ";uid=" + pUsername + ";password=" + pPassword;
@@ -45,6 +39,15 @@ namespace UTSISA_Library
             KoneksiDB.ConnectionString = strcon;
             Connect();
         }
+        #endregion
+
+        #region Properties
+        public MySqlConnection KoneksiDB
+        {
+            get => koneksiDB;
+            private set => koneksiDB = value;
+        }
+        #endregion
 
         #region Method
         public void Connect()

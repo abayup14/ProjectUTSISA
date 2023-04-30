@@ -16,6 +16,10 @@ namespace UTSISA_Library
             this.KodeJenis = kodeJenis;
             this.Nama = nama;
         }
+        public JenisPengguna(string kodeJenis)
+        {
+            this.KodeJenis = kodeJenis;
+        }
 
         public string KodeJenis { get => kodeJenis; set => kodeJenis = value; }
         public string Nama { get => nama; set => nama = value; }

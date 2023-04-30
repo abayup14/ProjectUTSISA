@@ -16,10 +16,10 @@ namespace UTSISA_Library
         private string email;
         private string noTelepon;
         private string password;
-        private string photoPath;
+        private string fotoDiri;
         private JenisPengguna jenisPengguna;
 
-        public Pengguna(string nik, string namaLengkap, string alamat, string email, string noTelepon, string password, string photoPath, JenisPengguna jenisPengguna)
+        public Pengguna(string nik, string namaLengkap, string alamat, string email, string noTelepon, string password, string fotoDiri, JenisPengguna jenisPengguna)
         {
             this.Nik = nik;
             this.NamaLengkap = namaLengkap;
@@ -27,8 +27,12 @@ namespace UTSISA_Library
             this.Email = email;
             this.NoTelepon = noTelepon;
             this.Password = password;
-            this.PhotoPath = photoPath;
+            this.FotoDiri = fotoDiri;
             this.JenisPengguna = jenisPengguna;
+        }
+        public Pengguna(string nik)
+        {
+            this.Nik = nik;
         }
 
         public string Nik { get => nik; set => nik = value; }
@@ -37,21 +41,21 @@ namespace UTSISA_Library
         public string Email { get => email; set => email = value; }
         public string NoTelepon { get => noTelepon; set => noTelepon = value; }
         public string Password { get => password; set => password = value; }
-        public string PhotoPath { get => photoPath; set => photoPath = value; }
+        public string FotoDiri { get => fotoDiri; set => fotoDiri = value; }
         public JenisPengguna JenisPengguna { get => jenisPengguna; set => jenisPengguna = value; }
         
 
         public static void TambahData(Pengguna pengguna, Koneksi k)
         {
             string sql = $"INSERT into penggunas (nik, nama_lengkap, alamat, email, nomor_telepon, password, foto_diri, jenis_pengguna_id) " +
-                         $"values '{pengguna.Nik}', '{pengguna.NamaLengkap}', '{pengguna.Alamat}', '{pengguna.Email}', '{pengguna.NoTelepon}', '{pengguna.Password}', '{pengguna.PhotoPath}', '{pengguna.JenisPengguna.KodeJenis}')";
+                         $"values ('{pengguna.Nik}', '{pengguna.NamaLengkap}', '{pengguna.Alamat}', '{pengguna.Email}', '{pengguna.NoTelepon}', '{pengguna.Password}', '{pengguna.FotoDiri}', '{pengguna.JenisPengguna.KodeJenis}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
 
         public static void UpdateData(Pengguna pengguna, Koneksi k)
         {
-            string sql = $"UPDATE penggunas set nik='{pengguna.Nik}', nama_lengkap='{pengguna.NamaLengkap}', alamat='{pengguna.Alamat}', email='{pengguna.Email}', nomor_telepon='{pengguna.NoTelepon}', password='{pengguna.Password}', foto_diri='{pengguna.PhotoPath}', jenis_pengguna_id='{pengguna.JenisPengguna.KodeJenis}'";
+            string sql = $"UPDATE penggunas set nik='{pengguna.Nik}', nama_lengkap='{pengguna.NamaLengkap}', alamat='{pengguna.Alamat}', email='{pengguna.Email}', nomor_telepon='{pengguna.NoTelepon}', password='{pengguna.Password}', foto_diri='{pengguna.FotoDiri}', jenis_pengguna_id='{pengguna.JenisPengguna.KodeJenis}'";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
@@ -82,6 +86,8 @@ namespace UTSISA_Library
 
             while (hasil.Read() == true)
             {
+                JenisPengguna jp = new JenisPengguna(hasil.GetValue(7).ToString());
+
                 Pengguna pengguna = new Pengguna(hasil.GetValue(0).ToString(),
                                                  hasil.GetValue(1).ToString(),
                                                  hasil.GetValue(2).ToString(),
@@ -89,7 +95,7 @@ namespace UTSISA_Library
                                                  hasil.GetValue(4).ToString(),
                                                  hasil.GetValue(5).ToString(),
                                                  hasil.GetValue(6).ToString(),
-                                                 (JenisPengguna)hasil.GetValue(7));
+                                                 jp);
 
                 listPengguna.Add(pengguna);
             }
@@ -103,8 +109,10 @@ namespace UTSISA_Library
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            while (hasil.Read() == true)
+            if (hasil.Read() == true)
             {
+                JenisPengguna jp = new JenisPengguna(hasil.GetValue(7).ToString());
+
                 Pengguna p = new Pengguna(hasil.GetString(0), 
                                           hasil.GetString(1), 
                                           hasil.GetString(2), 
@@ -112,7 +120,7 @@ namespace UTSISA_Library
                                           hasil.GetString(4),
                                           hasil.GetString(5), 
                                           hasil.GetString(6), 
-                                          (JenisPengguna)hasil.GetValue(7));
+                                          jp);
 
                 return p;
             }
