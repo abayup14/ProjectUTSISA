@@ -17,6 +17,9 @@ namespace CobaProjectPakeConsole
             //key = TripleDES.GenerateRandomKey();
             //iv = TripleDES.GenerateRandomIV();
 
+            //key = AES.GenerateRandomKey();
+            //iv = AES.GenerateRandomIV();
+
             //RSACryptoServiceProvider rsaCrypt = new RSACryptoServiceProvider();
             //RSAParameters publicKey = rsaCrypt.ExportParameters(false);
 
@@ -29,6 +32,7 @@ namespace CobaProjectPakeConsole
             //    if (plainText != "-1")
             //    {
             //        string cipherText, decryptText;
+                      //TripleDES
             //        cipherText = TripleDES.Encrypt(plainText, key, iv);
             //        Console.WriteLine("");
             //        Console.WriteLine(plainText + " encrypted become " + cipherText);
@@ -36,7 +40,7 @@ namespace CobaProjectPakeConsole
             //        decryptText = TripleDES.Decrypt(cipherText, Convert.ToBase64String(key), Convert.ToBase64String(iv));
             //        Console.WriteLine(cipherText + " decrypted become " + decryptText);
             //        Console.WriteLine("");
-
+                      //AES
             //        AES aes = new AES();
             //        cipherText = aes.Encrypt(plainText, key, iv);
             //        WriteLine("");
@@ -44,7 +48,7 @@ namespace CobaProjectPakeConsole
             //        WriteLine("");
             //        WriteLine(cipherText + " decrypted become " + aes.Decrypt(cipherText, Convert.ToBase64String(key), Convert.ToBase64String(iv)));
             //        WriteLine("");
-
+                      //RSA
             //        cipherText = RSA.Encrypt(plainText, publicKey);
             //        cipherText = RSA.Encrypt(plainText, pubKey);
             //        WriteLine("");
@@ -61,6 +65,7 @@ namespace CobaProjectPakeConsole
             //        Console.ReadLine();
             //    }
             //}
+            //Contoh Steganography 
             //List<string> list1 = new List<string>() { "halo", "dunia", "apa", "kabarmu" };
             //string newList = string.Join(" ", list1);
 
