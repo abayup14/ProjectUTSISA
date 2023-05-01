@@ -10,6 +10,7 @@ namespace UTSISA_Library
 {
     public class Pengguna
     {
+        #region Data Members
         private string nik;
         private string namaLengkap;
         private string alamat;
@@ -18,7 +19,9 @@ namespace UTSISA_Library
         private string password;
         private string fotoDiri;
         private JenisPengguna jenisPengguna;
+        #endregion
 
+        #region Constructors
         public Pengguna(string nik, string namaLengkap, string alamat, string email, string noTelepon, string password, string fotoDiri, JenisPengguna jenisPengguna)
         {
             this.Nik = nik;
@@ -34,7 +37,9 @@ namespace UTSISA_Library
         {
             this.Nik = nik;
         }
+        #endregion
 
+        #region Properties
         public string Nik { get => nik; set => nik = value; }
         public string NamaLengkap { get => namaLengkap; set => namaLengkap = value; }
         public string Alamat { get => alamat; set => alamat = value; }
@@ -43,8 +48,9 @@ namespace UTSISA_Library
         public string Password { get => password; set => password = value; }
         public string FotoDiri { get => fotoDiri; set => fotoDiri = value; }
         public JenisPengguna JenisPengguna { get => jenisPengguna; set => jenisPengguna = value; }
-        
+        #endregion
 
+        #region Methods
         public static void TambahData(Pengguna pengguna, Koneksi k)
         {
             string sql = $"INSERT into penggunas (nik, nama_lengkap, alamat, email, nomor_telepon, password, foto_diri, jenis_pengguna_id) " +
@@ -127,5 +133,6 @@ namespace UTSISA_Library
 
             return null;
         }
+        #endregion
     }
 }

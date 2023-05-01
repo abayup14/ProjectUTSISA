@@ -9,13 +9,16 @@ namespace UTSISA_Library
 {
     public class Transaksi
     {
+        #region Data Members
         private Rekening rekeningSumber;
         private Rekening rekeningTujuan;
         private DateTime waktuTransaksi;
         private double nominal;
         private string pesan;
         private JenisTransaksi jenisTransaksi;
+        #endregion
 
+        #region Constructors
         public Transaksi(Rekening rekeningSumber, Rekening rekeningTujuan, DateTime waktuTransaksi, double nominal, string pesan, JenisTransaksi jenisTransaksi)
         {
             this.RekeningSumber = rekeningSumber;
@@ -25,14 +28,18 @@ namespace UTSISA_Library
             this.Pesan = pesan;
             this.JenisTransaksi = jenisTransaksi;
         }
+        #endregion
 
+        #region Properties
         public Rekening RekeningSumber { get => rekeningSumber; set => rekeningSumber = value; }
         public Rekening RekeningTujuan { get => rekeningTujuan; set => rekeningTujuan = value; }
         public DateTime WaktuTransaksi { get => waktuTransaksi; set => waktuTransaksi = value; }
         public double Nominal { get => nominal; set => nominal = value; }
         public string Pesan { get => pesan; set => pesan = value; }
         public JenisTransaksi JenisTransaksi { get => jenisTransaksi; set => jenisTransaksi = value; }
+        #endregion
 
+        #region Methods
         public static void TambahData(Transaksi transaksi, Koneksi k)
         {
             string sql = $"INSERT into transaksis (rek_sumber, rek_tujuan, waktu_transaksi, nominal, pesan, jenis_transaksi_id) " +
@@ -75,5 +82,6 @@ namespace UTSISA_Library
 
             return listTransaksi;
         }
+        #endregion
     }
 }

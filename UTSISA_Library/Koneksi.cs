@@ -49,7 +49,7 @@ namespace UTSISA_Library
         }
         #endregion
 
-        #region Method
+        #region Methods
         public void Connect()
         {
             if (KoneksiDB.State == System.Data.ConnectionState.Open)

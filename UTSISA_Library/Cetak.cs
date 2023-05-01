@@ -11,10 +11,13 @@ namespace UTSISA_Library
 {
     public class Cetak
     {
+        #region Data Members
         private Font fontType;
         private StreamReader printToFile;
         private float marginLeft, marginRight, marginTop, marginBottom;
+        #endregion
 
+        #region Constructors
         public Cetak(Font fontType, string pathToFile, float marginLeft, float marginRight, float marginTop, float marginBottom)
         {
             this.FontType = fontType;
@@ -24,14 +27,18 @@ namespace UTSISA_Library
             this.MarginTop = marginTop;
             this.MarginBottom = marginBottom;
         }
+        #endregion
 
+        #region Properties
         public Font FontType { get => fontType; set => fontType = value; }
         public StreamReader PrintToFile { get => printToFile; set => printToFile = value; }
         public float MarginLeft { get => marginLeft; set => marginLeft = value; }
         public float MarginRight { get => marginRight; set => marginRight = value; }
         public float MarginTop { get => marginTop; set => marginTop = value; }
         public float MarginBottom { get => marginBottom; set => marginBottom = value; }
+        #endregion
 
+        #region Methods
         private void CetakTeks(object sender, PrintPageEventArgs e)
         {
             int maxRow = (int)((e.MarginBounds.Height - MarginTop - MarginBottom) / FontType.GetHeight(e.Graphics));
@@ -75,5 +82,6 @@ namespace UTSISA_Library
 
             printToFile.Close();
         }
+        #endregion
     }
 }
