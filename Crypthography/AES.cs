@@ -49,23 +49,23 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomKey()
+        public static string GenerateRandomKey()
         {
             using (Aes aes = Aes.Create())
             {
                 aes.KeySize = 256;
                 aes.GenerateKey();
-                return aes.Key;
+                return Convert.ToBase64String(aes.Key);
             }
         }
 
-        public static byte[] GenerateRandomIV()
+        public static string GenerateRandomIV()
         {
             using (var aes = Aes.Create())
             {
                 aes.BlockSize = 128;
                 aes.GenerateIV();
-                return aes.IV;
+                return Convert.ToBase64String(aes.IV);
             }
         }
     }

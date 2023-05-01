@@ -45,21 +45,21 @@ namespace Crypthography
             }
         }
 
-        public static byte[] GenerateRandomKey()
+        public static string GenerateRandomKey()
         {
             using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
                 tdes.GenerateKey();
-                return tdes.Key;
+                return Convert.ToBase64String(tdes.Key);
             }
         }
 
-        public static byte[] GenerateRandomIV()
+        public static string GenerateRandomIV()
         {
             using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
                 tdes.GenerateIV();
-                return tdes.IV;
+                return Convert.ToBase64String(tdes.IV);
             }
         }
     }
