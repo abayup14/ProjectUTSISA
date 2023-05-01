@@ -71,11 +71,11 @@ DROP TABLE IF EXISTS `penggunas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `penggunas` (
-  `nik` varchar(16) NOT NULL,
+  `nik` varchar(255) NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `nomor_telepon` varchar(12) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `nomor_telepon` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `foto_diri` varchar(255) NOT NULL,
   `jenis_pengguna_id` varchar(3) NOT NULL,
@@ -163,4 +163,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-19 10:19:30
+-- Dump completed on 2023-05-01  7:47:37
