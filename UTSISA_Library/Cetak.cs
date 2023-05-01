@@ -80,7 +80,7 @@ namespace UTSISA_Library
 
             p.Print();
 
-            printToFile.Close();
+            PrintToFile.Close();
         }
         #endregion
     }
