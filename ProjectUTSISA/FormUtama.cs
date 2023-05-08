@@ -70,7 +70,7 @@ namespace ProjectUTSISA
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Koneksi gagal hiks\n Pesan Eror: {ex.Message}", "Information");
+                MessageBox.Show($"Koneksi gagal hiks\nPesan Eror: {ex.Message}", "Information");
             }
         }
 
