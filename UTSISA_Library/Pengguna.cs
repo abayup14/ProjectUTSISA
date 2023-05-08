@@ -69,7 +69,7 @@ namespace UTSISA_Library
 
             Koneksi.JalankanPerintahDML(sql, k);
 
-            string sql1 = $"INSERT INTO key(key, iv, penggunas_nik) " +
+            string sql1 = $"INSERT INTO public_keys(key, iv, penggunas_nik) " +
                           $"values ('{Encoding.UTF8.GetString(key)}', '{Encoding.UTF8.GetString(iv)}', '{nik}')";
 
             Koneksi.JalankanPerintahDML(sql1, k);
@@ -140,7 +140,7 @@ namespace UTSISA_Library
 
         public static Pengguna CekLogin(string email, string password)
         {
-            string sql = $"SELECT * from key k inner join penggunas p on k.pengguna_nik = p.nik";
+            string sql = $"SELECT * from public_key k inner join penggunas p on k.pengguna_nik = p.nik";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -176,6 +176,7 @@ namespace UTSISA_Library
             
             return null;
         }
+
         #endregion
     }
 }
