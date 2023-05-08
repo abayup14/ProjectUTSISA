@@ -75,13 +75,6 @@ namespace UTSISA_Library
             Koneksi.JalankanPerintahDML(sql1, k);
         }
 
-        public static void UpdateData(Pengguna pengguna, Koneksi k)
-        {
-            string sql = $"UPDATE penggunas set nik='{pengguna.Nik}', nama_lengkap='{pengguna.NamaLengkap}', alamat='{pengguna.Alamat}', email='{pengguna.Email}', nomor_telepon='{pengguna.NoTelepon}', password='{pengguna.Password}', foto_diri='{pengguna.FotoDiri}', jenis_pengguna_id='{pengguna.JenisPengguna.KodeJenis}'";
-
-            Koneksi.JalankanPerintahDML(sql, k);
-        }
-
         public static void HapusData(Pengguna pengguna, Koneksi k)
         {
             string sql = $"DELETE from penggunas where nik='{pengguna.Nik}'";
@@ -153,7 +146,9 @@ namespace UTSISA_Library
 
                 if (email == decrypt_email && password == decrypt_pass)
                 {
-                    string sql1 = $"SELECT * from penggunas where email='{hasil.GetString(6)}' AND password='{hasil.GetString(8)}'";
+                    string new_email = hasil.GetValue(6).ToString();
+                    string new_pass = hasil.GetValue(8).ToString();
+                    string sql1 = $"SELECT * from penggunas where email='{new_email}' AND password='{new_pass}'";
 
                     MySqlDataReader hasil1 = Koneksi.JalankanPerintahQuery(sql1);
 
