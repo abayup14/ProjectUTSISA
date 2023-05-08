@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `uts_isa` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `uts_isa`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: uts_isa
@@ -61,6 +59,31 @@ CREATE TABLE `jenis_transaksis` (
 LOCK TABLES `jenis_transaksis` WRITE;
 /*!40000 ALTER TABLE `jenis_transaksis` DISABLE KEYS */;
 /*!40000 ALTER TABLE `jenis_transaksis` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `key`
+--
+
+DROP TABLE IF EXISTS `key`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `key` (
+  `key` varchar(255) NOT NULL,
+  `iv` varchar(255) NOT NULL,
+  `penggunas_nik` varchar(255) NOT NULL,
+  KEY `fk_key_penggunas1_idx` (`penggunas_nik`),
+  CONSTRAINT `fk_key_penggunas1` FOREIGN KEY (`penggunas_nik`) REFERENCES `penggunas` (`nik`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `key`
+--
+
+LOCK TABLES `key` WRITE;
+/*!40000 ALTER TABLE `key` DISABLE KEYS */;
+/*!40000 ALTER TABLE `key` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -163,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-01  7:47:37
+-- Dump completed on 2023-05-08 13:46:14
