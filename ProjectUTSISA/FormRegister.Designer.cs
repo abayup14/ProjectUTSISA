@@ -38,7 +38,7 @@ namespace ProjectUTSISA
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.textBoxNIK = new System.Windows.Forms.TextBox();
-            this.textBoxNamaDepan = new System.Windows.Forms.TextBox();
+            this.textBoxNamaLengkap = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSimpan = new System.Windows.Forms.Button();
@@ -46,11 +46,11 @@ namespace ProjectUTSISA
             this.label1 = new System.Windows.Forms.Label();
             this.buttonKosongi = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.buttonFoto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPassword
@@ -62,6 +62,8 @@ namespace ProjectUTSISA
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(556, 24);
             this.textBoxPassword.TabIndex = 14;
+            this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
+            this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             // 
             // label8
             // 
@@ -81,6 +83,8 @@ namespace ProjectUTSISA
             this.textBoxNoTelp.Name = "textBoxNoTelp";
             this.textBoxNoTelp.Size = new System.Drawing.Size(556, 24);
             this.textBoxNoTelp.TabIndex = 12;
+            this.textBoxNoTelp.Enter += new System.EventHandler(this.textBoxNoTelp_Enter);
+            this.textBoxNoTelp.Leave += new System.EventHandler(this.textBoxNoTelp_Leave);
             // 
             // label7
             // 
@@ -100,6 +104,8 @@ namespace ProjectUTSISA
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(556, 24);
             this.textBoxEmail.TabIndex = 10;
+            this.textBoxEmail.Enter += new System.EventHandler(this.textBoxEmail_Enter);
+            this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
             // 
             // label6
             // 
@@ -131,6 +137,8 @@ namespace ProjectUTSISA
             this.textBoxAlamat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxAlamat.Size = new System.Drawing.Size(556, 59);
             this.textBoxAlamat.TabIndex = 7;
+            this.textBoxAlamat.Enter += new System.EventHandler(this.textBoxAlamat_Enter);
+            this.textBoxAlamat.Leave += new System.EventHandler(this.textBoxAlamat_Leave);
             // 
             // textBoxNIK
             // 
@@ -143,14 +151,16 @@ namespace ProjectUTSISA
             this.textBoxNIK.Enter += new System.EventHandler(this.textBoxNIK_Enter);
             this.textBoxNIK.Leave += new System.EventHandler(this.textBoxNIK_Leave);
             // 
-            // textBoxNamaDepan
+            // textBoxNamaLengkap
             // 
-            this.textBoxNamaDepan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNamaDepan.Location = new System.Drawing.Point(185, 62);
-            this.textBoxNamaDepan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxNamaDepan.Name = "textBoxNamaDepan";
-            this.textBoxNamaDepan.Size = new System.Drawing.Size(556, 24);
-            this.textBoxNamaDepan.TabIndex = 2;
+            this.textBoxNamaLengkap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNamaLengkap.Location = new System.Drawing.Point(185, 62);
+            this.textBoxNamaLengkap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxNamaLengkap.Name = "textBoxNamaLengkap";
+            this.textBoxNamaLengkap.Size = new System.Drawing.Size(556, 24);
+            this.textBoxNamaLengkap.TabIndex = 2;
+            this.textBoxNamaLengkap.Enter += new System.EventHandler(this.textBoxNamaDepan_Enter);
+            this.textBoxNamaLengkap.Leave += new System.EventHandler(this.textBoxNamaDepan_Leave);
             // 
             // label9
             // 
@@ -178,7 +188,7 @@ namespace ProjectUTSISA
             this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.buttonSimpan.ForeColor = System.Drawing.Color.White;
             this.buttonSimpan.Location = new System.Drawing.Point(201, 615);
-            this.buttonSimpan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSimpan.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(153, 46);
             this.buttonSimpan.TabIndex = 38;
@@ -192,7 +202,7 @@ namespace ProjectUTSISA
             this.buttonKeluar.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.buttonKeluar.ForeColor = System.Drawing.Color.White;
             this.buttonKeluar.Location = new System.Drawing.Point(653, 615);
-            this.buttonKeluar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonKeluar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(153, 46);
             this.buttonKeluar.TabIndex = 37;
@@ -218,7 +228,7 @@ namespace ProjectUTSISA
             this.buttonKosongi.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.buttonKosongi.ForeColor = System.Drawing.Color.White;
             this.buttonKosongi.Location = new System.Drawing.Point(363, 615);
-            this.buttonKosongi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonKosongi.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKosongi.Name = "buttonKosongi";
             this.buttonKosongi.Size = new System.Drawing.Size(153, 46);
             this.buttonKosongi.TabIndex = 39;
@@ -228,8 +238,8 @@ namespace ProjectUTSISA
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBoxPhoto);
+            this.panel1.Controls.Add(this.buttonFoto);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBoxPassword);
             this.panel1.Controls.Add(this.label8);
@@ -240,7 +250,7 @@ namespace ProjectUTSISA
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textBoxAlamat);
             this.panel1.Controls.Add(this.textBoxNIK);
-            this.panel1.Controls.Add(this.textBoxNamaDepan);
+            this.panel1.Controls.Add(this.textBoxNamaLengkap);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 63);
@@ -249,24 +259,25 @@ namespace ProjectUTSISA
             this.panel1.Size = new System.Drawing.Size(796, 546);
             this.panel1.TabIndex = 36;
             // 
-            // pictureBox1
+            // pictureBoxPhoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(31, 331);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 187);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(31, 331);
+            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(167, 187);
+            this.pictureBoxPhoto.TabIndex = 17;
+            this.pictureBoxPhoto.TabStop = false;
             // 
-            // button1
+            // buttonFoto
             // 
-            this.button1.Location = new System.Drawing.Point(185, 278);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 34);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Pilih Foto Anda";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonFoto.Location = new System.Drawing.Point(185, 278);
+            this.buttonFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFoto.Name = "buttonFoto";
+            this.buttonFoto.Size = new System.Drawing.Size(167, 34);
+            this.buttonFoto.TabIndex = 16;
+            this.buttonFoto.Text = "Pilih Foto Anda";
+            this.buttonFoto.UseVisualStyleBackColor = true;
+            this.buttonFoto.Click += new System.EventHandler(this.buttonFoto_Click);
             // 
             // label3
             // 
@@ -294,7 +305,7 @@ namespace ProjectUTSISA
             this.Load += new System.EventHandler(this.FormRegister_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,7 +321,7 @@ namespace ProjectUTSISA
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxAlamat;
         private System.Windows.Forms.TextBox textBoxNIK;
-        private System.Windows.Forms.TextBox textBoxNamaDepan;
+        private System.Windows.Forms.TextBox textBoxNamaLengkap;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSimpan;
@@ -318,8 +329,8 @@ namespace ProjectUTSISA
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonKosongi;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBoxPhoto;
+        private System.Windows.Forms.Button buttonFoto;
         private System.Windows.Forms.Label label3;
     }
 }
