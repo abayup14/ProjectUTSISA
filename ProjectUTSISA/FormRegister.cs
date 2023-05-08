@@ -16,16 +16,37 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
-
+        OpenFileDialog open;
+        FormLogin frmLogin;
         private void buttonSimpan_Click(object sender, EventArgs e)
         {
-            //simpen data pengguna
-            this.Close();//kembali ke form login
+            try
+            {
+                //simpen data pengguna
+                string nik = textBoxNIK.Text;
+                string nama = textBoxNamaLengkap.Text;
+                string alamat = textBoxAlamat.Text;
+                string email = textBoxEmail.Text;
+                string noTelepon = textBoxNoTelp.Text;
+                string password = textBoxPassword.Text;
+                string fotoDiri = open.FileName;
+
+                frmLogin.email = email;
+                frmLogin.password = password;
+                //new akun
+                this.DialogResult = DialogResult.OK;
+                this.Close();//kembali ke form login
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.DialogResult = DialogResult.No;
         }
 
         private void textBoxNIK_Enter(object sender, EventArgs e)
@@ -51,6 +72,7 @@ namespace ProjectUTSISA
         private void FormRegister_Load(object sender, EventArgs e)
         {
             this.ActiveControl = label1;
+            frmLogin = (FormLogin)this.Owner;
 
             textBoxNIK.Text = "(16 digit angka Nomor Induk Kewarganegaraan)";
             textBoxNIK.Font = new Font(textBoxNIK.Font, FontStyle.Italic);
@@ -80,7 +102,7 @@ namespace ProjectUTSISA
 
         private void buttonFoto_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog
+            open = new OpenFileDialog
             {
                 InitialDirectory = @"D:\",
                 Title = "Browse Image Files",
@@ -205,6 +227,32 @@ namespace ProjectUTSISA
                 textBoxPassword.Text = "";
                 textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Regular);
                 textBoxPassword.ForeColor = Color.Black;
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void buttonKosongi_Click(object sender, EventArgs e)
+        {
+            textBoxNIK.Text = "";
+            textBoxNamaLengkap.Text = "";
+            textBoxAlamat.Text = "";
+            textBoxEmail.Text = "";
+            textBoxNoTelp.Text = "";
+            textBoxPassword.Text = "";
+            open.FileName = "";
+            pictureBoxPhoto.Image = null;
+        }
+
+        private void buttonBukaPass_Click(object sender, EventArgs e)
+        {
+            if (buttonBukaPass.Text == "Buka")
+            {
+                buttonBukaPass.Text = "Tutup";
+                textBoxPassword.UseSystemPasswordChar = false;
+            }
+            else if (buttonBukaPass.Text == "Tutup")
+            {
+                buttonBukaPass.Text = "Buka";
                 textBoxPassword.UseSystemPasswordChar = true;
             }
         }

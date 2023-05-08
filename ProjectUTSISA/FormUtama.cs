@@ -17,13 +17,27 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
-
+        public Pengguna pengguna;
+        public Rekening rekening;
+        public void SetHakAkses()
+        {
+            //ganti dalem stringnya dan visiblity nya
+            if (pengguna.JenisPengguna.KodeJenis == "")
+            {
+                masterToolStripMenuItem.Visible = true;//pegawai
+            }
+            else if (pengguna.JenisPengguna.KodeJenis == "")
+            {
+                aksiToolStripMenuItem.Visible = true;//nasbah
+            }
+        }
         private void FormUtama_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.IsMdiContainer = true;
 
-            //masterToolStripMenuItem.Visible = false;
+            masterToolStripMenuItem.Visible = false;
+            aksiToolStripMenuItem.Visible = false;
             try
             {
                 Koneksi koneksi = new Koneksi();
@@ -35,22 +49,23 @@ namespace ProjectUTSISA
 
                 if (frmLogin.ShowDialog() == DialogResult.OK)
                 {
-                    //    //login sukses
-                    //    //if (!(employeeAktif is null))
-                    //    //{
-                    //    //    label1.Text = "Anda login sebagai:";
-                    //    //    label3.Text = "-";
-                    //    //    labelKodePegawai.Text = employeeAktif.Id.ToString();
-                    //    //    labelNamaPegawai.Text = employeeAktif.Nama_depan;
-                    //    //}
-                    //    //SetHakAkses(employeeAktif, penggunaAktif);
-                    //}
-                    //else
+                    //login sukses
+                    //if (!(employeeAktif is null))
                     //{
-                    //    //login gagal
-                    //    MessageBox.Show("Gagal Login");
-                    //    Application.Exit();
+                    //    label1.Text = "Anda login sebagai:";
+                    //    label3.Text = "-";
+                    //    labelKodePegawai.Text = employeeAktif.Id.ToString();
+                    //    labelNamaPegawai.Text = employeeAktif.Nama_depan;
                     //}
+                    //SetHakAkses(employeeAktif, penggunaAktif);
+                    //List<Rekening> reks= Rekening.BacaData("NIK", pengguna.Nik); // berpotensi erorr -> untuk nasabar=h
+                    //rekening = reks[0];
+                }
+                else
+                {
+                    //login gagal
+                    MessageBox.Show("Gagal Login");
+                    Application.Exit();
                 }
             }
             catch (Exception ex)
@@ -95,11 +110,6 @@ namespace ProjectUTSISA
                 form.Show();
                 form.BringToFront();
             }
-        }
-
-        private void riwayatToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void keluarToolStripMenuItem_Click(object sender, EventArgs e)

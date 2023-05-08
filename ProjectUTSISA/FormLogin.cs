@@ -17,14 +17,15 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
-
+        public string email;
+        public string password;
         private void FormLogin_Load(object sender, EventArgs e)
         {
             this.ActiveControl = label1;
 
-            textBoxUsername.Text = "Masukkan username anda";
-            textBoxUsername.Font = new Font(textBoxUsername.Font, FontStyle.Italic);
-            textBoxUsername.ForeColor = Color.Gray;
+            textBoxEmail.Text = "Masukkan username anda";
+            textBoxEmail.Font = new Font(textBoxEmail.Font, FontStyle.Italic);
+            textBoxEmail.ForeColor = Color.Gray;
 
             textBoxPassword.Text = "Masukkan password anda";
             textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
@@ -36,8 +37,17 @@ namespace ProjectUTSISA
         {
             FormRegister frm = new FormRegister();
             frm.Owner = this;
-            frm.Show();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                textBoxEmail.Text = email;
+                textBoxEmail.Font = new Font(textBoxEmail.Font, FontStyle.Regular);
+                textBoxEmail.ForeColor = Color.Black;
 
+                textBoxPassword.Text = password;
+                textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Regular);
+                textBoxPassword.ForeColor = Color.Black;
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -90,7 +100,7 @@ namespace ProjectUTSISA
                     MessageBox.Show("Gagal login, pesan error :" + a.Message);
                 }
 
-            MessageBox.Show("Login berhasil, Selamat menggunakan Aplikasi Bank Masbro, " + textBoxUsername.Text + "!", "Informasi");
+            MessageBox.Show("Login berhasil, Selamat menggunakan Aplikasi Bank Masbro, " + textBoxEmail.Text + "!", "Informasi");
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -106,21 +116,21 @@ namespace ProjectUTSISA
 
         private void textBoxUsername_Enter(object sender, EventArgs e)
         {
-            if (textBoxUsername.Text == "Masukkan username anda")
+            if (textBoxEmail.Text == "Masukkan username anda")
             {
-                textBoxUsername.Text = "";
-                textBoxUsername.Font = new Font(textBoxUsername.Font, FontStyle.Regular);
-                textBoxUsername.ForeColor = Color.Black;
+                textBoxEmail.Text = "";
+                textBoxEmail.Font = new Font(textBoxEmail.Font, FontStyle.Regular);
+                textBoxEmail.ForeColor = Color.Black;
             }
         }
 
         private void textBoxUsername_Leave(object sender, EventArgs e)
         {
-            if (textBoxUsername.Text == "")
+            if (textBoxEmail.Text == "")
             {
-                textBoxUsername.Text = "Masukkan username anda";
-                textBoxUsername.Font = new Font(textBoxUsername.Font, FontStyle.Italic);
-                textBoxUsername.ForeColor = Color.Gray;
+                textBoxEmail.Text = "Masukkan username anda";
+                textBoxEmail.Font = new Font(textBoxEmail.Font, FontStyle.Italic);
+                textBoxEmail.ForeColor = Color.Gray;
             }
         }
 

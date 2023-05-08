@@ -49,6 +49,7 @@ namespace ProjectUTSISA
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFoto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonBukaPass = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
@@ -59,8 +60,7 @@ namespace ProjectUTSISA
             this.textBoxPassword.Location = new System.Drawing.Point(185, 241);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(556, 24);
+            this.textBoxPassword.Size = new System.Drawing.Size(474, 24);
             this.textBoxPassword.TabIndex = 14;
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
@@ -234,10 +234,12 @@ namespace ProjectUTSISA
             this.buttonKosongi.TabIndex = 39;
             this.buttonKosongi.Text = "&KOSONGI";
             this.buttonKosongi.UseVisualStyleBackColor = false;
+            this.buttonKosongi.Click += new System.EventHandler(this.buttonKosongi_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
+            this.panel1.Controls.Add(this.buttonBukaPass);
             this.panel1.Controls.Add(this.pictureBoxPhoto);
             this.panel1.Controls.Add(this.buttonFoto);
             this.panel1.Controls.Add(this.label3);
@@ -289,6 +291,16 @@ namespace ProjectUTSISA
             this.label3.TabIndex = 15;
             this.label3.Text = "Foto Diri:";
             // 
+            // buttonBukaPass
+            // 
+            this.buttonBukaPass.Location = new System.Drawing.Point(665, 238);
+            this.buttonBukaPass.Name = "buttonBukaPass";
+            this.buttonBukaPass.Size = new System.Drawing.Size(76, 30);
+            this.buttonBukaPass.TabIndex = 18;
+            this.buttonBukaPass.Text = "Buka";
+            this.buttonBukaPass.UseVisualStyleBackColor = true;
+            this.buttonBukaPass.Click += new System.EventHandler(this.buttonBukaPass_Click);
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,5 +344,6 @@ namespace ProjectUTSISA
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button buttonFoto;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonBukaPass;
     }
 }

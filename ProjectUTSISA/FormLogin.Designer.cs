@@ -30,7 +30,7 @@
         {
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,16 +66,16 @@
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxUsername
+            // textBoxEmail
             // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(185, 28);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(233, 24);
-            this.textBoxUsername.TabIndex = 2;
-            this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
-            this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(185, 28);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(233, 24);
+            this.textBoxEmail.TabIndex = 2;
+            this.textBoxEmail.Enter += new System.EventHandler(this.textBoxUsername_Enter);
+            this.textBoxEmail.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             // 
             // textBoxPassword
             // 
@@ -94,9 +94,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(28, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 18);
+            this.label9.Size = new System.Drawing.Size(55, 18);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Username:";
+            this.label9.Text = "Email:";
             // 
             // label2
             // 
@@ -112,7 +112,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
             this.panel1.Controls.Add(this.labelRegistrasi);
-            this.panel1.Controls.Add(this.textBoxUsername);
+            this.panel1.Controls.Add(this.textBoxEmail);
             this.panel1.Controls.Add(this.textBoxPassword);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label2);
@@ -171,7 +171,7 @@
 
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;

@@ -87,7 +87,7 @@ namespace ProjectUTSISA
             this.labelAlamat.AutoSize = true;
             this.labelAlamat.Location = new System.Drawing.Point(147, 214);
             this.labelAlamat.Name = "labelAlamat";
-            this.labelAlamat.Size = new System.Drawing.Size(49, 16);
+            this.labelAlamat.Size = new System.Drawing.Size(51, 17);
             this.labelAlamat.TabIndex = 11;
             this.labelAlamat.Text = "Alamat";
             // 
@@ -96,7 +96,7 @@ namespace ProjectUTSISA
             this.labelNIK.AutoSize = true;
             this.labelNIK.Location = new System.Drawing.Point(144, 10);
             this.labelNIK.Name = "labelNIK";
-            this.labelNIK.Size = new System.Drawing.Size(28, 16);
+            this.labelNIK.Size = new System.Drawing.Size(30, 17);
             this.labelNIK.TabIndex = 13;
             this.labelNIK.Text = "NIK";
             // 
@@ -105,7 +105,7 @@ namespace ProjectUTSISA
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(11, 214);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 16);
+            this.label8.Size = new System.Drawing.Size(128, 17);
             this.label8.TabIndex = 10;
             this.label8.Text = "Alamat Pengguna: ";
             // 
@@ -114,7 +114,7 @@ namespace ProjectUTSISA
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(29, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 16);
+            this.label6.Size = new System.Drawing.Size(107, 17);
             this.label6.TabIndex = 12;
             this.label6.Text = "NIK Pengguna: ";
             // 
@@ -123,7 +123,7 @@ namespace ProjectUTSISA
             this.labelNoTelp.AutoSize = true;
             this.labelNoTelp.Location = new System.Drawing.Point(147, 180);
             this.labelNoTelp.Name = "labelNoTelp";
-            this.labelNoTelp.Size = new System.Drawing.Size(59, 16);
+            this.labelNoTelp.Size = new System.Drawing.Size(62, 17);
             this.labelNoTelp.TabIndex = 11;
             this.labelNoTelp.Text = "No. Telp";
             // 
@@ -132,7 +132,7 @@ namespace ProjectUTSISA
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(25, 180);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 16);
+            this.label5.Size = new System.Drawing.Size(114, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Nomor Telepon: ";
             // 
@@ -141,7 +141,7 @@ namespace ProjectUTSISA
             this.labelEmail.AutoSize = true;
             this.labelEmail.Location = new System.Drawing.Point(147, 146);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 16);
+            this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 7;
             this.labelEmail.Text = "Email";
             // 
@@ -150,7 +150,7 @@ namespace ProjectUTSISA
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(19, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Email Pengguna: ";
             // 
@@ -159,7 +159,7 @@ namespace ProjectUTSISA
             this.labelSaldo.AutoSize = true;
             this.labelSaldo.Location = new System.Drawing.Point(147, 112);
             this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(43, 16);
+            this.labelSaldo.Size = new System.Drawing.Size(44, 17);
             this.labelSaldo.TabIndex = 5;
             this.labelSaldo.Text = "Saldo";
             // 
@@ -168,7 +168,7 @@ namespace ProjectUTSISA
             this.labelsld.AutoSize = true;
             this.labelsld.Location = new System.Drawing.Point(21, 112);
             this.labelsld.Name = "labelsld";
-            this.labelsld.Size = new System.Drawing.Size(110, 16);
+            this.labelsld.Size = new System.Drawing.Size(116, 17);
             this.labelsld.TabIndex = 4;
             this.labelsld.Text = "Saldo Rekening: ";
             // 
@@ -177,7 +177,7 @@ namespace ProjectUTSISA
             this.labelNoRek.AutoSize = true;
             this.labelNoRek.Location = new System.Drawing.Point(147, 78);
             this.labelNoRek.Name = "labelNoRek";
-            this.labelNoRek.Size = new System.Drawing.Size(48, 16);
+            this.labelNoRek.Size = new System.Drawing.Size(50, 17);
             this.labelNoRek.TabIndex = 3;
             this.labelNoRek.Text = "Nomor";
             // 
@@ -186,7 +186,7 @@ namespace ProjectUTSISA
             this.labelNamaPengguna.AutoSize = true;
             this.labelNamaPengguna.Location = new System.Drawing.Point(144, 44);
             this.labelNamaPengguna.Name = "labelNamaPengguna";
-            this.labelNamaPengguna.Size = new System.Drawing.Size(44, 16);
+            this.labelNamaPengguna.Size = new System.Drawing.Size(45, 17);
             this.labelNamaPengguna.TabIndex = 2;
             this.labelNamaPengguna.Text = "Nama";
             // 
@@ -195,7 +195,7 @@ namespace ProjectUTSISA
             this.labelnrk.AutoSize = true;
             this.labelnrk.Location = new System.Drawing.Point(15, 78);
             this.labelnrk.Name = "labelnrk";
-            this.labelnrk.Size = new System.Drawing.Size(112, 16);
+            this.labelnrk.Size = new System.Drawing.Size(118, 17);
             this.labelnrk.TabIndex = 1;
             this.labelnrk.Text = "Nomor Rekening:";
             // 
@@ -204,7 +204,7 @@ namespace ProjectUTSISA
             this.labelnm.AutoSize = true;
             this.labelnm.Location = new System.Drawing.Point(15, 44);
             this.labelnm.Name = "labelnm";
-            this.labelnm.Size = new System.Drawing.Size(115, 16);
+            this.labelnm.Size = new System.Drawing.Size(122, 17);
             this.labelnm.TabIndex = 0;
             this.labelnm.Text = "Nama Pengguna: ";
             // 
@@ -232,6 +232,7 @@ namespace ProjectUTSISA
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormAkun";
             this.Text = "Akun Pengguna";
+            this.Load += new System.EventHandler(this.FormAkun_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();

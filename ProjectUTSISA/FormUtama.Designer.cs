@@ -30,10 +30,9 @@ namespace ProjectUTSISA
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.riwayatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelSubtitle = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -41,6 +40,9 @@ namespace ProjectUTSISA
             this.labelNamaPegawai = new System.Windows.Forms.Label();
             this.labelKodePegawai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nasabahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transaksiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +51,7 @@ namespace ProjectUTSISA
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.masterToolStripMenuItem,
+            this.aksiToolStripMenuItem,
             this.keluarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -57,36 +60,28 @@ namespace ProjectUTSISA
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // masterToolStripMenuItem
+            // aksiToolStripMenuItem
             // 
-            this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.akunToolStripMenuItem,
-            this.transaksiToolStripMenuItem,
-            this.riwayatToolStripMenuItem});
-            this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
-            this.masterToolStripMenuItem.Text = "Master";
+            this.transaksiToolStripMenuItem});
+            this.aksiToolStripMenuItem.Name = "aksiToolStripMenuItem";
+            this.aksiToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.aksiToolStripMenuItem.Text = "Aksi";
             // 
             // akunToolStripMenuItem
             // 
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.akunToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.akunToolStripMenuItem.Text = "Akun";
             this.akunToolStripMenuItem.Click += new System.EventHandler(this.akunToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             this.transaksiToolStripMenuItem.Click += new System.EventHandler(this.transaksiToolStripMenuItem_Click);
-            // 
-            // riwayatToolStripMenuItem
-            // 
-            this.riwayatToolStripMenuItem.Name = "riwayatToolStripMenuItem";
-            this.riwayatToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
-            this.riwayatToolStripMenuItem.Text = "Riwayat";
-            this.riwayatToolStripMenuItem.Click += new System.EventHandler(this.riwayatToolStripMenuItem_Click);
             // 
             // keluarToolStripMenuItem
             // 
@@ -127,7 +122,7 @@ namespace ProjectUTSISA
             this.label3.Location = new System.Drawing.Point(653, 7);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 16);
+            this.label3.Size = new System.Drawing.Size(13, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "-";
             // 
@@ -139,7 +134,7 @@ namespace ProjectUTSISA
             this.labelNamaPegawai.Location = new System.Drawing.Point(672, 7);
             this.labelNamaPegawai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNamaPegawai.Name = "labelNamaPegawai";
-            this.labelNamaPegawai.Size = new System.Drawing.Size(100, 16);
+            this.labelNamaPegawai.Size = new System.Drawing.Size(102, 17);
             this.labelNamaPegawai.TabIndex = 14;
             this.labelNamaPegawai.Text = "Nama Pegawai";
             // 
@@ -151,7 +146,7 @@ namespace ProjectUTSISA
             this.labelKodePegawai.Location = new System.Drawing.Point(608, 7);
             this.labelKodePegawai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelKodePegawai.Name = "labelKodePegawai";
-            this.labelKodePegawai.Size = new System.Drawing.Size(39, 16);
+            this.labelKodePegawai.Size = new System.Drawing.Size(41, 17);
             this.labelKodePegawai.TabIndex = 13;
             this.labelKodePegawai.Text = "Kode";
             // 
@@ -163,9 +158,30 @@ namespace ProjectUTSISA
             this.label1.Location = new System.Drawing.Point(463, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 16);
+            this.label1.Size = new System.Drawing.Size(133, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Anda login sebagai:";
+            // 
+            // masterToolStripMenuItem
+            // 
+            this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nasabahToolStripMenuItem,
+            this.transaksiToolStripMenuItem1});
+            this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.masterToolStripMenuItem.Text = "Master";
+            // 
+            // nasabahToolStripMenuItem
+            // 
+            this.nasabahToolStripMenuItem.Name = "nasabahToolStripMenuItem";
+            this.nasabahToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nasabahToolStripMenuItem.Text = "Nasabah";
+            // 
+            // transaksiToolStripMenuItem1
+            // 
+            this.transaksiToolStripMenuItem1.Name = "transaksiToolStripMenuItem1";
+            this.transaksiToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.transaksiToolStripMenuItem1.Text = "Transaksi";
             // 
             // FormUtama
             // 
@@ -194,7 +210,7 @@ namespace ProjectUTSISA
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aksiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem akunToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transaksiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keluarToolStripMenuItem;
@@ -204,6 +220,8 @@ namespace ProjectUTSISA
         private System.Windows.Forms.Label labelNamaPegawai;
         private System.Windows.Forms.Label labelKodePegawai;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem riwayatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nasabahToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transaksiToolStripMenuItem1;
     }
 }
