@@ -217,6 +217,11 @@ namespace ProjectUTSISA
                 textBoxPassword.Text = "Password";
                 textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
                 textBoxPassword.ForeColor = Color.Gray;
+                if (buttonBukaPass.Text == "Buka" || buttonBukaPass.Text == "Tutup")
+                {
+                    textBoxPassword.UseSystemPasswordChar = false;
+                }
+                
             }
         }
 
@@ -248,12 +253,24 @@ namespace ProjectUTSISA
             if (buttonBukaPass.Text == "Buka")
             {
                 buttonBukaPass.Text = "Tutup";
+                if (textBoxPassword.Text == "Password")
+                {
+                    textBoxPassword.Text = "Password";
+                }
                 textBoxPassword.UseSystemPasswordChar = false;
             }
             else if (buttonBukaPass.Text == "Tutup")
             {
                 buttonBukaPass.Text = "Buka";
-                textBoxPassword.UseSystemPasswordChar = true;
+                if (textBoxPassword.Text == "Password")
+                {
+                    textBoxPassword.Text = "Password";
+                    textBoxPassword.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    textBoxPassword.UseSystemPasswordChar = true;
+                }
             }
         }
     }

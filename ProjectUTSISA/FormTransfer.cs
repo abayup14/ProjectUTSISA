@@ -31,7 +31,7 @@ namespace ProjectUTSISA
             DialogResult hasil = MessageBox.Show("Transaksi yang anda ingin lakukan: " +
                                                  "\nRekening Sumber : " + labelRekSumber.Text +
                                                  "\nRekening Tujuan : " + textBoxRekTujuan.Text +
-                                                 "\nSaldo : Rp. " + labelSaldo.Text +
+                                                 /*"\nSaldo : Rp. " + labelSaldo.Text +*/
                                                  "\nNominal Transaksi : " + textBoxNominal.Text +
                                                  "\nPesan : " + textBoxRekTujuan.Text +
                                                  "\n\nApakah anda yakin ingin melakukan transaksi tersebut?",

@@ -34,7 +34,7 @@ namespace ProjectUTSISA
 
         private void FormTransaksi_Load(object sender, EventArgs e)
         {
-            pengguna=
+            //pengguna=
         }
 
         private void btnKembali_Click(object sender, EventArgs e)
