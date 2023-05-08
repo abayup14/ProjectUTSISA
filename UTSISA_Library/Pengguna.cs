@@ -153,7 +153,9 @@ namespace UTSISA_Library
 
                 if (email == decrypt_email && password == decrypt_pass)
                 {
-                    string sql1 = $"SELECT * from penggunas where email='{hasil.GetString(6)}' AND password='{hasil.GetString(8)}'";
+                    string new_email = hasil.GetValue(6).ToString();
+                    string new_pass = hasil.GetValue(8).ToString();
+                    string sql1 = $"SELECT * from penggunas where email='{new_email}' AND password='{new_pass}'";
 
                     MySqlDataReader hasil1 = Koneksi.JalankanPerintahQuery(sql1);
 
