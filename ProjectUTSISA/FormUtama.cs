@@ -116,5 +116,29 @@ namespace ProjectUTSISA
         {
             Application.Exit();
         }
+
+        private void transaksiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void penggunaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormDaftarPengguna"];
+
+            if (form == null)
+            {
+                FormDaftarPengguna frm = new FormDaftarPengguna();
+                frm.MdiParent = this;
+                frm.Show();
+                labelTitle.SendToBack();
+                labelSubtitle.SendToBack();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
+        }
     } 
 }
