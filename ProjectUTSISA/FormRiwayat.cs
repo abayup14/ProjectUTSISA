@@ -38,8 +38,8 @@ namespace ProjectUTSISA
             {
                 foreach (Transaksi t in listTransaksi)
                 {
-                    dataGridViewRiwayat.Rows.Add(em.Id, em.Nama_depan, em.Nama_keluarga, em.Posisi.Nama, em.Nik, em.Email,
-                        em.Tgl_buat.ToShortDateString(), em.Tgl_perubahan.ToShortDateString());
+                    dataGridViewRiwayat.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi.ToString("dd-MM-yyyy HH:mm:ss"),t.Nominal,
+                        t.Pesan,t.JenisTransaksi);
                 }
             }
             else
@@ -74,6 +74,15 @@ namespace ProjectUTSISA
 
             dataGridViewRiwayat.AllowUserToAddRows = false;
             dataGridViewRiwayat.ReadOnly = true;
+        }
+
+        private void dataGridViewRiwayat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewRiwayat.Columns["btnCetak"].Index && e.RowIndex >= 0)
+            {
+                //Transaksi.PrintTransaksi("transaksi_id", dataGridViewTransaksi.Rows[e.RowIndex].Cells["transaksi_id"].Value.ToString(), "transaksi.txt",new Font("Courier New", 12));
+                MessageBox.Show("Transaksi telah tercetak.");
+            }
         }
     }
 }

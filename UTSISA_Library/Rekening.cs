@@ -90,6 +90,10 @@ namespace UTSISA_Library
 
             return listRekening;
         }
+        public override string ToString()
+        {
+            return this.NoRekening;
+        }
         #endregion
     }
 }

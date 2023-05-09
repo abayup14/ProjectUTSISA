@@ -44,6 +44,7 @@ namespace ProjectUTSISA
             this.dataGridViewRiwayat.RowHeadersWidth = 51;
             this.dataGridViewRiwayat.Size = new System.Drawing.Size(661, 288);
             this.dataGridViewRiwayat.TabIndex = 44;
+            this.dataGridViewRiwayat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRiwayat_CellContentClick);
             // 
             // btnKembali
             // 

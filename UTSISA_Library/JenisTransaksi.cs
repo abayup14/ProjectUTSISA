@@ -23,6 +23,10 @@ namespace UTSISA_Library
         {
             this.KodeJenis = kodeJenis;
         }
+        public override string ToString()
+        {
+            return this.Nama;
+        }
         #endregion
 
         #region Properties
