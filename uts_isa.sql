@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `uts_isa` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `uts_isa`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: uts_isa
@@ -130,7 +132,7 @@ CREATE TABLE `rekenings` (
   `nomor_rekening` varchar(12) NOT NULL,
   `saldo` double NOT NULL,
   `pin` varchar(255) NOT NULL,
-  `pengguna_id` varchar(16) NOT NULL,
+  `pengguna_id` varchar(255) NOT NULL,
   PRIMARY KEY (`nomor_rekening`),
   KEY `fk_rekening_pengguna1_idx` (`pengguna_id`),
   CONSTRAINT `fk_rekening_pengguna1` FOREIGN KEY (`pengguna_id`) REFERENCES `penggunas` (`nik`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -160,7 +162,8 @@ CREATE TABLE `transaksis` (
   `nominal` double NOT NULL,
   `pesan` varchar(50) NOT NULL,
   `jenis_transaksis_id` int(11) NOT NULL,
-  PRIMARY KEY (`rek_sumber`,`rek_tujuan`),
+  `nomor_transaksi` varchar(45) NOT NULL,
+  PRIMARY KEY (`rek_sumber`,`rek_tujuan`,`nomor_transaksi`),
   KEY `fk_rekening_rekening_rekening2_idx` (`rek_tujuan`),
   KEY `fk_rekening_rekening_rekening1_idx` (`rek_sumber`),
   KEY `fk_transaksis_jenis_transaksis1_idx` (`jenis_transaksis_id`),
@@ -188,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-09 10:45:11
+-- Dump completed on 2023-05-09 15:25:03
