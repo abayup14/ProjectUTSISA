@@ -46,10 +46,9 @@ namespace ProjectUTSISA
             // labelnm
             // 
             this.labelnm.AutoSize = true;
-            this.labelnm.Location = new System.Drawing.Point(11, 8);
-            this.labelnm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelnm.Location = new System.Drawing.Point(15, 10);
             this.labelnm.Name = "labelnm";
-            this.labelnm.Size = new System.Drawing.Size(93, 13);
+            this.labelnm.Size = new System.Drawing.Size(122, 17);
             this.labelnm.TabIndex = 0;
             this.labelnm.Text = "Nama Pengguna: ";
             // 
@@ -62,70 +61,66 @@ namespace ProjectUTSISA
             this.panel1.Controls.Add(this.labelNamaPengguna);
             this.panel1.Controls.Add(this.labelnrk);
             this.panel1.Controls.Add(this.labelnm);
-            this.panel1.Location = new System.Drawing.Point(8, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(11, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 80);
+            this.panel1.Size = new System.Drawing.Size(452, 98);
             this.panel1.TabIndex = 5;
             // 
             // checkBoxTmpilkanSaldo
             // 
             this.checkBoxTmpilkanSaldo.AutoSize = true;
-            this.checkBoxTmpilkanSaldo.Location = new System.Drawing.Point(229, 57);
-            this.checkBoxTmpilkanSaldo.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxTmpilkanSaldo.Location = new System.Drawing.Point(305, 70);
+            this.checkBoxTmpilkanSaldo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxTmpilkanSaldo.Name = "checkBoxTmpilkanSaldo";
-            this.checkBoxTmpilkanSaldo.Size = new System.Drawing.Size(105, 17);
+            this.checkBoxTmpilkanSaldo.Size = new System.Drawing.Size(135, 21);
             this.checkBoxTmpilkanSaldo.TabIndex = 6;
             this.checkBoxTmpilkanSaldo.Text = "Tampilkan Saldo";
             this.checkBoxTmpilkanSaldo.UseVisualStyleBackColor = true;
+            this.checkBoxTmpilkanSaldo.CheckedChanged += new System.EventHandler(this.checkBoxTmpilkanSaldo_CheckedChanged);
             // 
             // labelSaldo
             // 
             this.labelSaldo.AutoSize = true;
-            this.labelSaldo.Location = new System.Drawing.Point(110, 58);
-            this.labelSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSaldo.Location = new System.Drawing.Point(147, 71);
             this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(47, 13);
+            this.labelSaldo.Size = new System.Drawing.Size(58, 17);
             this.labelSaldo.TabIndex = 5;
             this.labelSaldo.Text = "**********";
             // 
             // labelsld
             // 
             this.labelsld.AutoSize = true;
-            this.labelsld.Location = new System.Drawing.Point(16, 58);
-            this.labelsld.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelsld.Location = new System.Drawing.Point(21, 71);
             this.labelsld.Name = "labelsld";
-            this.labelsld.Size = new System.Drawing.Size(89, 13);
+            this.labelsld.Size = new System.Drawing.Size(116, 17);
             this.labelsld.TabIndex = 4;
             this.labelsld.Text = "Saldo Rekening: ";
             // 
             // labelNoRek
             // 
             this.labelNoRek.AutoSize = true;
-            this.labelNoRek.Location = new System.Drawing.Point(110, 32);
-            this.labelNoRek.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNoRek.Location = new System.Drawing.Point(147, 39);
             this.labelNoRek.Name = "labelNoRek";
-            this.labelNoRek.Size = new System.Drawing.Size(38, 13);
+            this.labelNoRek.Size = new System.Drawing.Size(50, 17);
             this.labelNoRek.TabIndex = 3;
             this.labelNoRek.Text = "Nomor";
             // 
             // labelNamaPengguna
             // 
             this.labelNamaPengguna.AutoSize = true;
-            this.labelNamaPengguna.Location = new System.Drawing.Point(110, 8);
-            this.labelNamaPengguna.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNamaPengguna.Location = new System.Drawing.Point(147, 10);
             this.labelNamaPengguna.Name = "labelNamaPengguna";
-            this.labelNamaPengguna.Size = new System.Drawing.Size(35, 13);
+            this.labelNamaPengguna.Size = new System.Drawing.Size(45, 17);
             this.labelNamaPengguna.TabIndex = 2;
             this.labelNamaPengguna.Text = "Nama";
             // 
             // labelnrk
             // 
             this.labelnrk.AutoSize = true;
-            this.labelnrk.Location = new System.Drawing.Point(11, 32);
-            this.labelnrk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelnrk.Location = new System.Drawing.Point(15, 39);
             this.labelnrk.Name = "labelnrk";
-            this.labelnrk.Size = new System.Drawing.Size(90, 13);
+            this.labelnrk.Size = new System.Drawing.Size(118, 17);
             this.labelnrk.TabIndex = 1;
             this.labelnrk.Text = "Nomor Rekening:";
             // 
@@ -134,10 +129,10 @@ namespace ProjectUTSISA
             this.btnKembali.BackColor = System.Drawing.Color.Red;
             this.btnKembali.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKembali.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKembali.Location = new System.Drawing.Point(253, 247);
-            this.btnKembali.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKembali.Location = new System.Drawing.Point(350, 124);
+            this.btnKembali.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKembali.Name = "btnKembali";
-            this.btnKembali.Size = new System.Drawing.Size(76, 29);
+            this.btnKembali.Size = new System.Drawing.Size(101, 36);
             this.btnKembali.TabIndex = 8;
             this.btnKembali.Text = "Kembali";
             this.btnKembali.UseVisualStyleBackColor = false;
@@ -148,10 +143,10 @@ namespace ProjectUTSISA
             this.btnRiwayat.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnRiwayat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRiwayat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRiwayat.Location = new System.Drawing.Point(139, 101);
-            this.btnRiwayat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRiwayat.Location = new System.Drawing.Point(161, 124);
+            this.btnRiwayat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRiwayat.Name = "btnRiwayat";
-            this.btnRiwayat.Size = new System.Drawing.Size(76, 29);
+            this.btnRiwayat.Size = new System.Drawing.Size(101, 36);
             this.btnRiwayat.TabIndex = 7;
             this.btnRiwayat.Text = "Riwayat";
             this.btnRiwayat.UseVisualStyleBackColor = false;
@@ -162,10 +157,10 @@ namespace ProjectUTSISA
             this.btnTranfer.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnTranfer.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTranfer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTranfer.Location = new System.Drawing.Point(22, 101);
-            this.btnTranfer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTranfer.Location = new System.Drawing.Point(29, 124);
+            this.btnTranfer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTranfer.Name = "btnTranfer";
-            this.btnTranfer.Size = new System.Drawing.Size(76, 29);
+            this.btnTranfer.Size = new System.Drawing.Size(101, 36);
             this.btnTranfer.TabIndex = 6;
             this.btnTranfer.Text = "Transfer";
             this.btnTranfer.UseVisualStyleBackColor = false;
@@ -173,14 +168,14 @@ namespace ProjectUTSISA
             // 
             // FormTransaksi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 292);
+            this.ClientSize = new System.Drawing.Size(472, 180);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnKembali);
             this.Controls.Add(this.btnRiwayat);
             this.Controls.Add(this.btnTranfer);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormTransaksi";
             this.Text = "Transaksi";
             this.Load += new System.EventHandler(this.FormTransaksi_Load);

@@ -30,6 +30,9 @@ namespace ProjectUTSISA
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nasabahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transaksiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +43,6 @@ namespace ProjectUTSISA
             this.labelNamaPegawai = new System.Windows.Forms.Label();
             this.labelKodePegawai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nasabahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transaksiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,27 @@ namespace ProjectUTSISA
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // masterToolStripMenuItem
+            // 
+            this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nasabahToolStripMenuItem,
+            this.transaksiToolStripMenuItem1});
+            this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.masterToolStripMenuItem.Text = "Master";
+            // 
+            // nasabahToolStripMenuItem
+            // 
+            this.nasabahToolStripMenuItem.Name = "nasabahToolStripMenuItem";
+            this.nasabahToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.nasabahToolStripMenuItem.Text = "Nasabah";
+            // 
+            // transaksiToolStripMenuItem1
+            // 
+            this.transaksiToolStripMenuItem1.Name = "transaksiToolStripMenuItem1";
+            this.transaksiToolStripMenuItem1.Size = new System.Drawing.Size(151, 26);
+            this.transaksiToolStripMenuItem1.Text = "Transaksi";
+            // 
             // aksiToolStripMenuItem
             // 
             this.aksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -72,14 +93,14 @@ namespace ProjectUTSISA
             // akunToolStripMenuItem
             // 
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.akunToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.akunToolStripMenuItem.Text = "Akun";
             this.akunToolStripMenuItem.Click += new System.EventHandler(this.akunToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             this.transaksiToolStripMenuItem.Click += new System.EventHandler(this.transaksiToolStripMenuItem_Click);
             // 
@@ -95,7 +116,7 @@ namespace ProjectUTSISA
             this.labelSubtitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelSubtitle.AutoSize = true;
             this.labelSubtitle.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelSubtitle.Location = new System.Drawing.Point(243, 92);
+            this.labelSubtitle.Location = new System.Drawing.Point(237, 103);
             this.labelSubtitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSubtitle.Name = "labelSubtitle";
             this.labelSubtitle.Size = new System.Drawing.Size(326, 24);
@@ -107,7 +128,7 @@ namespace ProjectUTSISA
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(223, 50);
+            this.labelTitle.Location = new System.Drawing.Point(220, 62);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(366, 41);
@@ -161,27 +182,6 @@ namespace ProjectUTSISA
             this.label1.Size = new System.Drawing.Size(133, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Anda login sebagai:";
-            // 
-            // masterToolStripMenuItem
-            // 
-            this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nasabahToolStripMenuItem,
-            this.transaksiToolStripMenuItem1});
-            this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
-            this.masterToolStripMenuItem.Text = "Master";
-            // 
-            // nasabahToolStripMenuItem
-            // 
-            this.nasabahToolStripMenuItem.Name = "nasabahToolStripMenuItem";
-            this.nasabahToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.nasabahToolStripMenuItem.Text = "Nasabah";
-            // 
-            // transaksiToolStripMenuItem1
-            // 
-            this.transaksiToolStripMenuItem1.Name = "transaksiToolStripMenuItem1";
-            this.transaksiToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.transaksiToolStripMenuItem1.Text = "Transaksi";
             // 
             // FormUtama
             // 
