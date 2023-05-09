@@ -54,25 +54,18 @@ namespace UTSISA_Library
         #region Methods
         public static void TambahData(Pengguna pengguna, Koneksi k)
         {
-            byte[] key = AES.GenerateRandomKey();
-            byte[] iv = AES.GenerateRandomIV();
-
-            string nik = AES.Encrypt(pengguna.Nik, key, iv);
-            string namaLengkap = AES.Encrypt(pengguna.NamaLengkap, key, iv);
-            string alamat = AES.Encrypt(pengguna.Alamat, key, iv);
-            string email = AES.Encrypt(pengguna.Email, key, iv);
-            string noTelepon = AES.Encrypt(pengguna.NoTelepon, key, iv);
-            string password = AES.Encrypt(pengguna.Password, key, iv);
-
             string sql = $"INSERT into penggunas (nik, nama_lengkap, alamat, email, nomor_telepon, password, foto_diri, jenis_pengguna_id) " +
-                         $"values ('{nik}', '{namaLengkap}', '{alamat}', '{email}', '{noTelepon}', '{password}', '{pengguna.FotoDiri}', '{pengguna.JenisPengguna.KodeJenis}')";
+                         $"values ('{pengguna.Nik}', '{pengguna.NamaLengkap}', '{pengguna.Alamat}', '{pengguna.Email}', '{pengguna.NoTelepon}', '{pengguna.Password}', '{pengguna.FotoDiri}', '{pengguna.JenisPengguna.KodeJenis}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
-
-            string sql1 = $"INSERT INTO public_keys(key, iv, penggunas_nik) " +
+        }
+        
+        public static void TambahKunci(string nik, byte[] key, byte[] iv, Koneksi k)
+        {
+            string sql = $"INSERT INTO public_keys(key, iv, penggunas_nik) " +
                           $"values ('{Encoding.UTF8.GetString(key)}', '{Encoding.UTF8.GetString(iv)}', '{nik}')";
 
-            Koneksi.JalankanPerintahDML(sql1, k);
+            Koneksi.JalankanPerintahDML(sql, k);
         }
 
         public static void HapusData(Pengguna pengguna, Koneksi k)

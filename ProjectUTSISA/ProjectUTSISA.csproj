@@ -170,5 +170,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crypthography\Crypthography.csproj">
+      <Project>{B40A187B-33B6-4701-876D-E9D47CD73034}</Project>
+      <Name>Crypthography</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

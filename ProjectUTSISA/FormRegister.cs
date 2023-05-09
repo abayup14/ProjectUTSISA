@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Crypthography;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTSISA_Library;
 
 namespace ProjectUTSISA
 {
@@ -22,6 +25,8 @@ namespace ProjectUTSISA
         {
             try
             {
+                Koneksi k = new Koneksi();
+
                 //simpen data pengguna
                 string nik = textBoxNIK.Text;
                 string nama = textBoxNamaLengkap.Text;
@@ -30,9 +35,53 @@ namespace ProjectUTSISA
                 string noTelepon = textBoxNoTelp.Text;
                 string password = textBoxPassword.Text;
                 string fotoDiri = open.FileName;
+                //JenisPengguna jp = new JenisPengguna()
+
+                DialogResult result = MessageBox.Show("Cek kembali data anda. Apabila anda sudah memilih tombol Yes maka data anda tidak bisa diubah." +
+                                                      "\nApakah anda yakin dengan data yang diisi?", 
+                                                      "Konfirmasi", 
+                                                      MessageBoxButtons.YesNo, 
+                                                      MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    byte[] key = AES.GenerateRandomKey();
+                    byte[] iv = AES.GenerateRandomIV();
+
+                    string encrypt_nik = AES.Encrypt(nik, key, iv);
+                    string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
+                    string encrypt_alamat = AES.Encrypt(alamat, key, iv);
+                    string encrypt_email = AES.Encrypt(email, key, iv);
+                    string encrypt_noTelepon = AES.Encrypt(noTelepon, key, iv);
+                    string encrypt_password = AES.Encrypt(password, key, iv);
+
+                    List<string> listDataPengguna = new List<string>() { encrypt_nik, encrypt_namaLengkap, encrypt_alamat, encrypt_email, encrypt_noTelepon, encrypt_password };
+                    string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
+                    string workPath = Directory.GetCurrentDirectory();
+                    string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
+                    string lokasiSimpan = parentpath + $@"\{nik}.png";
+                    Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
+                    hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
+
+                    Pengguna p = new Pengguna(encrypt_nik,
+                                              encrypt_namaLengkap,
+                                              encrypt_alamat,
+                                              encrypt_email,
+                                              encrypt_noTelepon,
+                                              encrypt_password,
+                                              lokasiSimpan,
+                                              null);
+
+                    Pengguna.TambahData(p, k);
+                    Pengguna.TambahKunci(encrypt_nik, key, iv, k);
+
+                    MessageBox.Show("Selamat, data anda sudah tersimpan." +
+                                    "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
+                }
 
                 frmLogin.email = email;
                 frmLogin.password = password;
+
                 //new akun
                 this.DialogResult = DialogResult.OK;
                 this.Close();//kembali ke form login
