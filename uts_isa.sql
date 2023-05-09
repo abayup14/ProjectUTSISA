@@ -35,6 +35,7 @@ CREATE TABLE `jenis_penggunas` (
 
 LOCK TABLES `jenis_penggunas` WRITE;
 /*!40000 ALTER TABLE `jenis_penggunas` DISABLE KEYS */;
+INSERT INTO `jenis_penggunas` VALUES ('EMP','Employee'),('NSB','Nasabah');
 /*!40000 ALTER TABLE `jenis_penggunas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,31 +60,6 @@ CREATE TABLE `jenis_transaksis` (
 LOCK TABLES `jenis_transaksis` WRITE;
 /*!40000 ALTER TABLE `jenis_transaksis` DISABLE KEYS */;
 /*!40000 ALTER TABLE `jenis_transaksis` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `key`
---
-
-DROP TABLE IF EXISTS `key`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `key` (
-  `key` varchar(255) NOT NULL,
-  `iv` varchar(255) NOT NULL,
-  `penggunas_nik` varchar(255) NOT NULL,
-  KEY `fk_key_penggunas1_idx` (`penggunas_nik`),
-  CONSTRAINT `fk_key_penggunas1` FOREIGN KEY (`penggunas_nik`) REFERENCES `penggunas` (`nik`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `key`
---
-
-LOCK TABLES `key` WRITE;
-/*!40000 ALTER TABLE `key` DISABLE KEYS */;
-/*!40000 ALTER TABLE `key` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -115,6 +91,32 @@ CREATE TABLE `penggunas` (
 LOCK TABLES `penggunas` WRITE;
 /*!40000 ALTER TABLE `penggunas` DISABLE KEYS */;
 /*!40000 ALTER TABLE `penggunas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `public_keys`
+--
+
+DROP TABLE IF EXISTS `public_keys`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `public_keys` (
+  `public_key` varchar(255) NOT NULL,
+  `iv` varchar(255) NOT NULL,
+  `penggunas_nik` varchar(255) NOT NULL,
+  PRIMARY KEY (`penggunas_nik`),
+  KEY `fk_key_penggunas1_idx` (`penggunas_nik`),
+  CONSTRAINT `fk_key_penggunas1` FOREIGN KEY (`penggunas_nik`) REFERENCES `penggunas` (`nik`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `public_keys`
+--
+
+LOCK TABLES `public_keys` WRITE;
+/*!40000 ALTER TABLE `public_keys` DISABLE KEYS */;
+/*!40000 ALTER TABLE `public_keys` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -186,4 +188,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-08 13:46:14
+-- Dump completed on 2023-05-09 10:45:11
