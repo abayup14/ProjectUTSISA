@@ -29,5 +29,12 @@ namespace UTSISA_Library
         public string KodeJenis { get => kodeJenis; set => kodeJenis = value; }
         public string Nama { get => nama; set => nama = value; }
         #endregion
+
+        #region Method
+        public override string ToString()
+        {
+            return this.Nama;
+        }
+        #endregion
     }
 }

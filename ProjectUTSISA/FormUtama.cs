@@ -49,6 +49,12 @@ namespace ProjectUTSISA
 
                 if (frmLogin.ShowDialog() == DialogResult.OK)
                 {
+                    if (pengguna != null)
+                    {
+                        labelKodePegawai.Text = pengguna.JenisPengguna.KodeJenis;
+                        labelNamaPegawai.Text = pengguna.NamaLengkap;
+                        SetHakAkses();
+                    }
                     //login sukses
                     //if (!(employeeAktif is null))
                     //{
@@ -64,7 +70,7 @@ namespace ProjectUTSISA
                 else
                 {
                     //login gagal
-                    MessageBox.Show("Gagal Login");
+                    MessageBox.Show("Gagal Login", "Informasi");
                     Application.Exit();
                 }
             }
@@ -115,6 +121,30 @@ namespace ProjectUTSISA
         private void keluarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void transaksiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void penggunaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormDaftarPengguna"];
+
+            if (form == null)
+            {
+                FormDaftarPengguna frm = new FormDaftarPengguna();
+                frm.MdiParent = this;
+                frm.Show();
+                labelTitle.SendToBack();
+                labelSubtitle.SendToBack();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
         }
     } 
 }

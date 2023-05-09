@@ -49,8 +49,6 @@ namespace ProjectUTSISA
                     byte[] key = AES.GenerateRandomKey();
                     byte[] iv = AES.GenerateRandomIV();
 
-                    MessageBox.Show("Key: " + Convert.ToBase64String(key) + "\nIV: " + Convert.ToBase64String(iv));
-
                     string encrypt_nik = AES.Encrypt(nik, key, iv);
                     string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
                     string encrypt_alamat = AES.Encrypt(alamat, key, iv);
@@ -62,7 +60,7 @@ namespace ProjectUTSISA
                     string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
                     string workPath = Directory.GetCurrentDirectory();
                     string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
-                    string lokasiSimpan = parentpath + $@"\foto_stegano\{nik}_{noRekening}.png";
+                    string lokasiSimpan = parentpath + $"\\foto_stegano\\{nik}_{noRekening}.png";
                     Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
                     hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -72,7 +70,7 @@ namespace ProjectUTSISA
                                               encrypt_email,
                                               encrypt_noTelepon,
                                               encrypt_password,
-                                              lokasiSimpan,
+                                              lokasiSimpan.Replace("\\", "\\\\"),
                                               jp);
 
                     Pengguna.TambahData(p, k);

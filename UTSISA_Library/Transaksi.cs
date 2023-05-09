@@ -89,6 +89,38 @@ namespace UTSISA_Library
             return listTransaksi;
         }
 
+        public static string GenerateNomorTransaksi()
+        {
+            string sql = "SELECT max(nomor_transaksi) FROM transaksis";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            string hasilGenerate = "";
+
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    string hasilKode = (int.Parse(hasil.GetValue(0).ToString()) + 1).ToString();
+
+                    if (hasilKode.Length == 10)
+                    {
+                        hasilGenerate = hasilKode;
+                    }
+                    else if (hasilKode.Length < 10)
+                    {
+                        hasilGenerate = hasilKode.PadLeft(11 - hasilKode.Length, '0');
+                    }
+                }
+                else
+                {
+                    hasilGenerate = 1.ToString().PadLeft(10, '0');
+                }
+            }
+
+            return hasilGenerate;
+        }
+
         public static void PrintTransaksi(string printKriteria, string nilaiKriteria, string fileName, Font font)
         {
             List<Transaksi> listTransaksi = new List<Transaksi>();

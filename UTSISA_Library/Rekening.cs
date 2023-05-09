@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Crypthography;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,40 @@ namespace UTSISA_Library
             string sql = $"DELETE from rekenings where nomor_rekening='{rekening.NoRekening}'";
 
             Koneksi.JalankanPerintahDML(sql, k);
+        }
+
+        public static Rekening AmbilData(Pengguna p)
+        {
+            string sql = $"SELECT * from public_keys k inner join penggunas p on k.penggunas_nik = p.nik";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            while (hasil.Read() == true)
+            {
+                string key = hasil.GetValue(0).ToString();
+                string iv = hasil.GetValue(1).ToString();
+                string nik = AES.Decrypt(hasil.GetValue(3).ToString(), key, iv);
+
+                if (nik == p.Nik)
+                {
+                    string sql1 = $"SELECT * from rekenings where pengguna_id = '{hasil.GetValue(3).ToString()}'";
+
+                    MySqlDataReader hasil1 = Koneksi.JalankanPerintahQuery(sql1);
+
+                    while (hasil1.Read() == true)
+                    {
+                        Pengguna pen = new Pengguna(nik);
+                        Rekening rek = new Rekening(hasil1.GetValue(0).ToString(),
+                                                    double.Parse(hasil1.GetValue(1).ToString()),
+                                                    hasil1.GetValue(2).ToString(),
+                                                    pen);
+
+                        return rek;
+                    }
+                }
+            }
+
+            return null;
         }
 
         public static List<Rekening> BacaData(string kriteria, string nilaiKriteria)

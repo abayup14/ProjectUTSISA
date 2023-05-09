@@ -31,7 +31,7 @@ namespace ProjectUTSISA
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nasabahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penggunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,23 +63,25 @@ namespace ProjectUTSISA
             // masterToolStripMenuItem
             // 
             this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nasabahToolStripMenuItem,
+            this.penggunaToolStripMenuItem,
             this.transaksiToolStripMenuItem1});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.masterToolStripMenuItem.Text = "Master";
             // 
-            // nasabahToolStripMenuItem
+            // penggunaToolStripMenuItem
             // 
-            this.nasabahToolStripMenuItem.Name = "nasabahToolStripMenuItem";
-            this.nasabahToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
-            this.nasabahToolStripMenuItem.Text = "Nasabah";
+            this.penggunaToolStripMenuItem.Name = "penggunaToolStripMenuItem";
+            this.penggunaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.penggunaToolStripMenuItem.Text = "Pengguna";
+            this.penggunaToolStripMenuItem.Click += new System.EventHandler(this.penggunaToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem1
             // 
             this.transaksiToolStripMenuItem1.Name = "transaksiToolStripMenuItem1";
-            this.transaksiToolStripMenuItem1.Size = new System.Drawing.Size(151, 26);
+            this.transaksiToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.transaksiToolStripMenuItem1.Text = "Transaksi";
+            this.transaksiToolStripMenuItem1.Click += new System.EventHandler(this.transaksiToolStripMenuItem1_Click);
             // 
             // aksiToolStripMenuItem
             // 
@@ -93,14 +95,14 @@ namespace ProjectUTSISA
             // akunToolStripMenuItem
             // 
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.akunToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.akunToolStripMenuItem.Text = "Akun";
             this.akunToolStripMenuItem.Click += new System.EventHandler(this.akunToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             this.transaksiToolStripMenuItem.Click += new System.EventHandler(this.transaksiToolStripMenuItem_Click);
             // 
@@ -221,7 +223,7 @@ namespace ProjectUTSISA
         private System.Windows.Forms.Label labelKodePegawai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nasabahToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem penggunaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transaksiToolStripMenuItem1;
     }
 }

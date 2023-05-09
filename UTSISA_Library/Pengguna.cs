@@ -75,9 +75,32 @@ namespace UTSISA_Library
             Koneksi.JalankanPerintahDML(sql, k);
         }
 
+        public static (string, string) AmbilKunci(string nik)
+        {
+            string key = "";
+            string iv = "";
+            
+            string sql = $"SELECT * from public_keys k inner join penggunas p on k.penggunas_nik = p.nik";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            while (hasil.Read() == true)
+            {
+                string getNik = hasil.GetValue(3).ToString();
+
+                if (nik == getNik)
+                {
+                    key = hasil.GetValue(0).ToString();
+                    iv = hasil.GetValue(1).ToString();
+                }
+            }
+
+            return (key, iv);
+        }
+
         public static List<Pengguna> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = $"SELECT * from key k inner join penggunas p on k.pengguna_nik = p.nik";
+            string sql = $"SELECT * from public_keys k inner join penggunas p on k.penggunas_nik = p.nik";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

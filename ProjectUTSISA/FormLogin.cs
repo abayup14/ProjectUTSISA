@@ -19,6 +19,7 @@ namespace ProjectUTSISA
         }
         public string email;
         public string password;
+        public FormUtama formUtama;
         private void FormLogin_Load(object sender, EventArgs e)
         {
             this.ActiveControl = label1;
@@ -55,6 +56,16 @@ namespace ProjectUTSISA
             try
             {
                 Koneksi koneksi = new Koneksi();
+                email = textBoxEmail.Text;
+                password = textBoxPassword.Text;
+                Pengguna p = Pengguna.CekLogin(email, password);
+                if (p != null)
+                {
+                    Rekening rek = Rekening.AmbilData(p);
+                    formUtama = (FormUtama)this.Owner;
+                    formUtama.pengguna = p;
+                    formUtama.rekening = rek;
+                }
                 //    string apakahEmployee = textBoxUsername.Text.Substring(textBoxUsername.Text.Length - 3);
                 //    if (apakahEmployee.ToUpper() == "EMP")
                 //    {
