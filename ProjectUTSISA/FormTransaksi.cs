@@ -18,6 +18,7 @@ namespace ProjectUTSISA
             InitializeComponent();
         }
         public Pengguna pengguna;
+        public Rekening rekening;
         private void btnTranfer_Click(object sender, EventArgs e)
         {
             FormTransfer frm = new FormTransfer();
@@ -40,6 +41,18 @@ namespace ProjectUTSISA
         private void btnKembali_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkBoxTmpilkanSaldo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxTmpilkanSaldo.Checked)
+            {
+                labelSaldo.Text = $"Rp. {rekening.Saldo.ToString("N0")}";
+            }
+            else
+            {
+                labelSaldo.Text = "Rp. ********";
+            }
         }
     }
 }
