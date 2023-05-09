@@ -22,11 +22,11 @@ namespace ProjectUTSISA
         public void SetHakAkses()
         {
             //ganti dalem stringnya dan visiblity nya
-            if (pengguna.JenisPengguna.KodeJenis == "")
+            if (pengguna.JenisPengguna.KodeJenis == "EMP")
             {
                 masterToolStripMenuItem.Visible = true;//pegawai
             }
-            else if (pengguna.JenisPengguna.KodeJenis == "")
+            else if (pengguna.JenisPengguna.KodeJenis == "NSB")
             {
                 aksiToolStripMenuItem.Visible = true;//nasbah
             }
