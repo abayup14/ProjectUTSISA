@@ -62,8 +62,8 @@ namespace UTSISA_Library
         
         public static void TambahKunci(string nik, byte[] key, byte[] iv, Koneksi k)
         {
-            string sql = $"INSERT INTO public_keys(key, iv, penggunas_nik) " +
-                          $"values ('{Encoding.UTF8.GetString(key)}', '{Encoding.UTF8.GetString(iv)}', '{nik}')";
+            string sql = $"INSERT INTO public_keys (public_key, iv, penggunas_nik) " +
+                          $"values ('{Convert.ToBase64String(key)}', '{Convert.ToBase64String(iv)}', '{nik}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }

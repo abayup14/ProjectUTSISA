@@ -35,7 +35,7 @@ namespace ProjectUTSISA
                 string noTelepon = textBoxNoTelp.Text;
                 string password = textBoxPassword.Text;
                 string fotoDiri = open.FileName;
-                //JenisPengguna jp = new JenisPengguna()
+                JenisPengguna jp = new JenisPengguna("NSB");
 
                 DialogResult result = MessageBox.Show("Cek kembali data anda. Apabila anda sudah memilih tombol Yes maka data anda tidak bisa diubah." +
                                                       "\nApakah anda yakin dengan data yang diisi?", 
@@ -48,6 +48,8 @@ namespace ProjectUTSISA
                     byte[] key = AES.GenerateRandomKey();
                     byte[] iv = AES.GenerateRandomIV();
 
+                    MessageBox.Show("Key: " + Convert.ToBase64String(key) + "\nIV: " + Convert.ToBase64String(iv));
+
                     string encrypt_nik = AES.Encrypt(nik, key, iv);
                     string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
                     string encrypt_alamat = AES.Encrypt(alamat, key, iv);
@@ -59,7 +61,7 @@ namespace ProjectUTSISA
                     string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
                     string workPath = Directory.GetCurrentDirectory();
                     string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
-                    string lokasiSimpan = parentpath + $@"\{nik}.png";
+                    string lokasiSimpan = parentpath + $@"\foto_stegano\{nik}.png";
                     Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
                     hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -70,7 +72,7 @@ namespace ProjectUTSISA
                                               encrypt_noTelepon,
                                               encrypt_password,
                                               lokasiSimpan,
-                                              null);
+                                              jp);
 
                     Pengguna.TambahData(p, k);
                     Pengguna.TambahKunci(encrypt_nik, key, iv, k);
