@@ -39,7 +39,7 @@ namespace ProjectUTSISA
                 foreach (Transaksi t in listTransaksi)
                 {
                     dataGridViewRiwayat.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi.ToString("dd-MM-yyyy HH:mm:ss"),t.Nominal,
-                        t.Pesan,t.JenisTransaksi);
+                        t.Pesan,t.JenisTransaksi.KodeJenis, t.NomorTransaksi);
                 }
             }
             else
@@ -56,7 +56,8 @@ namespace ProjectUTSISA
             dataGridViewRiwayat.Columns.Add("waktuTransaksi", "Waktu");
             dataGridViewRiwayat.Columns.Add("nominal", "Nominal");
             dataGridViewRiwayat.Columns.Add("pesan", "Pesan");
-            dataGridViewRiwayat.Columns.Add("jenisTransaksi", "jenisTransaksi");
+            dataGridViewRiwayat.Columns.Add("jenisTransaksi", "Jenis Transaksi");
+            dataGridViewRiwayat.Columns.Add("nomor_transaksi", "Nomor Transaksi");
 
             dataGridViewRiwayat.Columns["rekeningSumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewRiwayat.Columns["rekeningTujuan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -64,6 +65,7 @@ namespace ProjectUTSISA
             dataGridViewRiwayat.Columns["nominal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewRiwayat.Columns["pesan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewRiwayat.Columns["jenisTransaksi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewRiwayat.Columns["nomor_transaksi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewButtonColumn bcolCetak = new DataGridViewButtonColumn();
             bcolCetak.HeaderText = "Cetak Transaksi";
@@ -80,7 +82,7 @@ namespace ProjectUTSISA
         {
             if (e.ColumnIndex == dataGridViewRiwayat.Columns["btnCetak"].Index && e.RowIndex >= 0)
             {
-                //Transaksi.PrintTransaksi("transaksi_id", dataGridViewTransaksi.Rows[e.RowIndex].Cells["transaksi_id"].Value.ToString(), "transaksi.txt",new Font("Courier New", 12));
+                Transaksi.PrintTransaksi("transaksi_id", dataGridViewRiwayat.Rows[e.RowIndex].Cells["nomor_transaksi"].Value.ToString(), "transaksi.txt", new Font("Courier New", 12));
                 MessageBox.Show("Transaksi telah tercetak.");
             }
         }

@@ -94,6 +94,38 @@ namespace UTSISA_Library
         {
             return this.NoRekening;
         }
+
+        public static string GenerateNomorRekening()
+        {
+            string sql = "SELECT max(nomor_rekening) FROM rekenings";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            string hasilGenerate = "";
+
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    string hasilKode = (int.Parse(hasil.GetValue(0).ToString()) + 1).ToString();
+
+                    if (hasilKode.Length == 10)
+                    {
+                        hasilGenerate = hasilKode;
+                    }
+                    else if (hasilKode.Length < 10)
+                    {
+                        hasilGenerate = hasilKode.PadLeft(11 - hasilKode.Length, '0');
+                    }
+                }
+                else
+                {
+                    hasilGenerate = 1.ToString().PadLeft(10, '0');
+                }
+            }
+
+            return hasilGenerate;
+        }
         #endregion
     }
 }

@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +18,11 @@ namespace UTSISA_Library
         private double nominal;
         private string pesan;
         private JenisTransaksi jenisTransaksi;
+        private string nomorTransaksi;
         #endregion
 
         #region Constructors
-        public Transaksi(Rekening rekeningSumber, Rekening rekeningTujuan, DateTime waktuTransaksi, double nominal, string pesan, JenisTransaksi jenisTransaksi)
+        public Transaksi(Rekening rekeningSumber, Rekening rekeningTujuan, DateTime waktuTransaksi, double nominal, string pesan, JenisTransaksi jenisTransaksi, string nomorTransaksi)
         {
             this.RekeningSumber = rekeningSumber;
             this.RekeningTujuan = rekeningTujuan;
@@ -27,6 +30,7 @@ namespace UTSISA_Library
             this.Nominal = nominal;
             this.Pesan = pesan;
             this.JenisTransaksi = jenisTransaksi;
+            this.NomorTransaksi = nomorTransaksi;
         }
         #endregion
 
@@ -37,13 +41,14 @@ namespace UTSISA_Library
         public double Nominal { get => nominal; set => nominal = value; }
         public string Pesan { get => pesan; set => pesan = value; }
         public JenisTransaksi JenisTransaksi { get => jenisTransaksi; set => jenisTransaksi = value; }
+        public string NomorTransaksi { get => nomorTransaksi; set => nomorTransaksi = value; }
         #endregion
 
         #region Methods
         public static void TambahData(Transaksi transaksi, Koneksi k)
         {
-            string sql = $"INSERT into transaksis (rek_sumber, rek_tujuan, waktu_transaksi, nominal, pesan, jenis_transaksi_id) " +
-                         $"values ('{transaksi.RekeningSumber.NoRekening}', '{transaksi.RekeningTujuan.NoRekening}', '{transaksi.WaktuTransaksi.ToString("yyyy-MM-dd HH:mm:ss")}', '{transaksi.Nominal}', '{transaksi.Pesan}', '{transaksi.JenisTransaksi.KodeJenis}')";
+            string sql = $"INSERT into transaksis (rek_sumber, rek_tujuan, waktu_transaksi, nominal, pesan, jenis_transaksi_id, nomor_transaksi) " +
+                         $"values ('{transaksi.RekeningSumber.NoRekening}', '{transaksi.RekeningTujuan.NoRekening}', '{transaksi.WaktuTransaksi.ToString("yyyy-MM-dd HH:mm:ss")}', '{transaksi.Nominal}', '{transaksi.Pesan}', '{transaksi.JenisTransaksi.KodeJenis}', '{transaksi.NomorTransaksi}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
@@ -75,12 +80,55 @@ namespace UTSISA_Library
                                              DateTime.Parse(hasil.GetValue(2).ToString()), 
                                              double.Parse(hasil.GetValue(3).ToString()), 
                                              hasil.GetValue(4).ToString(), 
-                                             jt);
+                                             jt, 
+                                             hasil.GetValue(6).ToString());
 
                 listTransaksi.Add(tr);
             }
 
             return listTransaksi;
+        }
+
+        public static void PrintTransaksi(string printKriteria, string nilaiKriteria, string fileName, Font font)
+        {
+            List<Transaksi> listTransaksi = new List<Transaksi>();
+
+            listTransaksi = Transaksi.BacaData(printKriteria, nilaiKriteria);
+
+            StreamWriter tempFile = new StreamWriter(fileName);
+
+            foreach (Transaksi tr in listTransaksi)
+            {
+                tempFile.WriteLine("");
+                tempFile.WriteLine("===== Bank MasBro =====");
+                tempFile.WriteLine("");
+                tempFile.WriteLine("Tanggal Transaksi: " + tr.WaktuTransaksi.ToShortDateString());
+                tempFile.WriteLine("Waktu Transaksi: " + tr.WaktuTransaksi.ToShortTimeString());
+                tempFile.WriteLine("");
+                tempFile.WriteLine("");
+                tempFile.WriteLine("Nomor Transaksi: " + tr.NomorTransaksi);
+                if (tr.JenisTransaksi.KodeJenis == "")
+                {
+                    tempFile.WriteLine("KIRIM");
+                }
+                else
+                {
+                    tempFile.WriteLine("TERIMA");
+                }
+                tempFile.WriteLine("Rekeining Sumber: " + tr.RekeningSumber.NoRekening);
+                tempFile.WriteLine("Rekening Tujuan: " + tr.RekeningTujuan.NoRekening);
+                tempFile.WriteLine("Nominal Transaksi: Rp. " + tr.Nominal.ToString());
+                tempFile.WriteLine("Saldo: Rp. " + tr.RekeningSumber.Saldo.ToString());
+                tempFile.WriteLine("Pesan Tambahan: " + tr.Pesan);
+                tempFile.WriteLine("");
+                tempFile.WriteLine("");
+                tempFile.WriteLine("===== TERIMA KASIH =====");
+                tempFile.Close();
+
+                Cetak cetak = new Cetak(font, fileName, 20, 10, 10, 10);
+
+                cetak.SentToPrinter();
+            }
         }
         #endregion
     }

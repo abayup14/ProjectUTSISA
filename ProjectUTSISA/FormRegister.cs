@@ -36,6 +36,7 @@ namespace ProjectUTSISA
                 string password = textBoxPassword.Text;
                 string fotoDiri = open.FileName;
                 JenisPengguna jp = new JenisPengguna("NSB");
+                string noRekening = Rekening.GenerateNomorRekening();
 
                 DialogResult result = MessageBox.Show("Cek kembali data anda. Apabila anda sudah memilih tombol Yes maka data anda tidak bisa diubah." +
                                                       "\nApakah anda yakin dengan data yang diisi?", 
@@ -56,12 +57,12 @@ namespace ProjectUTSISA
                     string encrypt_email = AES.Encrypt(email, key, iv);
                     string encrypt_noTelepon = AES.Encrypt(noTelepon, key, iv);
                     string encrypt_password = AES.Encrypt(password, key, iv);
-
+                    
                     List<string> listDataPengguna = new List<string>() { encrypt_nik, encrypt_namaLengkap, encrypt_alamat, encrypt_email, encrypt_noTelepon, encrypt_password };
                     string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
                     string workPath = Directory.GetCurrentDirectory();
                     string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
-                    string lokasiSimpan = parentpath + $@"\foto_stegano\{nik}.png";
+                    string lokasiSimpan = parentpath + $@"\foto_stegano\{nik}_{noRekening}.png";
                     Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
                     hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -76,6 +77,13 @@ namespace ProjectUTSISA
 
                     Pengguna.TambahData(p, k);
                     Pengguna.TambahKunci(encrypt_nik, key, iv, k);
+
+                    string pin = textBoxPIN.Text;
+                    string encrypt_pin = AES.Encrypt(pin, key, iv);
+                    Rekening rek = new Rekening(noRekening, 0, encrypt_pin, p);
+                    Rekening.TambahData(rek, k);
+
+                    MessageBox.Show($"Rekening anda sudah dibuat dengan nomor rekening {noRekening}", "Informasi");
 
                     MessageBox.Show("Selamat, data anda sudah tersimpan." +
                                     "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
@@ -146,6 +154,11 @@ namespace ProjectUTSISA
             textBoxNoTelp.ForeColor = Color.Gray;
 
             textBoxPassword.Text = "Password";
+            textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
+            textBoxPassword.ForeColor = Color.Gray;
+            textBoxPassword.UseSystemPasswordChar = false;
+
+            textBoxPIN.Text = "PIN anda";
             textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
             textBoxPassword.ForeColor = Color.Gray;
             textBoxPassword.UseSystemPasswordChar = false;
@@ -321,6 +334,58 @@ namespace ProjectUTSISA
                 else
                 {
                     textBoxPassword.UseSystemPasswordChar = true;
+                }
+            }
+        }
+
+        private void textBoxPIN_Enter(object sender, EventArgs e)
+        {
+            if (textBoxPIN.Text == "PIN anda")
+            {
+                textBoxPIN.Text = "";
+                textBoxPIN.Font = new Font(textBoxPassword.Font, FontStyle.Regular);
+                textBoxPIN.ForeColor = Color.Black;
+                textBoxPIN.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void textBoxPIN_Leave(object sender, EventArgs e)
+        {
+            if (textBoxPIN.Text == "")
+            {
+                textBoxPIN.Text = "PIN anda";
+                textBoxPIN.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
+                textBoxPIN.ForeColor = Color.Gray;
+                if (buttonBukaPIN.Text == "Buka" || buttonBukaPIN.Text == "Tutup")
+                {
+                    textBoxPIN.UseSystemPasswordChar = false;
+                }
+
+            }
+        }
+
+        private void buttonBukaPIN_Click(object sender, EventArgs e)
+        {
+            if (buttonBukaPIN.Text == "Buka")
+            {
+                buttonBukaPIN.Text = "Tutup";
+                if (textBoxPIN.Text == "Password")
+                {
+                    textBoxPIN.Text = "Password";
+                }
+                textBoxPIN.UseSystemPasswordChar = false;
+            }
+            else if (buttonBukaPIN.Text == "Tutup")
+            {
+                buttonBukaPIN.Text = "Buka";
+                if (textBoxPIN.Text == "Password")
+                {
+                    textBoxPIN.Text = "Password";
+                    textBoxPIN.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    textBoxPIN.UseSystemPasswordChar = true;
                 }
             }
         }
