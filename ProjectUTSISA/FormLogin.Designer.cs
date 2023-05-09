@@ -45,7 +45,7 @@
             this.buttonKeluar.BackColor = System.Drawing.Color.Red;
             this.buttonKeluar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.buttonKeluar.ForeColor = System.Drawing.Color.White;
-            this.buttonKeluar.Location = new System.Drawing.Point(331, 192);
+            this.buttonKeluar.Location = new System.Drawing.Point(330, 211);
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(127, 41);
@@ -139,7 +139,7 @@
             this.buttonLogin.BackColor = System.Drawing.Color.Navy;
             this.buttonLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(184, 192);
+            this.buttonLogin.Location = new System.Drawing.Point(180, 211);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(127, 41);
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 241);
+            this.ClientSize = new System.Drawing.Size(467, 263);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);

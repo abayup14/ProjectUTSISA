@@ -76,6 +76,8 @@ namespace ProjectUTSISA
 
                     Pengguna.TambahData(p, k);
                     Pengguna.TambahKunci(encrypt_nik, key, iv, k);
+                    
+                    Rekening rek = new Rekening(null, 0, )
 
                     MessageBox.Show("Selamat, data anda sudah tersimpan." +
                                     "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
