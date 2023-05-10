@@ -64,23 +64,5 @@ namespace ProjectUTSISA
         {
             this.Close();
         }
-
-        private void textBoxCari_TextChanged(object sender, EventArgs e)
-        {
-            string kriteria = "";
-            if (comboBoxCari.Text == "Rekening Sumber")
-                kriteria = "rek_sumber";
-            else if (comboBoxCari.Text == "Rekening Tujuan")
-                kriteria = "rek_tujuan";
-            else if (comboBoxCari.Text == "Waktu Transaksi")
-                kriteria = "waktu_transaksi";
-            else if (comboBoxCari.Text == "Nominal")
-                kriteria = "nominal";
-            else if (comboBoxCari.Text == "Pesan")
-                kriteria = "pesan";
-            else if (comboBoxCari.Text == "Jenis Transaksi")
-                kriteria = "jenis_transaksi"; // berpotensi eror
-            //listPengguna = Pengguna.BacaData(kriteria, textBoxCari.Text);
-        }
     }
 }

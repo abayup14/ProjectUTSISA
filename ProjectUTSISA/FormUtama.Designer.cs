@@ -68,6 +68,7 @@ namespace ProjectUTSISA
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.masterToolStripMenuItem.Text = "Master";
+            this.masterToolStripMenuItem.Click += new System.EventHandler(this.masterToolStripMenuItem_Click);
             // 
             // penggunaToolStripMenuItem
             // 
@@ -95,14 +96,14 @@ namespace ProjectUTSISA
             // akunToolStripMenuItem
             // 
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.akunToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.akunToolStripMenuItem.Text = "Akun";
             this.akunToolStripMenuItem.Click += new System.EventHandler(this.akunToolStripMenuItem_Click);
             // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             this.transaksiToolStripMenuItem.Click += new System.EventHandler(this.transaksiToolStripMenuItem_Click);
             // 

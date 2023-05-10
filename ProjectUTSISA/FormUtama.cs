@@ -125,7 +125,21 @@ namespace ProjectUTSISA
 
         private void transaksiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Form form = Application.OpenForms["FormDaftarTransaksi"];
 
+            if (form == null)
+            {
+                FormDaftarTransaksi frm = new FormDaftarTransaksi();
+                frm.MdiParent = this;
+                frm.Show();
+                labelTitle.SendToBack();
+                labelSubtitle.SendToBack();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
         }
 
         private void penggunaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +159,11 @@ namespace ProjectUTSISA
                 form.Show();
                 form.BringToFront();
             }
+        }
+
+        private void masterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     } 
 }
