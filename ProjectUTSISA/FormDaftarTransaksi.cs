@@ -52,7 +52,7 @@ namespace ProjectUTSISA
             {
                 foreach (Transaksi t in listTransaksi)
                 {
-                    dataGridViewPengguna.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi,t.Nominal,t.Pesan,t.JenisTransaksi);
+                    dataGridViewPengguna.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi,t.Nominal,t.Pesan,t.JenisTransaksi.KodeJenis);
                 }
             }
             else

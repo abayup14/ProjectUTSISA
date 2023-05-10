@@ -34,7 +34,7 @@ namespace ProjectUTSISA
             frm.Show();
         }
 
-        private void FormTransaksi_Load(object sender, EventArgs e)
+        public void FormTransaksi_Load(object sender, EventArgs e)
         {
             formUtama = (FormUtama)this.MdiParent;
             pengguna = formUtama.pengguna;

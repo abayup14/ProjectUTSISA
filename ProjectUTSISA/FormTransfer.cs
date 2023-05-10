@@ -25,6 +25,7 @@ namespace ProjectUTSISA
             DialogResult result = MessageBox.Show("Apakah anda yakin ingin membatalkan transaksi?","Info",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Stop);
             if (result == DialogResult.Yes)
             {
+                formTransaksi.FormTransaksi_Load(btnBatal, e);
                 this.Close();
             }
         }
@@ -45,18 +46,25 @@ namespace ProjectUTSISA
                 string noTransaksi = Transaksi.GenerateNomorTransaksi();
                 JenisTransaksi jtKirim = new JenisTransaksi("KRM");
                 JenisTransaksi jtTerima = new JenisTransaksi("TRM");
-                Rekening rekeningSumber = new Rekening(labelRekSumber.Text);
-                Rekening rekeningTujuan = new Rekening(textBoxRekTujuan.Text);
+                Rekening rekeningTujuan = Rekening.AmbilData(textBoxRekTujuan.Text);
                 string pin = textBoxPIN.Text;
-                if (Transaksi.CekPIN(pin, rekeningSumber) == true)
+                if (Transaksi.CekPIN(pin, rekening) == true)
                 {
+
                     double nominal = double.Parse(textBoxNominal.Text);
-                    Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, nominal, textBoxPesan.Text, jtKirim, noTransaksi);
+                    Transaksi tr = new Transaksi(rekening, rekeningTujuan, DateTime.Now, nominal, textBoxPesan.Text, jtKirim, noTransaksi);
                     Transaksi.TambahData(tr, k);
+                    rekening.Saldo += nominal;
+                    Rekening.UpdateSaldo(rekening, k);
                     string noTransaksiTujuan = Transaksi.GenerateNomorTransaksi();
-                    Transaksi trTujuan = new Transaksi(rekeningTujuan, rekeningSumber, DateTime.Now, nominal, textBoxPesan.Text, jtTerima, noTransaksiTujuan);
+                    Transaksi trTujuan = new Transaksi(rekeningTujuan, rekening, DateTime.Now, nominal, textBoxPesan.Text, jtTerima, noTransaksiTujuan);
+                    rekeningTujuan.Saldo -= nominal;
+                    Rekening.UpdateSaldo(rekeningTujuan, k);
                     Transaksi.TambahData(trTujuan, k);
+                    
                     MessageBox.Show("Transaksi berhasil dilakukan", "Informasi");
+
+                    formTransaksi.FormTransaksi_Load(btnKirim, e);
                 }
                 else
                 {

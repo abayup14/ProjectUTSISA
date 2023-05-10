@@ -47,9 +47,9 @@ namespace UTSISA_Library
             Koneksi.JalankanPerintahDML(sql, k);
         }
 
-        public static void UpdateData(Rekening rekening, Koneksi k)
+        public static void UpdateSaldo(Rekening rekening, Koneksi k)
         {
-            string sql = $"UPDATE rekenings set nomor_rekening='{rekening.NoRekening}', saldo='{rekening.Saldo}', pin='{rekening.Saldo}', pengguna_id='{rekening.Pengguna.Nik}'";
+            string sql = $"UPDATE rekenings set saldo='{rekening.Saldo}' where nomor_rekening='{rekening.NoRekening}'";
 
             Koneksi.JalankanPerintahDML(sql, k);
         }
@@ -128,6 +128,25 @@ namespace UTSISA_Library
         public override string ToString()
         {
             return this.NoRekening;
+        }
+
+        public static Rekening AmbilData(string noRekening)
+        {
+            string sql = $"SELECT * from rekenings where nomor_rekening='{noRekening}'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            if (hasil.Read() == true)
+            {
+
+                Pengguna p = new Pengguna(hasil.GetValue(3).ToString());
+
+                Rekening rek = new Rekening(hasil.GetValue(0).ToString(), double.Parse(hasil.GetValue(1).ToString()), hasil.GetValue(2).ToString(), p);
+
+                return rek;
+            }
+
+            return null;
         }
 
         public static string GenerateNomorRekening()
