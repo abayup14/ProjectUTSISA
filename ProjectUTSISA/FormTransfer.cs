@@ -43,8 +43,8 @@ namespace ProjectUTSISA
             if (hasil == DialogResult.Yes)
             {
                 string noTransaksi = Transaksi.GenerateNomorTransaksi();
-                JenisTransaksi jtKirim = new JenisTransaksi(001);
-                JenisTransaksi jtTerima = new JenisTransaksi(002);
+                JenisTransaksi jtKirim = new JenisTransaksi("KRM");
+                JenisTransaksi jtTerima = new JenisTransaksi("TRM");
                 Rekening rekeningSumber = new Rekening(labelRekSumber.Text);
                 Rekening rekeningTujuan = new Rekening(textBoxRekTujuan.Text);
                 Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtKirim, noTransaksi);

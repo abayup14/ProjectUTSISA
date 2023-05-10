@@ -9,17 +9,17 @@ namespace UTSISA_Library
     public class JenisTransaksi
     {
         #region Data Members
-        private int kodeJenis;
+        private string kodeJenis;
         private string nama;
         #endregion
 
         #region Constructors
-        public JenisTransaksi(int kodeJenis, string nama)
+        public JenisTransaksi(string kodeJenis, string nama)
         {
             this.KodeJenis = kodeJenis;
             this.Nama = nama;
         }
-        public JenisTransaksi(int kodeJenis)
+        public JenisTransaksi(string kodeJenis)
         {
             this.KodeJenis = kodeJenis;
         }
@@ -30,7 +30,7 @@ namespace UTSISA_Library
         #endregion
 
         #region Properties
-        public int KodeJenis { get => kodeJenis; set => kodeJenis = value; }
+        public string KodeJenis { get => kodeJenis; set => kodeJenis = value; }
         public string Nama { get => nama; set => nama = value; }
         #endregion
     }
