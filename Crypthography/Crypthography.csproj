@@ -45,9 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AES.cs" />
-    <Compile Include="RSA.cs" />
     <Compile Include="Steganography.cs" />
-    <Compile Include="TripleDES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
