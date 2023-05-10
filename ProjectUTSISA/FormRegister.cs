@@ -52,47 +52,53 @@ namespace ProjectUTSISA
                     }
                     else
                     {
-                        byte[] key = AES.GenerateRandomKey();
-                        byte[] iv = AES.GenerateRandomIV();
+                        if (textBoxPassword.Text == "" || textBoxPIN.Text == "")
+                        {
+                            MessageBox.Show("PIN atau password belum diisi. Tolong diisi terlebih dahulu");
+                        }
+                        else
+                        {
+                            byte[] key = AES.GenerateRandomKey();
+                            byte[] iv = AES.GenerateRandomIV();
 
-                        string encrypt_nik = AES.Encrypt(nik, key, iv);
-                        string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
-                        string encrypt_alamat = AES.Encrypt(alamat, key, iv);
-                        string encrypt_email = AES.Encrypt(email, key, iv);
-                        string encrypt_noTelepon = AES.Encrypt(noTelepon, key, iv);
-                        string encrypt_password = AES.Encrypt(password, key, iv);
+                            string encrypt_nik = AES.Encrypt(nik, key, iv);
+                            string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
+                            string encrypt_alamat = AES.Encrypt(alamat, key, iv);
+                            string encrypt_email = AES.Encrypt(email, key, iv);
+                            string encrypt_noTelepon = AES.Encrypt(noTelepon, key, iv);
+                            string encrypt_password = AES.Encrypt(password, key, iv);
 
-                        List<string> listDataPengguna = new List<string>() { encrypt_nik, encrypt_namaLengkap, encrypt_alamat, encrypt_email, encrypt_noTelepon, encrypt_password };
-                        string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
-                        string workPath = Directory.GetCurrentDirectory();
-                        string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
-                        string lokasiSimpan = parentpath + $"\\foto_stegano\\{nik}_{noRekening}.png";
-                        Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
-                        hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
+                            List<string> listDataPengguna = new List<string>() { encrypt_nik, encrypt_namaLengkap, encrypt_alamat, encrypt_email, encrypt_noTelepon, encrypt_password };
+                            string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
+                            string workPath = Directory.GetCurrentDirectory();
+                            string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
+                            string lokasiSimpan = parentpath + $"\\foto_stegano\\{nik}_{noRekening}.png";
+                            Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
+                            hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
 
-                        Pengguna p = new Pengguna(encrypt_nik,
-                                                  encrypt_namaLengkap,
-                                                  encrypt_alamat,
-                                                  encrypt_email,
-                                                  encrypt_noTelepon,
-                                                  encrypt_password,
-                                                  lokasiSimpan.Replace("\\", "\\\\"),
-                                                  jp);
+                            Pengguna p = new Pengguna(encrypt_nik,
+                                                      encrypt_namaLengkap,
+                                                      encrypt_alamat,
+                                                      encrypt_email,
+                                                      encrypt_noTelepon,
+                                                      encrypt_password,
+                                                      lokasiSimpan.Replace("\\", "\\\\"),
+                                                      jp);
 
-                        Pengguna.TambahData(p, k);
-                        Pengguna.TambahKunci(encrypt_nik, key, iv, k);
+                            Pengguna.TambahData(p, k);
+                            Pengguna.TambahKunci(encrypt_nik, key, iv, k);
 
-                        string pin = textBoxPIN.Text;
-                        string encrypt_pin = AES.Encrypt(pin, key, iv);
-                        Rekening rek = new Rekening(noRekening, 0, encrypt_pin, p);
-                        Rekening.TambahData(rek, k);
+                            string pin = textBoxPIN.Text;
+                            string encrypt_pin = AES.Encrypt(pin, key, iv);
+                            Rekening rek = new Rekening(noRekening, 0, encrypt_pin, p);
+                            Rekening.TambahData(rek, k);
 
-                        MessageBox.Show($"Rekening anda sudah dibuat dengan nomor rekening {noRekening}", "Informasi");
+                            MessageBox.Show($"Rekening anda sudah dibuat dengan nomor rekening {noRekening}", "Informasi");
 
-                        MessageBox.Show("Selamat, data anda sudah tersimpan." +
-                                        "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
+                            MessageBox.Show("Selamat, data anda sudah tersimpan." +
+                                            "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
+                        }
                     }
-                    
                 }
 
                 frmLogin.email = email;
