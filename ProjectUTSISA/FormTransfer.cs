@@ -50,10 +50,11 @@ namespace ProjectUTSISA
                 string pin = textBoxPIN.Text;
                 if (Transaksi.CekPIN(pin, rekeningSumber) == true)
                 {
-                    Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtKirim, noTransaksi);
+                    double nominal = double.Parse(textBoxNominal.Text);
+                    Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, nominal, textBoxPesan.Text, jtKirim, noTransaksi);
                     Transaksi.TambahData(tr, k);
                     string noTransaksiTujuan = Transaksi.GenerateNomorTransaksi();
-                    Transaksi trTujuan = new Transaksi(rekeningTujuan, rekeningSumber, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtTerima, noTransaksiTujuan);
+                    Transaksi trTujuan = new Transaksi(rekeningTujuan, rekeningSumber, DateTime.Now, nominal, textBoxPesan.Text, jtTerima, noTransaksiTujuan);
                     Transaksi.TambahData(trTujuan, k);
                     MessageBox.Show("Transaksi berhasil dilakukan", "Informasi");
                 }
@@ -61,7 +62,6 @@ namespace ProjectUTSISA
                 {
                     MessageBox.Show("PIN yang anda masukkan salah. Silahkan coba lagi.", "Informasi");
                 }
-                
             }
         }
 
