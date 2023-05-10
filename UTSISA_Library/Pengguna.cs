@@ -156,38 +156,48 @@ namespace UTSISA_Library
                 string new_pass = hasil.GetValue(8).ToString();
                 if (email == new_email && password == new_pass)
                 {
-                    JenisPengguna jp = new JenisPengguna(hasil.GetValue(10).ToString());
-
-                    string nik = hasil.GetValue(3).ToString();
-                    string namaLengkap = hasil.GetValue(4).ToString();
-                    string alamat = hasil.GetValue(5).ToString();
-                    string noTelepon = hasil.GetValue(7).ToString();
-                    string fotoDiri = hasil.GetValue(9).ToString();
-
-                    Pengguna p = new Pengguna(nik, namaLengkap, alamat, new_email, noTelepon, new_pass, fotoDiri, jp);
-
-                    return p;
-                }
-                else
-                {
-                    string key = hasil.GetValue(0).ToString();
-                    string iv = hasil.GetValue(1).ToString();
-                    string decrypt_email = AES.Decrypt(hasil.GetValue(6).ToString(), key, iv);
-                    string decrypt_pass = AES.Decrypt(hasil.GetValue(8).ToString(), key, iv);
-
-                    if (email == decrypt_email && password == decrypt_pass)
+                    if (hasil.GetValue(3).ToString() == "1")
                     {
                         JenisPengguna jp = new JenisPengguna(hasil.GetValue(10).ToString());
 
-                        string nik = AES.Decrypt(hasil.GetValue(3).ToString(), key, iv);
-                        string namaLengkap = AES.Decrypt(hasil.GetValue(4).ToString(), key, iv);
-                        string alamat = AES.Decrypt(hasil.GetValue(5).ToString(), key, iv);
-                        string noTelepon = AES.Decrypt(hasil.GetValue(7).ToString(), key, iv);
+                        string nik = hasil.GetValue(3).ToString();
+                        string namaLengkap = hasil.GetValue(4).ToString();
+                        string alamat = hasil.GetValue(5).ToString();
+                        string noTelepon = hasil.GetValue(7).ToString();
                         string fotoDiri = hasil.GetValue(9).ToString();
 
-                        Pengguna p = new Pengguna(nik, namaLengkap, alamat, decrypt_email, noTelepon, decrypt_pass, fotoDiri, jp);
+                        Pengguna p = new Pengguna(nik, namaLengkap, alamat, email, noTelepon, password, fotoDiri, jp);
 
                         return p;
+                    }
+                }
+                else
+                {
+                    if (hasil.GetValue(3).ToString() == "1")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        string key = hasil.GetValue(0).ToString();
+                        string iv = hasil.GetValue(1).ToString();
+                        string decrypt_email = AES.Decrypt(hasil.GetValue(6).ToString(), key, iv);
+                        string decrypt_pass = AES.Decrypt(hasil.GetValue(8).ToString(), key, iv);
+
+                        if (email == decrypt_email && password == decrypt_pass)
+                        {
+                            JenisPengguna jp = new JenisPengguna(hasil.GetValue(10).ToString());
+
+                            string nik = AES.Decrypt(hasil.GetValue(3).ToString(), key, iv);
+                            string namaLengkap = AES.Decrypt(hasil.GetValue(4).ToString(), key, iv);
+                            string alamat = AES.Decrypt(hasil.GetValue(5).ToString(), key, iv);
+                            string noTelepon = AES.Decrypt(hasil.GetValue(7).ToString(), key, iv);
+                            string fotoDiri = hasil.GetValue(9).ToString();
+
+                            Pengguna p = new Pengguna(nik, namaLengkap, alamat, decrypt_email, noTelepon, decrypt_pass, fotoDiri, jp);
+
+                            return p;
+                        }
                     }
                 }
             }
