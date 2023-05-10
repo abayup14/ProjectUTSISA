@@ -182,7 +182,7 @@ namespace ProjectUTSISA
             {
                 InitialDirectory = @"D:\",
                 Title = "Browse Image Files",
-                Filter = "Image Files(*.jpg; *.jpeg; *.bmp)|*.jpg; *.jpeg; *.bmp",
+                Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png",
                 DefaultExt = "jpg",
                 CheckFileExists = true,
                 CheckPathExists = true,
