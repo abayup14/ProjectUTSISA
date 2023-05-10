@@ -17,7 +17,9 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
-
+        FormTransaksi formTransaksi;
+        public Pengguna pengguna;
+        public Rekening rekening;
         private void btnBatal_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Apakah anda yakin ingin membatalkan transaksi?","Info",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Stop);
@@ -58,9 +60,19 @@ namespace ProjectUTSISA
         {
             this.ActiveControl = label1;
 
+            formTransaksi = (FormTransaksi)this.Owner;
+            pengguna = formTransaksi.pengguna;
+            rekening = formTransaksi.rekening;
+            labelRekSumber.Text = rekening.NoRekening;
+
             textBoxRekTujuan.Text = "Masukkan nomor rekening tujuan";
             textBoxRekTujuan.Font = new Font(textBoxRekTujuan.Font, FontStyle.Italic);
             textBoxRekTujuan.ForeColor = Color.Gray;
+
+            textBoxPIN.Text = "PIN anda";
+            textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Italic);
+            textBoxPIN.ForeColor = Color.Gray;
+            textBoxPIN.UseSystemPasswordChar = false;
         }
 
         private void textBoxRekTujuan_Enter(object sender, EventArgs e)
@@ -80,6 +92,58 @@ namespace ProjectUTSISA
                 textBoxRekTujuan.Text = "Masukkan nomor rekening tujuan";
                 textBoxRekTujuan.Font = new Font(textBoxRekTujuan.Font, FontStyle.Italic);
                 textBoxRekTujuan.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBoxPIN_Enter(object sender, EventArgs e)
+        {
+            if (textBoxPIN.Text == "PIN anda")
+            {
+                textBoxPIN.Text = "";
+                textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Regular);
+                textBoxPIN.ForeColor = Color.Black;
+                textBoxPIN.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void textBoxPIN_Leave(object sender, EventArgs e)
+        {
+            if (textBoxPIN.Text == "")
+            {
+                textBoxPIN.Text = "PIN anda";
+                textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Italic);
+                textBoxPIN.ForeColor = Color.Gray;
+                if (buttonBukaPIN.Text == "Buka" || buttonBukaPIN.Text == "Tutup")
+                {
+                    textBoxPIN.UseSystemPasswordChar = false;
+                }
+
+            }
+        }
+
+        private void buttonBukaPIN_Click(object sender, EventArgs e)
+        {
+            if (buttonBukaPIN.Text == "Buka")
+            {
+                buttonBukaPIN.Text = "Tutup";
+                if (textBoxPIN.Text == "Password")
+                {
+                    textBoxPIN.Text = "Password";
+                }
+                textBoxPIN.UseSystemPasswordChar = false;
+            }
+            else if (buttonBukaPIN.Text == "Tutup")
+            {
+                buttonBukaPIN.Text = "Buka";
+                if (textBoxPIN.Text == "Password")
+                {
+                    textBoxPIN.Text = "Password";
+                    textBoxPIN.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    textBoxPIN.UseSystemPasswordChar = true;
+                }
             }
         }
     }

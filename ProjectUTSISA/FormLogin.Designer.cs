@@ -49,7 +49,7 @@
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(127, 41);
-            this.buttonKeluar.TabIndex = 32;
+            this.buttonKeluar.TabIndex = 3;
             this.buttonKeluar.Text = "&KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
             this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
@@ -62,7 +62,7 @@
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(445, 55);
-            this.label1.TabIndex = 30;
+            this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -73,7 +73,7 @@
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(233, 24);
-            this.textBoxEmail.TabIndex = 2;
+            this.textBoxEmail.TabIndex = 1;
             this.textBoxEmail.Enter += new System.EventHandler(this.textBoxUsername_Enter);
             this.textBoxEmail.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             // 
@@ -84,7 +84,7 @@
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(233, 24);
-            this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             // 
@@ -105,7 +105,7 @@
             this.label2.Location = new System.Drawing.Point(28, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 18);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
             // panel1
@@ -120,7 +120,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 121);
-            this.panel1.TabIndex = 31;
+            this.panel1.TabIndex = 1;
             // 
             // labelRegistrasi
             // 
@@ -130,7 +130,7 @@
             this.labelRegistrasi.Location = new System.Drawing.Point(240, 95);
             this.labelRegistrasi.Name = "labelRegistrasi";
             this.labelRegistrasi.Size = new System.Drawing.Size(154, 18);
-            this.labelRegistrasi.TabIndex = 3;
+            this.labelRegistrasi.TabIndex = 4;
             this.labelRegistrasi.Text = "Belum punya akun?";
             this.labelRegistrasi.Click += new System.EventHandler(this.labelRegistrasi_Click);
             // 
@@ -143,7 +143,7 @@
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(127, 41);
-            this.buttonLogin.TabIndex = 33;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "&LOGIN";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);

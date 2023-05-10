@@ -64,7 +64,7 @@ namespace ProjectUTSISA
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(474, 24);
-            this.textBoxPassword.TabIndex = 14;
+            this.textBoxPassword.TabIndex = 11;
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             // 
@@ -75,7 +75,7 @@ namespace ProjectUTSISA
             this.label8.Location = new System.Drawing.Point(28, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 18);
-            this.label8.TabIndex = 13;
+            this.label8.TabIndex = 10;
             this.label8.Text = "Password:";
             // 
             // textBoxNoTelp
@@ -85,7 +85,7 @@ namespace ProjectUTSISA
             this.textBoxNoTelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNoTelp.Name = "textBoxNoTelp";
             this.textBoxNoTelp.Size = new System.Drawing.Size(556, 24);
-            this.textBoxNoTelp.TabIndex = 12;
+            this.textBoxNoTelp.TabIndex = 9;
             this.textBoxNoTelp.Enter += new System.EventHandler(this.textBoxNoTelp_Enter);
             this.textBoxNoTelp.Leave += new System.EventHandler(this.textBoxNoTelp_Leave);
             // 
@@ -96,7 +96,7 @@ namespace ProjectUTSISA
             this.label7.Location = new System.Drawing.Point(28, 210);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 18);
-            this.label7.TabIndex = 11;
+            this.label7.TabIndex = 8;
             this.label7.Text = "Nomor Telepon:";
             // 
             // textBoxEmail
@@ -106,7 +106,7 @@ namespace ProjectUTSISA
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(556, 24);
-            this.textBoxEmail.TabIndex = 10;
+            this.textBoxEmail.TabIndex = 7;
             this.textBoxEmail.Enter += new System.EventHandler(this.textBoxEmail_Enter);
             this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
             // 
@@ -117,7 +117,7 @@ namespace ProjectUTSISA
             this.label6.Location = new System.Drawing.Point(28, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 18);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 6;
             this.label6.Text = "Email: ";
             // 
             // label5
@@ -127,7 +127,7 @@ namespace ProjectUTSISA
             this.label5.Location = new System.Drawing.Point(28, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 18);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 4;
             this.label5.Text = "Alamat:";
             // 
             // textBoxAlamat
@@ -139,7 +139,7 @@ namespace ProjectUTSISA
             this.textBoxAlamat.Name = "textBoxAlamat";
             this.textBoxAlamat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxAlamat.Size = new System.Drawing.Size(556, 59);
-            this.textBoxAlamat.TabIndex = 7;
+            this.textBoxAlamat.TabIndex = 5;
             this.textBoxAlamat.Enter += new System.EventHandler(this.textBoxAlamat_Enter);
             this.textBoxAlamat.Leave += new System.EventHandler(this.textBoxAlamat_Leave);
             // 
@@ -150,7 +150,7 @@ namespace ProjectUTSISA
             this.textBoxNIK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNIK.Name = "textBoxNIK";
             this.textBoxNIK.Size = new System.Drawing.Size(556, 24);
-            this.textBoxNIK.TabIndex = 2;
+            this.textBoxNIK.TabIndex = 1;
             this.textBoxNIK.Enter += new System.EventHandler(this.textBoxNIK_Enter);
             this.textBoxNIK.Leave += new System.EventHandler(this.textBoxNIK_Leave);
             // 
@@ -161,7 +161,7 @@ namespace ProjectUTSISA
             this.textBoxNamaLengkap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNamaLengkap.Name = "textBoxNamaLengkap";
             this.textBoxNamaLengkap.Size = new System.Drawing.Size(556, 24);
-            this.textBoxNamaLengkap.TabIndex = 2;
+            this.textBoxNamaLengkap.TabIndex = 3;
             this.textBoxNamaLengkap.Enter += new System.EventHandler(this.textBoxNamaDepan_Enter);
             this.textBoxNamaLengkap.Leave += new System.EventHandler(this.textBoxNamaDepan_Leave);
             // 
@@ -182,7 +182,7 @@ namespace ProjectUTSISA
             this.label2.Location = new System.Drawing.Point(28, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Nama Lengkap:";
             // 
             // buttonSimpan
@@ -194,7 +194,7 @@ namespace ProjectUTSISA
             this.buttonSimpan.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(153, 46);
-            this.buttonSimpan.TabIndex = 38;
+            this.buttonSimpan.TabIndex = 3;
             this.buttonSimpan.Text = "&SIMPAN";
             this.buttonSimpan.UseVisualStyleBackColor = false;
             this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
@@ -208,7 +208,7 @@ namespace ProjectUTSISA
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(153, 46);
-            this.buttonKeluar.TabIndex = 37;
+            this.buttonKeluar.TabIndex = 0;
             this.buttonKeluar.Text = "&KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
             this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
@@ -221,7 +221,7 @@ namespace ProjectUTSISA
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(797, 55);
-            this.label1.TabIndex = 35;
+            this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRASI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -234,7 +234,7 @@ namespace ProjectUTSISA
             this.buttonKosongi.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKosongi.Name = "buttonKosongi";
             this.buttonKosongi.Size = new System.Drawing.Size(153, 46);
-            this.buttonKosongi.TabIndex = 39;
+            this.buttonKosongi.TabIndex = 4;
             this.buttonKosongi.Text = "&KOSONGI";
             this.buttonKosongi.UseVisualStyleBackColor = false;
             this.buttonKosongi.Click += new System.EventHandler(this.buttonKosongi_Click);
@@ -265,14 +265,14 @@ namespace ProjectUTSISA
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(796, 619);
-            this.panel1.TabIndex = 36;
+            this.panel1.TabIndex = 2;
             // 
             // buttonBukaPIN
             // 
             this.buttonBukaPIN.Location = new System.Drawing.Point(455, 281);
             this.buttonBukaPIN.Name = "buttonBukaPIN";
             this.buttonBukaPIN.Size = new System.Drawing.Size(76, 30);
-            this.buttonBukaPIN.TabIndex = 21;
+            this.buttonBukaPIN.TabIndex = 15;
             this.buttonBukaPIN.Text = "Buka";
             this.buttonBukaPIN.UseVisualStyleBackColor = true;
             this.buttonBukaPIN.Click += new System.EventHandler(this.buttonBukaPIN_Click);
@@ -284,7 +284,7 @@ namespace ProjectUTSISA
             this.textBoxPIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPIN.Name = "textBoxPIN";
             this.textBoxPIN.Size = new System.Drawing.Size(264, 24);
-            this.textBoxPIN.TabIndex = 20;
+            this.textBoxPIN.TabIndex = 14;
             this.textBoxPIN.Enter += new System.EventHandler(this.textBoxPIN_Enter);
             this.textBoxPIN.Leave += new System.EventHandler(this.textBoxPIN_Leave);
             // 
@@ -295,7 +295,7 @@ namespace ProjectUTSISA
             this.label4.Location = new System.Drawing.Point(28, 284);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 18);
-            this.label4.TabIndex = 19;
+            this.label4.TabIndex = 13;
             this.label4.Text = "PIN Rekening:";
             // 
             // buttonBukaPass
@@ -303,7 +303,7 @@ namespace ProjectUTSISA
             this.buttonBukaPass.Location = new System.Drawing.Point(665, 238);
             this.buttonBukaPass.Name = "buttonBukaPass";
             this.buttonBukaPass.Size = new System.Drawing.Size(76, 30);
-            this.buttonBukaPass.TabIndex = 18;
+            this.buttonBukaPass.TabIndex = 12;
             this.buttonBukaPass.Text = "Buka";
             this.buttonBukaPass.UseVisualStyleBackColor = true;
             this.buttonBukaPass.Click += new System.EventHandler(this.buttonBukaPass_Click);
@@ -323,7 +323,7 @@ namespace ProjectUTSISA
             this.buttonFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFoto.Name = "buttonFoto";
             this.buttonFoto.Size = new System.Drawing.Size(167, 34);
-            this.buttonFoto.TabIndex = 16;
+            this.buttonFoto.TabIndex = 17;
             this.buttonFoto.Text = "Pilih Foto Anda";
             this.buttonFoto.UseVisualStyleBackColor = true;
             this.buttonFoto.Click += new System.EventHandler(this.buttonFoto_Click);
@@ -335,7 +335,7 @@ namespace ProjectUTSISA
             this.label3.Location = new System.Drawing.Point(28, 326);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 18);
-            this.label3.TabIndex = 15;
+            this.label3.TabIndex = 16;
             this.label3.Text = "Foto Diri:";
             // 
             // FormRegister

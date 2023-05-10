@@ -28,7 +28,7 @@ namespace ProjectUTSISA
         {
             frmTransaksi = (FormTransaksi)this.Owner;
             FormatDataGrid(); //method untuk menambah kolompada datagridview
-            listTransaksi = Transaksi.BacaData("rekeningSumber or rekeningTujuan", frmTransaksi.rekening.NoRekening);
+            listTransaksi = Transaksi.BacaData("rek_sumber or rek_tujuan", frmTransaksi.rekening.NoRekening);
             TampilDataGrid(); //tampilkan semua isi
         }
         private void TampilDataGrid()

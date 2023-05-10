@@ -19,6 +19,7 @@ namespace ProjectUTSISA
         }
         public Pengguna pengguna;
         public Rekening rekening;
+        FormUtama formUtama;
         private void btnTranfer_Click(object sender, EventArgs e)
         {
             FormTransfer frm = new FormTransfer();
@@ -35,7 +36,11 @@ namespace ProjectUTSISA
 
         private void FormTransaksi_Load(object sender, EventArgs e)
         {
-            //pengguna=
+            formUtama = (FormUtama)this.MdiParent;
+            pengguna = formUtama.pengguna;
+            rekening = formUtama.rekening;
+            labelNamaPengguna.Text = pengguna.NamaLengkap;
+            labelNoRek.Text = rekening.NoRekening;
         }
 
         private void btnKembali_Click(object sender, EventArgs e)

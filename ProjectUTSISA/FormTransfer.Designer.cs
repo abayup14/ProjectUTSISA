@@ -63,7 +63,7 @@ namespace ProjectUTSISA
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(479, 228);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 0;
             // 
             // labelRekSumber
             // 
@@ -71,7 +71,7 @@ namespace ProjectUTSISA
             this.labelRekSumber.Location = new System.Drawing.Point(165, 18);
             this.labelRekSumber.Name = "labelRekSumber";
             this.labelRekSumber.Size = new System.Drawing.Size(139, 16);
-            this.labelRekSumber.TabIndex = 11;
+            this.labelRekSumber.TabIndex = 1;
             this.labelRekSumber.Text = "No. Rekening Sumber";
             // 
             // label4
@@ -80,7 +80,7 @@ namespace ProjectUTSISA
             this.label4.Location = new System.Drawing.Point(28, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 16);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Rekening Sumber: ";
             // 
             // label3
@@ -89,7 +89,7 @@ namespace ProjectUTSISA
             this.label3.Location = new System.Drawing.Point(96, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Pesan: ";
             // 
             // textBoxPesan
@@ -101,15 +101,15 @@ namespace ProjectUTSISA
             this.textBoxPesan.Name = "textBoxPesan";
             this.textBoxPesan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxPesan.Size = new System.Drawing.Size(248, 59);
-            this.textBoxPesan.TabIndex = 8;
+            this.textBoxPesan.TabIndex = 7;
             // 
             // textBoxNominal
             // 
-            this.textBoxNominal.Location = new System.Drawing.Point(168, 74);
+            this.textBoxNominal.Location = new System.Drawing.Point(168, 81);
             this.textBoxNominal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNominal.Name = "textBoxNominal";
             this.textBoxNominal.Size = new System.Drawing.Size(248, 22);
-            this.textBoxNominal.TabIndex = 7;
+            this.textBoxNominal.TabIndex = 5;
             // 
             // textBoxRekTujuan
             // 
@@ -118,17 +118,17 @@ namespace ProjectUTSISA
             this.textBoxRekTujuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRekTujuan.Name = "textBoxRekTujuan";
             this.textBoxRekTujuan.Size = new System.Drawing.Size(248, 22);
-            this.textBoxRekTujuan.TabIndex = 6;
+            this.textBoxRekTujuan.TabIndex = 3;
             this.textBoxRekTujuan.Enter += new System.EventHandler(this.textBoxRekTujuan_Enter);
             this.textBoxRekTujuan.Leave += new System.EventHandler(this.textBoxRekTujuan_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 77);
+            this.label2.Location = new System.Drawing.Point(85, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Nominal: ";
             // 
             // label1
@@ -137,7 +137,7 @@ namespace ProjectUTSISA
             this.label1.Location = new System.Drawing.Point(33, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 16);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Rekening Tujuan: ";
             // 
             // btnBatal
@@ -149,7 +149,7 @@ namespace ProjectUTSISA
             this.btnBatal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(101, 34);
-            this.btnBatal.TabIndex = 9;
+            this.btnBatal.TabIndex = 2;
             this.btnBatal.Text = "Batalkan";
             this.btnBatal.UseVisualStyleBackColor = false;
             this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
@@ -163,7 +163,7 @@ namespace ProjectUTSISA
             this.btnKirim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKirim.Name = "btnKirim";
             this.btnKirim.Size = new System.Drawing.Size(101, 34);
-            this.btnKirim.TabIndex = 10;
+            this.btnKirim.TabIndex = 1;
             this.btnKirim.Text = "Kirim";
             this.btnKirim.UseVisualStyleBackColor = false;
             this.btnKirim.Click += new System.EventHandler(this.btnKirim_Click);
@@ -174,7 +174,9 @@ namespace ProjectUTSISA
             this.textBoxPIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPIN.Name = "textBoxPIN";
             this.textBoxPIN.Size = new System.Drawing.Size(146, 22);
-            this.textBoxPIN.TabIndex = 13;
+            this.textBoxPIN.TabIndex = 9;
+            this.textBoxPIN.Enter += new System.EventHandler(this.textBoxPIN_Enter);
+            this.textBoxPIN.Leave += new System.EventHandler(this.textBoxPIN_Leave);
             // 
             // label5
             // 
@@ -182,7 +184,7 @@ namespace ProjectUTSISA
             this.label5.Location = new System.Drawing.Point(113, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 16);
-            this.label5.TabIndex = 12;
+            this.label5.TabIndex = 8;
             this.label5.Text = "PIN: ";
             // 
             // buttonBukaPIN
@@ -190,9 +192,10 @@ namespace ProjectUTSISA
             this.buttonBukaPIN.Location = new System.Drawing.Point(340, 184);
             this.buttonBukaPIN.Name = "buttonBukaPIN";
             this.buttonBukaPIN.Size = new System.Drawing.Size(76, 30);
-            this.buttonBukaPIN.TabIndex = 22;
+            this.buttonBukaPIN.TabIndex = 10;
             this.buttonBukaPIN.Text = "Buka";
             this.buttonBukaPIN.UseVisualStyleBackColor = true;
+            this.buttonBukaPIN.Click += new System.EventHandler(this.buttonBukaPIN_Click);
             // 
             // FormTransfer
             // 

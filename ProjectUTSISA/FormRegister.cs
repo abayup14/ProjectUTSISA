@@ -46,45 +46,53 @@ namespace ProjectUTSISA
 
                 if (result == DialogResult.Yes)
                 {
-                    byte[] key = AES.GenerateRandomKey();
-                    byte[] iv = AES.GenerateRandomIV();
+                    if (fotoDiri == "")
+                    {
+                        MessageBox.Show("Masukkan foto anda.");
+                    }
+                    else
+                    {
+                        byte[] key = AES.GenerateRandomKey();
+                        byte[] iv = AES.GenerateRandomIV();
 
-                    string encrypt_nik = AES.Encrypt(nik, key, iv);
-                    string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
-                    string encrypt_alamat = AES.Encrypt(alamat, key, iv);
-                    string encrypt_email = AES.Encrypt(email, key, iv);
-                    string encrypt_noTelepon = AES.Encrypt(noTelepon, key, iv);
-                    string encrypt_password = AES.Encrypt(password, key, iv);
+                        string encrypt_nik = AES.Encrypt(nik, key, iv);
+                        string encrypt_namaLengkap = AES.Encrypt(nama, key, iv);
+                        string encrypt_alamat = AES.Encrypt(alamat, key, iv);
+                        string encrypt_email = AES.Encrypt(email, key, iv);
+                        string encrypt_noTelepon = AES.Encrypt(noTelepon, key, iv);
+                        string encrypt_password = AES.Encrypt(password, key, iv);
+
+                        List<string> listDataPengguna = new List<string>() { encrypt_nik, encrypt_namaLengkap, encrypt_alamat, encrypt_email, encrypt_noTelepon, encrypt_password };
+                        string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
+                        string workPath = Directory.GetCurrentDirectory();
+                        string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
+                        string lokasiSimpan = parentpath + $"\\foto_stegano\\{nik}_{noRekening}.png";
+                        Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
+                        hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
+
+                        Pengguna p = new Pengguna(encrypt_nik,
+                                                  encrypt_namaLengkap,
+                                                  encrypt_alamat,
+                                                  encrypt_email,
+                                                  encrypt_noTelepon,
+                                                  encrypt_password,
+                                                  lokasiSimpan.Replace("\\", "\\\\"),
+                                                  jp);
+
+                        Pengguna.TambahData(p, k);
+                        Pengguna.TambahKunci(encrypt_nik, key, iv, k);
+
+                        string pin = textBoxPIN.Text;
+                        string encrypt_pin = AES.Encrypt(pin, key, iv);
+                        Rekening rek = new Rekening(noRekening, 0, encrypt_pin, p);
+                        Rekening.TambahData(rek, k);
+
+                        MessageBox.Show($"Rekening anda sudah dibuat dengan nomor rekening {noRekening}", "Informasi");
+
+                        MessageBox.Show("Selamat, data anda sudah tersimpan." +
+                                        "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
+                    }
                     
-                    List<string> listDataPengguna = new List<string>() { encrypt_nik, encrypt_namaLengkap, encrypt_alamat, encrypt_email, encrypt_noTelepon, encrypt_password };
-                    string dataPenggunaDigabung = string.Join(" ", listDataPengguna);
-                    string workPath = Directory.GetCurrentDirectory();
-                    string parentpath = Directory.GetParent(workPath).Parent.Parent.FullName;
-                    string lokasiSimpan = parentpath + $"\\foto_stegano\\{nik}_{noRekening}.png";
-                    Bitmap hideDataToImage = Steganography.Sembunyikan(dataPenggunaDigabung, fotoDiri);
-                    hideDataToImage.Save(lokasiSimpan, System.Drawing.Imaging.ImageFormat.Png);
-
-                    Pengguna p = new Pengguna(encrypt_nik,
-                                              encrypt_namaLengkap,
-                                              encrypt_alamat,
-                                              encrypt_email,
-                                              encrypt_noTelepon,
-                                              encrypt_password,
-                                              lokasiSimpan.Replace("\\", "\\\\"),
-                                              jp);
-
-                    Pengguna.TambahData(p, k);
-                    Pengguna.TambahKunci(encrypt_nik, key, iv, k);
-
-                    string pin = textBoxPIN.Text;
-                    string encrypt_pin = AES.Encrypt(pin, key, iv);
-                    Rekening rek = new Rekening(noRekening, 0, encrypt_pin, p);
-                    Rekening.TambahData(rek, k);
-
-                    MessageBox.Show($"Rekening anda sudah dibuat dengan nomor rekening {noRekening}", "Informasi");
-
-                    MessageBox.Show("Selamat, data anda sudah tersimpan." +
-                                    "\nSilahkan login dengan email dan password yang anda daftarkan", "Informasi");
                 }
 
                 frmLogin.email = email;
@@ -157,9 +165,9 @@ namespace ProjectUTSISA
             textBoxPassword.UseSystemPasswordChar = false;
 
             textBoxPIN.Text = "PIN anda";
-            textBoxPassword.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
-            textBoxPassword.ForeColor = Color.Gray;
-            textBoxPassword.UseSystemPasswordChar = false;
+            textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Italic);
+            textBoxPIN.ForeColor = Color.Gray;
+            textBoxPIN.UseSystemPasswordChar = false;
         }
 
         private void buttonFoto_Click(object sender, EventArgs e)
@@ -341,7 +349,7 @@ namespace ProjectUTSISA
             if (textBoxPIN.Text == "PIN anda")
             {
                 textBoxPIN.Text = "";
-                textBoxPIN.Font = new Font(textBoxPassword.Font, FontStyle.Regular);
+                textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Regular);
                 textBoxPIN.ForeColor = Color.Black;
                 textBoxPIN.UseSystemPasswordChar = true;
             }
@@ -352,7 +360,7 @@ namespace ProjectUTSISA
             if (textBoxPIN.Text == "")
             {
                 textBoxPIN.Text = "PIN anda";
-                textBoxPIN.Font = new Font(textBoxPassword.Font, FontStyle.Italic);
+                textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Italic);
                 textBoxPIN.ForeColor = Color.Gray;
                 if (buttonBukaPIN.Text == "Buka" || buttonBukaPIN.Text == "Tutup")
                 {

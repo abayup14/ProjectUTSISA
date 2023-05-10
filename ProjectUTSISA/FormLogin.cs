@@ -65,6 +65,9 @@ namespace ProjectUTSISA
                     formUtama = (FormUtama)this.Owner;
                     formUtama.pengguna = p;
                     formUtama.rekening = rek;
+
+                    MessageBox.Show("Login berhasil, Selamat menggunakan Aplikasi Bank Masbro, " + textBoxEmail.Text + "!", "Informasi");
+                    this.DialogResult = DialogResult.OK;
                 }
                 //    string apakahEmployee = textBoxUsername.Text.Substring(textBoxUsername.Text.Length - 3);
                 //    if (apakahEmployee.ToUpper() == "EMP")
@@ -110,9 +113,6 @@ namespace ProjectUTSISA
                 {
                     MessageBox.Show("Gagal login, pesan error :" + a.Message);
                 }
-
-            MessageBox.Show("Login berhasil, Selamat menggunakan Aplikasi Bank Masbro, " + textBoxEmail.Text + "!", "Informasi");
-            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
