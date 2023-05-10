@@ -36,10 +36,19 @@ namespace ProjectUTSISA
             dataGridViewRiwayat.Rows.Clear(); //kosongi datagridview
             if (listTransaksi.Count > 0)
             {
+                string kodeJenis = "";
                 foreach (Transaksi t in listTransaksi)
                 {
+                    if (t.JenisTransaksi.KodeJenis == "KRM")
+                    {
+                        kodeJenis = "Kirim";
+                    }
+                    else if (t.JenisTransaksi.KodeJenis == "TRM")
+                    {
+                        kodeJenis = "Terima";
+                    }
                     dataGridViewRiwayat.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi.ToString("dd-MM-yyyy HH:mm:ss"),t.Nominal,
-                        t.Pesan,t.JenisTransaksi.KodeJenis, t.NomorTransaksi);
+                        t.Pesan,kodeJenis, t.NomorTransaksi);
                 }
             }
             else
@@ -83,6 +92,7 @@ namespace ProjectUTSISA
             if (e.ColumnIndex == dataGridViewRiwayat.Columns["btnCetak"].Index && e.RowIndex >= 0)
             {
                 Transaksi.PrintTransaksi("nomor_transaksi", dataGridViewRiwayat.Rows[e.RowIndex].Cells["nomor_transaksi"].Value.ToString(), "transaksi.txt", new Font("Courier New", 12));
+                MessageBox.Show(this, "Transaksi berhasil dicetak", "Informasi");
             }
         }
     }

@@ -111,7 +111,7 @@ namespace ProjectUTSISA
                 }
                 catch (Exception a)
                 {
-                    MessageBox.Show("Gagal login, pesan error :" + a.Message);
+                    MessageBox.Show("Gagal login, pesan error :" + a.Message, "Kesalahan");
                 }
             this.Close();
         }
