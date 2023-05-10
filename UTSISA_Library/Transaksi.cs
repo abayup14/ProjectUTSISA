@@ -150,9 +150,7 @@ namespace UTSISA_Library
 
         public static void PrintTransaksi(string printKriteria, string nilaiKriteria, string fileName, Font font)
         {
-            List<Transaksi> listTransaksi = new List<Transaksi>();
-
-            listTransaksi = Transaksi.BacaData(printKriteria, nilaiKriteria);
+            List<Transaksi> listTransaksi = Transaksi.BacaData(printKriteria, nilaiKriteria);
 
             StreamWriter tempFile = new StreamWriter(fileName);
 
@@ -166,7 +164,7 @@ namespace UTSISA_Library
                 tempFile.WriteLine("");
                 tempFile.WriteLine("");
                 tempFile.WriteLine("Nomor Transaksi: " + tr.NomorTransaksi);
-                if (tr.JenisTransaksi.KodeJenis == "")
+                if (tr.JenisTransaksi.KodeJenis == "KRM")
                 {
                     tempFile.WriteLine("*** KIRIM ***");
                 }
@@ -178,7 +176,15 @@ namespace UTSISA_Library
                 tempFile.WriteLine("Rekening Tujuan: " + tr.RekeningTujuan.NoRekening);
                 tempFile.WriteLine("Nominal Transaksi: Rp. " + tr.Nominal.ToString());
                 tempFile.WriteLine("Saldo: Rp. " + tr.RekeningSumber.Saldo.ToString());
-                tempFile.WriteLine("Pesan Tambahan: " + tr.Pesan);
+                if (tr.Pesan == "")
+                {
+                    tempFile.WriteLine("");
+                }
+                else
+                {
+                    tempFile.WriteLine("Pesan Tambahan: " + tr.Pesan);
+                }
+                
                 tempFile.WriteLine("");
                 tempFile.WriteLine("");
                 tempFile.WriteLine("===== TERIMA KASIH =====");
