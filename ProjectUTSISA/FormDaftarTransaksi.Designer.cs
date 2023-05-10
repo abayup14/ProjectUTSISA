@@ -33,10 +33,7 @@ namespace ProjectUTSISA
             this.textBoxCari = new System.Windows.Forms.TextBox();
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonUbah = new System.Windows.Forms.Button();
-            this.buttonHapus = new System.Windows.Forms.Button();
             this.buttonKeluar = new System.Windows.Forms.Button();
-            this.buttonTambah = new System.Windows.Forms.Button();
             this.dataGridViewPengguna = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -92,34 +89,6 @@ namespace ProjectUTSISA
             this.label2.TabIndex = 0;
             this.label2.Text = "Cari Berdasarkan:";
             // 
-            // buttonUbah
-            // 
-            this.buttonUbah.BackColor = System.Drawing.Color.Navy;
-            this.buttonUbah.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonUbah.ForeColor = System.Drawing.Color.White;
-            this.buttonUbah.Location = new System.Drawing.Point(538, 501);
-            this.buttonUbah.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonUbah.Name = "buttonUbah";
-            this.buttonUbah.Size = new System.Drawing.Size(153, 46);
-            this.buttonUbah.TabIndex = 56;
-            this.buttonUbah.Text = "&UBAH";
-            this.buttonUbah.UseVisualStyleBackColor = false;
-            this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
-            // 
-            // buttonHapus
-            // 
-            this.buttonHapus.BackColor = System.Drawing.Color.Navy;
-            this.buttonHapus.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonHapus.ForeColor = System.Drawing.Color.White;
-            this.buttonHapus.Location = new System.Drawing.Point(699, 501);
-            this.buttonHapus.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonHapus.Name = "buttonHapus";
-            this.buttonHapus.Size = new System.Drawing.Size(153, 46);
-            this.buttonHapus.TabIndex = 57;
-            this.buttonHapus.Text = "&HAPUS";
-            this.buttonHapus.UseVisualStyleBackColor = false;
-            this.buttonHapus.Click += new System.EventHandler(this.buttonHapus_Click);
-            // 
             // buttonKeluar
             // 
             this.buttonKeluar.BackColor = System.Drawing.Color.Red;
@@ -133,20 +102,6 @@ namespace ProjectUTSISA
             this.buttonKeluar.Text = "&KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
             this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
-            // 
-            // buttonTambah
-            // 
-            this.buttonTambah.BackColor = System.Drawing.Color.Navy;
-            this.buttonTambah.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonTambah.ForeColor = System.Drawing.Color.White;
-            this.buttonTambah.Location = new System.Drawing.Point(376, 501);
-            this.buttonTambah.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(153, 46);
-            this.buttonTambah.TabIndex = 53;
-            this.buttonTambah.Text = "&TAMBAH";
-            this.buttonTambah.UseVisualStyleBackColor = false;
-            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // dataGridViewPengguna
             // 
@@ -177,10 +132,7 @@ namespace ProjectUTSISA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 567);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.buttonUbah);
-            this.Controls.Add(this.buttonHapus);
             this.Controls.Add(this.buttonKeluar);
-            this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.dataGridViewPengguna);
             this.Controls.Add(this.label1);
             this.Name = "FormDaftarTransaksi";
@@ -199,10 +151,7 @@ namespace ProjectUTSISA
         private System.Windows.Forms.TextBox textBoxCari;
         private System.Windows.Forms.ComboBox comboBoxCari;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonUbah;
-        private System.Windows.Forms.Button buttonHapus;
         private System.Windows.Forms.Button buttonKeluar;
-        private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.DataGridView dataGridViewPengguna;
         private System.Windows.Forms.Label label1;
     }

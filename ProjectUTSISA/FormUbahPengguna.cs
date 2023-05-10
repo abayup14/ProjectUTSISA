@@ -16,5 +16,60 @@ namespace ProjectUTSISA
         {
             InitializeComponent();
         }
+
+        private void textBoxNIK_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNIK_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNamaLengkap_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNamaLengkap_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxAlamat_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxAlamat_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNoTelp_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNoTelp_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

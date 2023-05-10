@@ -68,74 +68,9 @@ namespace ProjectUTSISA
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            //FormTambahPegawai frmTambahPegawai = new FormTambahPegawai();
-            //frmTambahPegawai.Owner = this;
-            //frmTambahPegawai.Show();
-        }
-
-        private void buttonUbah_Click(object sender, EventArgs e)
-        {
-            //if (dataGridViewPengguna.CurrentRow != null)
-            //{
-            //    FormUbahTransaksi frmUbah = new FormUbahTransaksi();
-            //    frmUbah.Owner = this;
-
-            //    string idUbah = dataGridViewPengguna.CurrentRow.Cells["transaksi_id"].Value.ToString();
-            //    frmUbah.transaksiUbah = Transaksi.AmbilDataByKode(idUbah);
-            //    frmUbah.Show();
-            //}
-        }
-
-        private void buttonHapus_Click(object sender, EventArgs e)
-        {
-            //if (dataGridViewPengguna.CurrentRow != null)
-            //{
-            //    string noRekSumber_Hapus = dataGridViewPengguna.CurrentRow.Cells["rekening_sumber"].Value.ToString();
-            //    string noRekTujuan_Hapus = dataGridViewPengguna.CurrentRow.Cells["rekening_tujuan"].Value.ToString();
-            //    Tabungan tabunganHapus = Tabungan.AmbilDataByKode(noRekSumber_Hapus);
-            //    string idHapus = dataGridViewPengguna.CurrentRow.Cells["transaksi_id"].Value.ToString();
-            //    DialogResult hasil = MessageBox.Show(this, $"Apakah anda yakin akan menghapus transaksi {noRekSumber_Hapus}-{noRekTujuan_Hapus}?", "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    //jika yes
-            //    if (hasil == DialogResult.Yes)
-            //    {
-            //        try
-            //        {
-            //            Transaksi t = Transaksi.AmbilDataByKode(idHapus);
-            //            Boolean hapus = Transaksi.HapusData(t);
-            //            if (hapus == true)
-            //            {
-            //                MessageBox.Show("Penghapusan data berhasil", "Information");
-
-            //                //refresh form
-            //                FormDaftarTransaksi_Load(buttonKeluar, e);
-            //            }
-            //            else
-            //                MessageBox.Show("Penghapusan data gagal", "Information");
-            //        }
-            //        catch (Exception a)
-            //        {
-            //            MessageBox.Show($"Terdapat Error\n Pesan Eror: {a.Message}", "Information");
-            //        }
-            //    }
-            //}
-        }
-
-        private void textBoxCari_TextChanged(object sender, EventArgs e)
-        {
-            string kriteria = "";
-            if (comboBoxCari.Text == "NIK")
-                kriteria = "p.id";
-            else if (comboBoxCari.Text == "Nama Lengkap")
-                kriteria = "p.nama_depan";
-            else if (comboBoxCari.Text == "Alamat")
-                kriteria = "p.nama_keluarga";
-            else if (comboBoxCari.Text == "Email")
-                kriteria = "p.posisi";
-            else if (comboBoxCari.Text == "Nomor Telepon")
-                kriteria = "p.nik";
-            else if (comboBoxCari.Text == "Jenis Pengguna")
-                kriteria = "j.email";
-            //listPengguna = Pengguna.BacaData(kriteria, textBoxCari.Text);
+            FormTambahPengguna frmTambah = new FormTambahPengguna();
+            frmTambah.Owner = this;
+            frmTambah.Show();
         }
     }
 }
