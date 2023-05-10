@@ -90,7 +90,7 @@ namespace ProjectUTSISA
 
                             string pin = textBoxPIN.Text;
                             string encrypt_pin = AES.Encrypt(pin, key, iv);
-                            Rekening rek = new Rekening(noRekening, 0, encrypt_pin, p);
+                            Rekening rek = new Rekening(noRekening, 1000000, encrypt_pin, p);
                             Rekening.TambahData(rek, k);
 
                             MessageBox.Show($"Rekening anda sudah dibuat dengan nomor rekening {noRekening}", "Informasi");

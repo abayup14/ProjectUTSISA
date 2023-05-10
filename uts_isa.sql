@@ -93,7 +93,7 @@ CREATE TABLE `penggunas` (
 
 LOCK TABLES `penggunas` WRITE;
 /*!40000 ALTER TABLE `penggunas` DISABLE KEYS */;
-INSERT INTO `penggunas` VALUES ('GFUQgojSFjMXUGz/f8aOGw==','VLWSJXreNvPHGo40EtQEMQ==','BNOq/1BWk/sas9tpWV4WYQ==','uPQY97ia6OITfHG0ll8Sig==','oLIhDg677wZ5I6hpvElUhQ==','PKW9Cl19A+V5vMVlQ/oOFw==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\16_0000000001.png','NSB'),('ZHoYpe9eG0RO+QnePfWErA==','hS0Ootoh8VLuTeVeqQrT1g==','P6EIM2vWd7JrX2lnZ1LIzg==','kUfAKun3HqYCm58OrT88zQ==','09cIW44WBV1gBB/nFhjy+Q==','sOqHppQlGTTj3DItR7lwmg==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\17_0000000002.png','NSB');
+INSERT INTO `penggunas` VALUES ('1','Dummy','Surabaya','dummy@gmail.com','08123123','12345','d','EMP'),('GFUQgojSFjMXUGz/f8aOGw==','VLWSJXreNvPHGo40EtQEMQ==','BNOq/1BWk/sas9tpWV4WYQ==','uPQY97ia6OITfHG0ll8Sig==','oLIhDg677wZ5I6hpvElUhQ==','PKW9Cl19A+V5vMVlQ/oOFw==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\16_0000000001.png','NSB'),('VakkX+UX9yJrx9w6yyBF2A==','vauqXGia0D2Mk6F95uXbaA==','eZthhzIW9TNvyf3fYhDPvw==','EJzhF0LDcyBG1Hq2oZ3Fu+6LROQJwBZmS4CcdR+ePqA=','QK4FAnLOw7w9ApNoM9/j9A==','JxeYHtOM23r5EzudGmU1SA==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\16_emp.png','EMP'),('ZHoYpe9eG0RO+QnePfWErA==','hS0Ootoh8VLuTeVeqQrT1g==','P6EIM2vWd7JrX2lnZ1LIzg==','kUfAKun3HqYCm58OrT88zQ==','09cIW44WBV1gBB/nFhjy+Q==','sOqHppQlGTTj3DItR7lwmg==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\17_0000000002.png','NSB');
 /*!40000 ALTER TABLE `penggunas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ CREATE TABLE `public_keys` (
 
 LOCK TABLES `public_keys` WRITE;
 /*!40000 ALTER TABLE `public_keys` DISABLE KEYS */;
-INSERT INTO `public_keys` VALUES ('shQKfQvAJXxYsVTFVLaTLsHg9IxLa9Saa7DATij+kqE=','QWHScyFfN/MiVWnDIiQWhw==','GFUQgojSFjMXUGz/f8aOGw=='),('HitjBUl1QoV+qa5ZEdrZmKpLC8ZjS2hqddnuy2SzGqA=','1+hMmNOTGFLmR4cKdNV9tQ==','ZHoYpe9eG0RO+QnePfWErA==');
+INSERT INTO `public_keys` VALUES ('shQKfQvAJXxYsVTFVLaTLsHg9IxLa9Saa7DATij+kqE=','QWHScyFfN/MiVWnDIiQWhw==','GFUQgojSFjMXUGz/f8aOGw=='),('bSkxVLWiJcQAjiiBoAsWuyHaTlYNTaRNF8tg53OH+eo=','/Olc6C59gjlODkLY49OxEA==','VakkX+UX9yJrx9w6yyBF2A=='),('HitjBUl1QoV+qa5ZEdrZmKpLC8ZjS2hqddnuy2SzGqA=','1+hMmNOTGFLmR4cKdNV9tQ==','ZHoYpe9eG0RO+QnePfWErA==');
 /*!40000 ALTER TABLE `public_keys` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `rekenings` (
 
 LOCK TABLES `rekenings` WRITE;
 /*!40000 ALTER TABLE `rekenings` DISABLE KEYS */;
-INSERT INTO `rekenings` VALUES ('0000000001',1000000,'78k+OB55sIbJeIScaSGv5A==','GFUQgojSFjMXUGz/f8aOGw=='),('0000000002',2000000,'jTepkjs68BicICprQwYsAA==','ZHoYpe9eG0RO+QnePfWErA==');
+INSERT INTO `rekenings` VALUES ('0000000001',1100000,'78k+OB55sIbJeIScaSGv5A==','GFUQgojSFjMXUGz/f8aOGw=='),('0000000002',1900000,'jTepkjs68BicICprQwYsAA==','ZHoYpe9eG0RO+QnePfWErA==');
 /*!40000 ALTER TABLE `rekenings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,6 +183,7 @@ CREATE TABLE `transaksis` (
 
 LOCK TABLES `transaksis` WRITE;
 /*!40000 ALTER TABLE `transaksis` DISABLE KEYS */;
+INSERT INTO `transaksis` VALUES ('0000000001','0000000002','2023-05-10 14:24:27',100000,'','KRM','0000000001'),('0000000002','0000000001','2023-05-10 14:24:27',100000,'','TRM','0000000002');
 /*!40000 ALTER TABLE `transaksis` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -195,4 +196,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-10 11:59:23
+-- Dump completed on 2023-05-10 15:19:47
