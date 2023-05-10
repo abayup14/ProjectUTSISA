@@ -49,7 +49,7 @@ DROP TABLE IF EXISTS `jenis_transaksis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `jenis_transaksis` (
-  `kode_jenisTransaksi` int(11) NOT NULL,
+  `kode_jenisTransaksi` varchar(45) NOT NULL,
   `nama` varchar(45) NOT NULL,
   PRIMARY KEY (`kode_jenisTransaksi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -92,6 +92,7 @@ CREATE TABLE `penggunas` (
 
 LOCK TABLES `penggunas` WRITE;
 /*!40000 ALTER TABLE `penggunas` DISABLE KEYS */;
+INSERT INTO `penggunas` VALUES ('llHXJPgqhzO3WamxLEMM0A==','jFpIWT964FUpZtyXMdIp9w==','fU5FbytBy1vY9iFrxFxp3g==','r2c8ntSAJE5gGtlYb+zSwQ==','QYXy6ogxwHpi9MEot3v/Mw==','e25jbrGgvEz4dSdsoHw0cw==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\16_0000000001.png','NSB');
 /*!40000 ALTER TABLE `penggunas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,6 +119,7 @@ CREATE TABLE `public_keys` (
 
 LOCK TABLES `public_keys` WRITE;
 /*!40000 ALTER TABLE `public_keys` DISABLE KEYS */;
+INSERT INTO `public_keys` VALUES ('++LQby9GbOILQuY59cBaI8BTEWj/knQaKBMw2aOCreg=','CzJ6iiOhjhOQklj98Zg5+w==','llHXJPgqhzO3WamxLEMM0A==');
 /*!40000 ALTER TABLE `public_keys` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,6 +147,7 @@ CREATE TABLE `rekenings` (
 
 LOCK TABLES `rekenings` WRITE;
 /*!40000 ALTER TABLE `rekenings` DISABLE KEYS */;
+INSERT INTO `rekenings` VALUES ('0000000001',0,'jB08IUpwb0/sgfYVh3zDpQ==','llHXJPgqhzO3WamxLEMM0A==');
 /*!40000 ALTER TABLE `rekenings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,4 +194,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-09 15:25:03
+-- Dump completed on 2023-05-10  9:01:12

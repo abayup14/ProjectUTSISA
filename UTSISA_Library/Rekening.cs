@@ -79,7 +79,7 @@ namespace UTSISA_Library
 
                     MySqlDataReader hasil1 = Koneksi.JalankanPerintahQuery(sql1);
 
-                    while (hasil1.Read() == true)
+                    if (hasil1.Read() == true)
                     {
                         Pengguna pen = new Pengguna(nik);
                         Rekening rek = new Rekening(hasil1.GetValue(0).ToString(),

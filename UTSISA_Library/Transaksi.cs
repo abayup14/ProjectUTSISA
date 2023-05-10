@@ -91,7 +91,7 @@ namespace UTSISA_Library
 
         public static string GenerateNomorTransaksi()
         {
-            string sql = "SELECT max(nomor_transaksi) FROM transaksis";
+            string sql = "SELECT max(nomor_transaksi) FROM rekenings";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
