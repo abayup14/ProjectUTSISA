@@ -61,6 +61,7 @@ CREATE TABLE `jenis_transaksis` (
 
 LOCK TABLES `jenis_transaksis` WRITE;
 /*!40000 ALTER TABLE `jenis_transaksis` DISABLE KEYS */;
+INSERT INTO `jenis_transaksis` VALUES ('KRM','Kirim'),('TRM','Terima');
 /*!40000 ALTER TABLE `jenis_transaksis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-10  9:01:12
+-- Dump completed on 2023-05-10  9:16:41

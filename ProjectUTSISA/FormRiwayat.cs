@@ -51,20 +51,20 @@ namespace ProjectUTSISA
         {
             dataGridViewRiwayat.Columns.Clear();
 
-            dataGridViewRiwayat.Columns.Add("rekeningSumber", "Rekening Sumber");
-            dataGridViewRiwayat.Columns.Add("rekeningTujuan", "Rekening Tujuan");
-            dataGridViewRiwayat.Columns.Add("waktuTransaksi", "Waktu");
+            dataGridViewRiwayat.Columns.Add("rek_Sumber", "Rekening Sumber");
+            dataGridViewRiwayat.Columns.Add("rek_Tujuan", "Rekening Tujuan");
+            dataGridViewRiwayat.Columns.Add("waktu_transaksi", "Waktu");
             dataGridViewRiwayat.Columns.Add("nominal", "Nominal");
             dataGridViewRiwayat.Columns.Add("pesan", "Pesan");
-            dataGridViewRiwayat.Columns.Add("jenisTransaksi", "Jenis Transaksi");
+            dataGridViewRiwayat.Columns.Add("jenis_transaksi_id", "Jenis Transaksi");
             dataGridViewRiwayat.Columns.Add("nomor_transaksi", "Nomor Transaksi");
 
-            dataGridViewRiwayat.Columns["rekeningSumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewRiwayat.Columns["rekeningTujuan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewRiwayat.Columns["waktuTransaksi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewRiwayat.Columns["rek_Sumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewRiwayat.Columns["rek_tujuan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewRiwayat.Columns["waktu_transaksi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewRiwayat.Columns["nominal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewRiwayat.Columns["pesan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewRiwayat.Columns["jenisTransaksi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewRiwayat.Columns["jenis_transaksi_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewRiwayat.Columns["nomor_transaksi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewButtonColumn bcolCetak = new DataGridViewButtonColumn();

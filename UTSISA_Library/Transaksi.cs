@@ -1,9 +1,12 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Crypthography;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -88,7 +91,31 @@ namespace UTSISA_Library
 
             return listTransaksi;
         }
+        public static bool CekPIN(string pin, Rekening rek)
+        {
+            string sql = "SELECT * from public_keys k inner join penggunas p on k.penggunas_nik = p.nik inner join rekenings r on p.nik = r.pengguna_id";
 
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            while (hasil.Read() == true)
+            {
+                string rekening = hasil.GetValue(11).ToString();
+
+                if (rekening == rek.NoRekening)
+                {
+                    string key = hasil.GetValue(0).ToString();
+                    string iv = hasil.GetValue(1).ToString();
+                    string decrypt_pin = AES.Decrypt(hasil.GetValue(13).ToString(), key, iv);
+
+                    if (pin == decrypt_pin)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
         public static string GenerateNomorTransaksi()
         {
             string sql = "SELECT max(nomor_transaksi) FROM rekenings";
@@ -141,11 +168,11 @@ namespace UTSISA_Library
                 tempFile.WriteLine("Nomor Transaksi: " + tr.NomorTransaksi);
                 if (tr.JenisTransaksi.KodeJenis == "")
                 {
-                    tempFile.WriteLine("KIRIM");
+                    tempFile.WriteLine("*** KIRIM ***");
                 }
                 else
                 {
-                    tempFile.WriteLine("TERIMA");
+                    tempFile.WriteLine("*** TERIMA ***");
                 }
                 tempFile.WriteLine("Rekeining Sumber: " + tr.RekeningSumber.NoRekening);
                 tempFile.WriteLine("Rekening Tujuan: " + tr.RekeningTujuan.NoRekening);

@@ -47,12 +47,21 @@ namespace ProjectUTSISA
                 JenisTransaksi jtTerima = new JenisTransaksi("TRM");
                 Rekening rekeningSumber = new Rekening(labelRekSumber.Text);
                 Rekening rekeningTujuan = new Rekening(textBoxRekTujuan.Text);
-                Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtKirim, noTransaksi);
-                string noTransaksiTujuan = Transaksi.GenerateNomorTransaksi();
-                Transaksi.TambahData(tr, k);
-                Transaksi trTujuan = new Transaksi(rekeningTujuan, rekeningSumber, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtTerima, noTransaksiTujuan);
-                Transaksi.TambahData(tr, k);
-                MessageBox.Show("Transaksi berhasil dilakukan", "Informasi");
+                string pin = textBoxPIN.Text;
+                if (Transaksi.CekPIN(pin, rekeningSumber) == true)
+                {
+                    Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtKirim, noTransaksi);
+                    string noTransaksiTujuan = Transaksi.GenerateNomorTransaksi();
+                    Transaksi.TambahData(tr, k);
+                    Transaksi trTujuan = new Transaksi(rekeningTujuan, rekeningSumber, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtTerima, noTransaksiTujuan);
+                    Transaksi.TambahData(trTujuan, k);
+                    MessageBox.Show("Transaksi berhasil dilakukan", "Informasi");
+                }
+                else
+                {
+                    MessageBox.Show("PIN yang anda masukkan salah. Silahkan coba lagi.", "Informasi");
+                }
+                
             }
         }
 
