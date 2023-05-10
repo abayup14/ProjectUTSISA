@@ -118,7 +118,7 @@ namespace ProjectUTSISA
             this.radioButtonNsb.AutoSize = true;
             this.radioButtonNsb.Location = new System.Drawing.Point(283, 277);
             this.radioButtonNsb.Name = "radioButtonNsb";
-            this.radioButtonNsb.Size = new System.Drawing.Size(86, 21);
+            this.radioButtonNsb.Size = new System.Drawing.Size(84, 20);
             this.radioButtonNsb.TabIndex = 19;
             this.radioButtonNsb.Text = "Nasabah";
             this.radioButtonNsb.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@ namespace ProjectUTSISA
             this.radioButtonEmp.Checked = true;
             this.radioButtonEmp.Location = new System.Drawing.Point(185, 277);
             this.radioButtonEmp.Name = "radioButtonEmp";
-            this.radioButtonEmp.Size = new System.Drawing.Size(82, 21);
+            this.radioButtonEmp.Size = new System.Drawing.Size(81, 20);
             this.radioButtonEmp.TabIndex = 18;
             this.radioButtonEmp.TabStop = true;
             this.radioButtonEmp.Text = "Pegawai";
@@ -373,7 +373,7 @@ namespace ProjectUTSISA
             this.buttonKosongi.TabIndex = 7;
             this.buttonKosongi.Text = "&KOSONGI";
             this.buttonKosongi.UseVisualStyleBackColor = false;
-            this.buttonKosongi.Click += new System.EventHandler(this.buttonKosongi_Click_1);
+            this.buttonKosongi.Click += new System.EventHandler(this.buttonKosongi_Click);
             // 
             // FormTambahPengguna
             // 

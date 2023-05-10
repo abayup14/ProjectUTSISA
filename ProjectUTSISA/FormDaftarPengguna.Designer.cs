@@ -32,6 +32,7 @@ namespace ProjectUTSISA
             this.dataGridViewPengguna = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonKeluar = new System.Windows.Forms.Button();
+            this.buttonTambah = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPengguna)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,26 @@ namespace ProjectUTSISA
             this.buttonKeluar.UseVisualStyleBackColor = false;
             this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
+            // buttonTambah
+            // 
+            this.buttonTambah.BackColor = System.Drawing.Color.Navy;
+            this.buttonTambah.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.buttonTambah.ForeColor = System.Drawing.Color.White;
+            this.buttonTambah.Location = new System.Drawing.Point(640, 504);
+            this.buttonTambah.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTambah.Name = "buttonTambah";
+            this.buttonTambah.Size = new System.Drawing.Size(153, 46);
+            this.buttonTambah.TabIndex = 48;
+            this.buttonTambah.Text = "&TAMBAH";
+            this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            // 
             // FormDaftarPengguna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 567);
+            this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.dataGridViewPengguna);
             this.Controls.Add(this.label1);
@@ -92,5 +108,6 @@ namespace ProjectUTSISA
         private System.Windows.Forms.DataGridView dataGridViewPengguna;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonKeluar;
+        private System.Windows.Forms.Button buttonTambah;
     }
 }

@@ -119,7 +119,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 63);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 121);
+            this.panel1.Size = new System.Drawing.Size(444, 136);
             this.panel1.TabIndex = 1;
             // 
             // labelRegistrasi
@@ -127,7 +127,7 @@
             this.labelRegistrasi.AutoSize = true;
             this.labelRegistrasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegistrasi.ForeColor = System.Drawing.Color.Blue;
-            this.labelRegistrasi.Location = new System.Drawing.Point(240, 95);
+            this.labelRegistrasi.Location = new System.Drawing.Point(242, 103);
             this.labelRegistrasi.Name = "labelRegistrasi";
             this.labelRegistrasi.Size = new System.Drawing.Size(154, 18);
             this.labelRegistrasi.TabIndex = 4;

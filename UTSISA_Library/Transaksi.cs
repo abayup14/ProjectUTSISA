@@ -75,8 +75,8 @@ namespace UTSISA_Library
 
             while (hasil.Read() == true)
             {
-                Rekening rekeningSumber = new Rekening(hasil.GetValue(0).ToString());
-                Rekening rekeningTujuan = new Rekening(hasil.GetValue(1).ToString());
+                Rekening rekeningSumber = Rekening.AmbilData(hasil.GetValue(0).ToString());
+                Rekening rekeningTujuan = Rekening.AmbilData(hasil.GetValue(1).ToString());
                 JenisTransaksi jt = new JenisTransaksi(hasil.GetValue(5).ToString());
                 Transaksi tr = new Transaksi(rekeningSumber, 
                                              rekeningTujuan, 
@@ -174,8 +174,8 @@ namespace UTSISA_Library
                 }
                 tempFile.WriteLine("Rekeining Sumber: " + tr.RekeningSumber.NoRekening);
                 tempFile.WriteLine("Rekening Tujuan: " + tr.RekeningTujuan.NoRekening);
-                tempFile.WriteLine("Nominal Transaksi: Rp. " + tr.Nominal.ToString());
-                tempFile.WriteLine("Saldo: Rp. " + tr.RekeningSumber.Saldo.ToString());
+                tempFile.WriteLine("Nominal Transaksi: Rp. " + tr.Nominal.ToString("N0"));
+                tempFile.WriteLine("Saldo: Rp. " + tr.RekeningSumber.Saldo.ToString("N0"));
                 if (tr.Pesan == "")
                 {
                     tempFile.WriteLine("");

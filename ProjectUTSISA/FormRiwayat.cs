@@ -28,7 +28,7 @@ namespace ProjectUTSISA
         {
             frmTransaksi = (FormTransaksi)this.Owner;
             FormatDataGrid(); //method untuk menambah kolompada datagridview
-            listTransaksi = Transaksi.BacaData("rek_sumber or rek_tujuan", frmTransaksi.rekening.NoRekening);
+            listTransaksi = Transaksi.BacaData("rek_sumber", frmTransaksi.rekening.NoRekening);
             TampilDataGrid(); //tampilkan semua isi
         }
         private void TampilDataGrid()
@@ -83,7 +83,6 @@ namespace ProjectUTSISA
             if (e.ColumnIndex == dataGridViewRiwayat.Columns["btnCetak"].Index && e.RowIndex >= 0)
             {
                 Transaksi.PrintTransaksi("nomor_transaksi", dataGridViewRiwayat.Rows[e.RowIndex].Cells["nomor_transaksi"].Value.ToString(), "transaksi.txt", new Font("Courier New", 12));
-                MessageBox.Show("Transaksi telah tercetak.");
             }
         }
     }

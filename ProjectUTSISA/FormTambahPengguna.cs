@@ -54,6 +54,9 @@ namespace ProjectUTSISA
             textBoxPIN.Font = new Font(textBoxPIN.Font, FontStyle.Italic);
             textBoxPIN.ForeColor = Color.Gray;
             textBoxPIN.UseSystemPasswordChar = false;
+
+            textBoxPIN.Enabled = false;
+            labelPIN.Enabled = false;
         }
 
         private void buttonFoto_Click(object sender, EventArgs e)

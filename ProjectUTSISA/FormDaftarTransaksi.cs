@@ -50,9 +50,18 @@ namespace ProjectUTSISA
             dataGridViewPengguna.Rows.Clear(); //kosongi datagridview
             if (listTransaksi.Count > 0)
             {
+                string kodeJenis = "";
                 foreach (Transaksi t in listTransaksi)
                 {
-                    dataGridViewPengguna.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi,t.Nominal,t.Pesan,t.JenisTransaksi.KodeJenis);
+                    if (t.JenisTransaksi.KodeJenis == "KRM")
+                    {
+                        kodeJenis = "Kirim";
+                    }
+                    else if (t.JenisTransaksi.KodeJenis == "TRM")
+                    {
+                        kodeJenis = "Terima";
+                    }
+                    dataGridViewPengguna.Rows.Add(t.RekeningSumber,t.RekeningTujuan,t.WaktuTransaksi,t.Nominal,t.Pesan,kodeJenis);
                 }
             }
             else

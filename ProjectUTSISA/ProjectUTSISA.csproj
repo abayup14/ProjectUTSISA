@@ -149,12 +149,6 @@
     <Compile Include="FormTransfer.Designer.cs">
       <DependentUpon>FormTransfer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUbahPengguna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUbahPengguna.Designer.cs">
-      <DependentUpon>FormUbahPengguna.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransfer.resx">
       <DependentUpon>FormTransfer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUbahPengguna.resx">
-      <DependentUpon>FormUbahPengguna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>
