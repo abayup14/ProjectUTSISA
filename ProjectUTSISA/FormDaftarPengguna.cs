@@ -53,11 +53,20 @@ namespace ProjectUTSISA
         private void TampilDataGrid()
         {
             dataGridViewPengguna.Rows.Clear(); //kosongi datagridview
+            string jenisPengguna = "";
             if (listPengguna.Count > 0)
             {
                 foreach (Pengguna p in listPengguna)
                 {
-                    dataGridViewPengguna.Rows.Add(p.Nik,p.NamaLengkap,p.Alamat,p.Email,p.NoTelepon,p.JenisPengguna);
+                    if (p.JenisPengguna.KodeJenis == "EMP")
+                    {
+                        jenisPengguna = "Employee";
+                    }
+                    else if (p.JenisPengguna.KodeJenis == "NSB")
+                    {
+                        jenisPengguna = "Nasabah";
+                    }
+                    dataGridViewPengguna.Rows.Add(p.Nik,p.NamaLengkap,p.Alamat,p.Email,p.NoTelepon,jenisPengguna);
                 }
             }
             else

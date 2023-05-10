@@ -100,56 +100,53 @@ namespace UTSISA_Library
 
         public static List<Pengguna> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = $"SELECT * from public_keys k inner join penggunas p on k.penggunas_nik = p.nik";
+            string sql;
+            if (kriteria == "")
+            {
+                sql = $"SELECT * from public_keys k right join penggunas p on k.penggunas_nik = p.nik";
+            }
+            else
+            {
+                sql = $"SELECT * from public_keys k right join penggunas p on k.penggunas_nik = p.nik where {kriteria} LIKE '%{nilaiKriteria}%'";
+            }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
+            List<Pengguna> listPengguna = new List<Pengguna>();
+
             while (hasil.Read() == true)
             {
-                string key = hasil.GetValue(0).ToString();
-                string iv = hasil.GetValue(1).ToString();
-                string decrypt_email = AES.Decrypt(hasil.GetValue(6).ToString(), key, iv);
-                string decrypt_pass = AES.Decrypt(hasil.GetValue(8).ToString(), key, iv);
-
-                string sql1;
-
-                if (kriteria == "")
+                if (hasil.GetValue(3).ToString() == "1")
                 {
-                    sql1 = "SELECT * from penggunas";
+                    continue;
                 }
                 else
                 {
-                    sql1 = $"SELECT * from penggunas where {kriteria} LIKE '%{nilaiKriteria}%'";
-                }
+                    string key = hasil.GetValue(0).ToString();
+                    string iv = hasil.GetValue(1).ToString();
+                    string decrypt_email = AES.Decrypt(hasil.GetValue(6).ToString(), key, iv);
+                    string decrypt_pass = AES.Decrypt(hasil.GetValue(8).ToString(), key, iv);
 
-                MySqlDataReader hasil1 = Koneksi.JalankanPerintahQuery(sql1);
+                    JenisPengguna jp = new JenisPengguna(hasil.GetValue(10).ToString());
 
-                List<Pengguna> listPengguna = new List<Pengguna>();
-
-                while (hasil1.Read() == true)
-                {
-                    JenisPengguna jp = new JenisPengguna(hasil.GetValue(7).ToString());
-
-                    string nik = AES.Decrypt(hasil1.GetValue(0).ToString(), key, iv);
-                    string namaLengkap = AES.Decrypt(hasil1.GetValue(1).ToString(), key, iv);
-                    string alamat = AES.Decrypt(hasil1.GetValue(2).ToString(), key, iv);
-                    string noTelepon = AES.Decrypt(hasil1.GetValue(4).ToString(), key, iv);
-                    string fotoDiri = hasil1.GetValue(6).ToString();
+                    string nik = AES.Decrypt(hasil.GetValue(3).ToString(), key, iv);
+                    string namaLengkap = AES.Decrypt(hasil.GetValue(4).ToString(), key, iv);
+                    string alamat = AES.Decrypt(hasil.GetValue(5).ToString(), key, iv);
+                    string noTelepon = AES.Decrypt(hasil.GetValue(7).ToString(), key, iv);
+                    string fotoDiri = hasil.GetValue(9).ToString();
 
                     Pengguna pengguna = new Pengguna(nik, namaLengkap, alamat, decrypt_email, noTelepon, decrypt_pass, fotoDiri, jp);
 
                     listPengguna.Add(pengguna);
                 }
-
-                return listPengguna;
             }
 
-            return null;
+            return listPengguna;
         }
 
         public static Pengguna CekLogin(string email, string password)
         {
-            string sql = $"SELECT * from public_keys k inner join penggunas p on k.penggunas_nik = p.nik";
+            string sql = $"SELECT * from public_keys k right join penggunas p on k.penggunas_nik = p.nik";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
