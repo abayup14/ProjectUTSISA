@@ -50,7 +50,7 @@ namespace UTSISA_Library
         #region Methods
         public static void TambahData(Transaksi transaksi, Koneksi k)
         {
-            string sql = $"INSERT into transaksis (rek_sumber, rek_tujuan, waktu_transaksi, nominal, pesan, jenis_transaksi_id, nomor_transaksi) " +
+            string sql = $"INSERT into transaksis (rek_sumber, rek_tujuan, waktu_transaksi, nominal, pesan, jenis_transaksis_id, nomor_transaksi) " +
                          $"values ('{transaksi.RekeningSumber.NoRekening}', '{transaksi.RekeningTujuan.NoRekening}', '{transaksi.WaktuTransaksi.ToString("yyyy-MM-dd HH:mm:ss")}', '{transaksi.Nominal}', '{transaksi.Pesan}', '{transaksi.JenisTransaksi.KodeJenis}', '{transaksi.NomorTransaksi}')";
 
             Koneksi.JalankanPerintahDML(sql, k);
@@ -118,7 +118,7 @@ namespace UTSISA_Library
         }
         public static string GenerateNomorTransaksi()
         {
-            string sql = "SELECT max(nomor_transaksi) FROM rekenings";
+            string sql = "SELECT max(nomor_transaksi) FROM transaksis";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

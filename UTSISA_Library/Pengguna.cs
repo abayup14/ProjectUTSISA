@@ -153,8 +153,6 @@ namespace UTSISA_Library
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            Pengguna p = null;
-
             while (hasil.Read() == true)
             {
                 string new_email = hasil.GetValue(6).ToString();
@@ -169,7 +167,9 @@ namespace UTSISA_Library
                     string noTelepon = hasil.GetValue(7).ToString();
                     string fotoDiri = hasil.GetValue(9).ToString();
 
-                    p = new Pengguna(nik, namaLengkap, alamat, new_email, noTelepon, new_pass, fotoDiri, jp);
+                    Pengguna p = new Pengguna(nik, namaLengkap, alamat, new_email, noTelepon, new_pass, fotoDiri, jp);
+
+                    return p;
                 }
                 else
                 {
@@ -188,12 +188,11 @@ namespace UTSISA_Library
                         string noTelepon = AES.Decrypt(hasil.GetValue(7).ToString(), key, iv);
                         string fotoDiri = hasil.GetValue(9).ToString();
 
-                        p = new Pengguna(nik, namaLengkap, alamat, decrypt_email, noTelepon, decrypt_pass, fotoDiri, jp);
+                        Pengguna p = new Pengguna(nik, namaLengkap, alamat, decrypt_email, noTelepon, decrypt_pass, fotoDiri, jp);
 
+                        return p;
                     }
                 }
-
-                return p;
             }
             
             return null;

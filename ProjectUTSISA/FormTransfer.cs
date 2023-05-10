@@ -37,7 +37,7 @@ namespace ProjectUTSISA
                                                  "\nRekening Tujuan : " + textBoxRekTujuan.Text +
                                                  /*"\nSaldo : Rp. " + labelSaldo.Text +*/
                                                  "\nNominal Transaksi : " + textBoxNominal.Text +
-                                                 "\nPesan : " + textBoxRekTujuan.Text +
+                                                 "\nPesan : " + textBoxPesan.Text +
                                                  "\n\nApakah anda yakin ingin melakukan transaksi tersebut?",
                                                  "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (hasil == DialogResult.Yes)
@@ -51,8 +51,8 @@ namespace ProjectUTSISA
                 if (Transaksi.CekPIN(pin, rekeningSumber) == true)
                 {
                     Transaksi tr = new Transaksi(rekeningSumber, rekeningTujuan, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtKirim, noTransaksi);
-                    string noTransaksiTujuan = Transaksi.GenerateNomorTransaksi();
                     Transaksi.TambahData(tr, k);
+                    string noTransaksiTujuan = Transaksi.GenerateNomorTransaksi();
                     Transaksi trTujuan = new Transaksi(rekeningTujuan, rekeningSumber, DateTime.Now, double.Parse(textBoxNominal.Text), textBoxPesan.Text, jtTerima, noTransaksiTujuan);
                     Transaksi.TambahData(trTujuan, k);
                     MessageBox.Show("Transaksi berhasil dilakukan", "Informasi");
