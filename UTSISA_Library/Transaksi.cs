@@ -160,7 +160,7 @@ namespace UTSISA_Library
                 tempFile.WriteLine("===== Bank MasBro =====");
                 tempFile.WriteLine("");
                 tempFile.WriteLine("Tanggal Transaksi: " + tr.WaktuTransaksi.ToShortDateString());
-                tempFile.WriteLine("Waktu Transaksi: " + tr.WaktuTransaksi.ToShortTimeString());
+                tempFile.WriteLine("Waktu Transaksi: " + tr.WaktuTransaksi.ToLongTimeString());
                 tempFile.WriteLine("");
                 tempFile.WriteLine("");
                 tempFile.WriteLine("Nomor Transaksi: " + tr.NomorTransaksi);
@@ -168,7 +168,7 @@ namespace UTSISA_Library
                 {
                     tempFile.WriteLine("*** KIRIM ***");
                 }
-                else
+                else if (tr.JenisTransaksi.KodeJenis == "TRM")
                 {
                     tempFile.WriteLine("*** TERIMA ***");
                 }
@@ -191,7 +191,7 @@ namespace UTSISA_Library
                 tempFile.Close();
 
                 Cetak cetak = new Cetak(font, fileName, 20, 10, 10, 10);
-
+                
                 cetak.SentToPrinter();
             }
         }

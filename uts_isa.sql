@@ -93,7 +93,7 @@ CREATE TABLE `penggunas` (
 
 LOCK TABLES `penggunas` WRITE;
 /*!40000 ALTER TABLE `penggunas` DISABLE KEYS */;
-INSERT INTO `penggunas` VALUES ('llHXJPgqhzO3WamxLEMM0A==','jFpIWT964FUpZtyXMdIp9w==','fU5FbytBy1vY9iFrxFxp3g==','r2c8ntSAJE5gGtlYb+zSwQ==','QYXy6ogxwHpi9MEot3v/Mw==','e25jbrGgvEz4dSdsoHw0cw==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\16_0000000001.png','NSB');
+INSERT INTO `penggunas` VALUES ('GFUQgojSFjMXUGz/f8aOGw==','VLWSJXreNvPHGo40EtQEMQ==','BNOq/1BWk/sas9tpWV4WYQ==','uPQY97ia6OITfHG0ll8Sig==','oLIhDg677wZ5I6hpvElUhQ==','PKW9Cl19A+V5vMVlQ/oOFw==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\16_0000000001.png','NSB'),('ZHoYpe9eG0RO+QnePfWErA==','hS0Ootoh8VLuTeVeqQrT1g==','P6EIM2vWd7JrX2lnZ1LIzg==','kUfAKun3HqYCm58OrT88zQ==','09cIW44WBV1gBB/nFhjy+Q==','sOqHppQlGTTj3DItR7lwmg==','D:\\GitHub\\ProjectUTSISA\\foto_stegano\\17_0000000002.png','NSB');
 /*!40000 ALTER TABLE `penggunas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ CREATE TABLE `public_keys` (
 
 LOCK TABLES `public_keys` WRITE;
 /*!40000 ALTER TABLE `public_keys` DISABLE KEYS */;
-INSERT INTO `public_keys` VALUES ('++LQby9GbOILQuY59cBaI8BTEWj/knQaKBMw2aOCreg=','CzJ6iiOhjhOQklj98Zg5+w==','llHXJPgqhzO3WamxLEMM0A==');
+INSERT INTO `public_keys` VALUES ('shQKfQvAJXxYsVTFVLaTLsHg9IxLa9Saa7DATij+kqE=','QWHScyFfN/MiVWnDIiQWhw==','GFUQgojSFjMXUGz/f8aOGw=='),('HitjBUl1QoV+qa5ZEdrZmKpLC8ZjS2hqddnuy2SzGqA=','1+hMmNOTGFLmR4cKdNV9tQ==','ZHoYpe9eG0RO+QnePfWErA==');
 /*!40000 ALTER TABLE `public_keys` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `rekenings` (
 
 LOCK TABLES `rekenings` WRITE;
 /*!40000 ALTER TABLE `rekenings` DISABLE KEYS */;
-INSERT INTO `rekenings` VALUES ('0000000001',0,'jB08IUpwb0/sgfYVh3zDpQ==','llHXJPgqhzO3WamxLEMM0A==');
+INSERT INTO `rekenings` VALUES ('0000000001',1000000,'78k+OB55sIbJeIScaSGv5A==','GFUQgojSFjMXUGz/f8aOGw=='),('0000000002',2000000,'jTepkjs68BicICprQwYsAA==','ZHoYpe9eG0RO+QnePfWErA==');
 /*!40000 ALTER TABLE `rekenings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `transaksis` (
   `waktu_transaksi` datetime NOT NULL,
   `nominal` double NOT NULL,
   `pesan` varchar(50) NOT NULL,
-  `jenis_transaksis_id` int(11) NOT NULL,
+  `jenis_transaksis_id` varchar(45) NOT NULL,
   `nomor_transaksi` varchar(45) NOT NULL,
   PRIMARY KEY (`rek_sumber`,`rek_tujuan`,`nomor_transaksi`),
   KEY `fk_rekening_rekening_rekening2_idx` (`rek_tujuan`),
@@ -195,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-10  9:16:41
+-- Dump completed on 2023-05-10 11:59:23
